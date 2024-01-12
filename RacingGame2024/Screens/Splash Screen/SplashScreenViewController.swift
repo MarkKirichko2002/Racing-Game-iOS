@@ -12,7 +12,8 @@ class SplashScreenViewController: UIViewController {
     // MARK: - UI
     private let icon: UIImageView = {
        let image = UIImageView()
-       image.image = UIImage(named: "finish")
+       image.image = UIImage(named: "racer")
+       image.tintColor = .label
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()
@@ -45,7 +46,6 @@ class SplashScreenViewController: UIViewController {
     private func setUpView() {
         view.backgroundColor = .systemBackground
         view.addSubviews(views: icon, titleLabel)
-        showAnimation()
     }
     
     private func makeConstraints() {
@@ -77,6 +77,8 @@ class SplashScreenViewController: UIViewController {
     private func showStartScreen() {
         let controller = StartViewController()
         controller.modalPresentationStyle = .fullScreen
-        self.present(controller, animated: false, completion: nil)
+        DispatchQueue.main.async { [weak self] in
+            self?.present(controller, animated: false, completion: nil)
+        }
     }
 }

@@ -14,7 +14,8 @@ class PlayerTableViewCell: UITableViewCell {
     // MARK: - UI
     private let playerImage: UIImageView = {
        let image = UIImageView()
-       image.image = UIImage(named: "finish")
+       image.image = UIImage(named: "racer")
+       image.tintColor = .label
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()

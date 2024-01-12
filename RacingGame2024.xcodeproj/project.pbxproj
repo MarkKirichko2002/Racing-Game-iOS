@@ -19,9 +19,9 @@
 		828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E062B51A3130022FDB3 /* GameViewController.swift */; };
 		828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */; };
 		828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */; };
-		828D8E0F2B51A3650022FDB3 /* CarColorOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0E2B51A3650022FDB3 /* CarColorOptionTableViewCell.swift */; };
 		828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */; };
 		828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */; };
+		828D8E182B51B65A0022FDB3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E172B51B65A0022FDB3 /* Options.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,9 +39,9 @@
 		828D8E062B51A3130022FDB3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOptionTableViewCell.swift; sourceTree = "<group>"; };
-		828D8E0E2B51A3650022FDB3 /* CarColorOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorOptionTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		828D8E172B51B65A0022FDB3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,8 +135,9 @@
 		828D8DFE2B51A2A10022FDB3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				828D8E162B51B64A0022FDB3 /* Model */,
 				828D8E092B51A3290022FDB3 /* ViewController */,
-				828D8E082B51A3260022FDB3 /* Cells */,
+				828D8E082B51A3260022FDB3 /* Cell */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -165,13 +166,12 @@
 			path = "Splash Screen";
 			sourceTree = "<group>";
 		};
-		828D8E082B51A3260022FDB3 /* Cells */ = {
+		828D8E082B51A3260022FDB3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */,
-				828D8E0E2B51A3650022FDB3 /* CarColorOptionTableViewCell.swift */,
 			);
-			path = Cells;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		828D8E092B51A3290022FDB3 /* ViewController */ = {
@@ -196,6 +196,14 @@
 				828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		828D8E162B51B64A0022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E172B51B65A0022FDB3 /* Options.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,12 +282,12 @@
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
 				828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */,
 				828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */,
+				828D8E182B51B65A0022FDB3 /* Options.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
 				828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
-				828D8E0F2B51A3650022FDB3 /* CarColorOptionTableViewCell.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

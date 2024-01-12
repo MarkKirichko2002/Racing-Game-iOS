@@ -17,11 +17,7 @@ class SettingsListTableViewController: UITableViewController {
     
     private func setUpTable() {
         tableView.rowHeight = 100
-        tableView.register(PlayerOptionTableViewCell.self, forCellReuseIdentifier: PlayerOptionTableViewCell.identifier)
-        tableView.register(CarColorOptionTableViewCell.self, forCellReuseIdentifier: CarColorOptionTableViewCell.identifier)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "obstacleOptionCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "hardOptionCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "controlOptionCell")
+        tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: OptionTableViewCell.identifier)
     }
     
     private func setUpNavigation() {
@@ -40,39 +36,12 @@ class SettingsListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return Options.allCases.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerOptionTableViewCell.identifier, for: indexPath) as? PlayerOptionTableViewCell else {return UITableViewCell()}
-            return cell
-            
-        case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: CarColorOptionTableViewCell.identifier, for: indexPath) as? CarColorOptionTableViewCell else {return UITableViewCell()}
-            return cell
-            
-        case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "obstacleOptionCell", for: indexPath)
-            cell.textLabel?.text = "Препятствия"
-            
-            return cell
-            
-        case 3:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "hardOptionCell", for: indexPath)
-            cell.textLabel?.text = "Сложность"
-            
-            return cell
-            
-        case 4:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "controlOptionCell", for: indexPath)
-            cell.textLabel?.text = "Управление"
-            
-            return cell
-            
-        default:
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: OptionTableViewCell.identifier, for: indexPath) as? OptionTableViewCell else {return UITableViewCell()}
+        cell.configure(option: Options.allCases[indexPath.row])
+        return cell
     }
 }

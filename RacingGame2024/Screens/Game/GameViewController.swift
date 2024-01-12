@@ -100,8 +100,8 @@ class GameViewController: UIViewController {
         timer?.fire()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.seconds += 1
-            DispatchQueue.main.async {
-                self.timeLabel.text = "Время: \(self.seconds) секунд"
+            DispatchQueue.main.async { [weak self] in
+                self?.timeLabel.text = "Время: \(self?.seconds ?? 0) секунд"
             }
         }
     }

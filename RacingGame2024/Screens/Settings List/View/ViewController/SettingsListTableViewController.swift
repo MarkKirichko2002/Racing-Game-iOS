@@ -32,6 +32,26 @@ class SettingsListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 1:
+            let vc = CarColorsListTableViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
+        case 2:
+            let vc = ObstaclesListTableViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
+        case 3:
+            let vc = LevelOfDifficultyListTableViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
+        case 4:
+            let vc = ControlsListTableViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
+        default:
+            break
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

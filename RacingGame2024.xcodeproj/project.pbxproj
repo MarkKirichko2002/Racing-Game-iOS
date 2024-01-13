@@ -22,6 +22,24 @@
 		828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */; };
 		828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */; };
 		828D8E182B51B65A0022FDB3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E172B51B65A0022FDB3 /* Options.swift */; };
+		828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E1D2B5270620022FDB3 /* Colors.swift */; };
+		828D8E202B5271020022FDB3 /* CarColorsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */; };
+		828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */; };
+		828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */; };
+		828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */; };
+		828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */; };
+		828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E362B5282670022FDB3 /* Obstacles.swift */; };
+		828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */; };
+		828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */; };
+		828D8E3D2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */; };
+		828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */; };
+		828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */; };
+		828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */; };
+		828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */; };
+		828D8E512B5290010022FDB3 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E502B5290010022FDB3 /* Controls.swift */; };
+		828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */; };
+		828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */; };
+		828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +60,24 @@
 		828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E172B51B65A0022FDB3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		828D8E1D2B5270620022FDB3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extensions.swift"; sourceTree = "<group>"; };
+		828D8E362B5282670022FDB3 /* Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
+		828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListPresenter.swift; sourceTree = "<group>"; };
+		828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficulty.swift; sourceTree = "<group>"; };
+		828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListPresenter.swift; sourceTree = "<group>"; };
+		828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E502B5290010022FDB3 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenterDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				828D8DF82B51A21C0022FDB3 /* UIView + Extensions.swift */,
+				828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */,
+				828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -109,8 +147,12 @@
 				828D8E012B51A2A70022FDB3 /* Splash Screen */,
 				828D8E002B51A2A50022FDB3 /* Start */,
 				828D8DFF2B51A2A30022FDB3 /* Game */,
-				828D8DFE2B51A2A10022FDB3 /* Settings */,
-				828D8DFD2B51A29F0022FDB3 /* Records */,
+				828D8DFE2B51A2A10022FDB3 /* Settings List */,
+				828D8E192B5270040022FDB3 /* Car Color List MVP */,
+				828D8E312B52821E0022FDB3 /* Obstacles List MVP */,
+				828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */,
+				828D8E4B2B528E9D0022FDB3 /* Control List MVP */,
+				828D8DFD2B51A29F0022FDB3 /* Records List */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -123,23 +165,22 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		828D8DFD2B51A29F0022FDB3 /* Records */ = {
+		828D8DFD2B51A29F0022FDB3 /* Records List */ = {
 			isa = PBXGroup;
 			children = (
 				828D8E112B51A3810022FDB3 /* ViewController */,
 				828D8E102B51A37F0022FDB3 /* Cell */,
 			);
-			path = Records;
+			path = "Records List";
 			sourceTree = "<group>";
 		};
-		828D8DFE2B51A2A10022FDB3 /* Settings */ = {
+		828D8DFE2B51A2A10022FDB3 /* Settings List */ = {
 			isa = PBXGroup;
 			children = (
 				828D8E162B51B64A0022FDB3 /* Model */,
-				828D8E092B51A3290022FDB3 /* ViewController */,
-				828D8E082B51A3260022FDB3 /* Cell */,
+				828D8E2C2B52819A0022FDB3 /* View */,
 			);
-			path = Settings;
+			path = "Settings List";
 			sourceTree = "<group>";
 		};
 		828D8DFF2B51A2A30022FDB3 /* Game */ = {
@@ -202,6 +243,187 @@
 			isa = PBXGroup;
 			children = (
 				828D8E172B51B65A0022FDB3 /* Options.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E192B5270040022FDB3 /* Car Color List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1C2B5270440022FDB3 /* Model */,
+				828D8E1B2B5270420022FDB3 /* View */,
+				828D8E1A2B52703F0022FDB3 /* Presenter */,
+				828D8E212B52712F0022FDB3 /* Protocol */,
+			);
+			path = "Car Color List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E1A2B52703F0022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E1B2B5270420022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E1C2B5270440022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1D2B5270620022FDB3 /* Colors.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E212B52712F0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E2C2B52819A0022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E092B51A3290022FDB3 /* ViewController */,
+				828D8E082B51A3260022FDB3 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E312B52821E0022FDB3 /* Obstacles List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E352B52824B0022FDB3 /* Model */,
+				828D8E342B5282470022FDB3 /* View */,
+				828D8E332B5282430022FDB3 /* Presenter */,
+				828D8E322B5282410022FDB3 /* Protocol */,
+			);
+			path = "Obstacles List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E322B5282410022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E332B5282430022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E342B5282470022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E352B52824B0022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E362B5282670022FDB3 /* Obstacles.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E422B5288FC0022FDB3 /* Model */,
+				828D8E412B5288FA0022FDB3 /* View */,
+				828D8E402B5288F90022FDB3 /* Presenter */,
+				828D8E3F2B5288F70022FDB3 /* Protocol */,
+			);
+			path = "Level of Difficulty List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E3F2B5288F70022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E402B5288F90022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E412B5288FA0022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E422B5288FC0022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E4B2B528E9D0022FDB3 /* Control List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E4F2B528FE80022FDB3 /* Model */,
+				828D8E4E2B528FE30022FDB3 /* View */,
+				828D8E4D2B528FE10022FDB3 /* Presenter */,
+				828D8E4C2B528FDF0022FDB3 /* Protocol */,
+			);
+			path = "Control List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E4C2B528FDF0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E4D2B528FE10022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E4E2B528FE30022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E4F2B528FE80022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E502B5290010022FDB3 /* Controls.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,18 +498,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */,
 				828D8DF92B51A21C0022FDB3 /* UIView + Extensions.swift in Sources */,
 				828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */,
+				828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */,
+				828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */,
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
+				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
+				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
+				828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */,
+				828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */,
+				828D8E3D2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift in Sources */,
+				828D8E202B5271020022FDB3 /* CarColorsListPresenter.swift in Sources */,
+				828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */,
+				828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */,
 				828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */,
+				828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */,
 				828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */,
+				828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */,
 				828D8E182B51B65A0022FDB3 /* Options.swift in Sources */,
+				828D8E512B5290010022FDB3 /* Controls.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
 				828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */,
+				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */,
+				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
+				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

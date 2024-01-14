@@ -40,6 +40,7 @@
 		828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */; };
 		828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */; };
 		828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */; };
+		828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E5C2B538D010022FDB3 /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenter.swift; sourceTree = "<group>"; };
 		828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E5C2B538D010022FDB3 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				828D8DFA2B51A2370022FDB3 /* Date */,
+				828D8E5B2B538CF00022FDB3 /* Settings */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -428,6 +431,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		828D8E5B2B538CF00022FDB3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E5C2B538D010022FDB3 /* SettingsManager.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -526,6 +537,7 @@
 				828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,

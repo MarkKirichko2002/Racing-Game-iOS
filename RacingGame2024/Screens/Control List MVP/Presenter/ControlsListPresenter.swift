@@ -9,6 +9,8 @@ import Foundation
 
 class ControlsListPresenter {
     
+    private let settingsManager = SettingsManager()
+    
     weak var delegate: ControlsListPresenterDelegate?
     
     func setDelegate(delegate: ControlsListPresenterDelegate) {
@@ -24,23 +26,17 @@ class ControlsListPresenter {
     }
     
     func selectControl(index: Int) {
-        let savedControl = UserDefaults.loadData(type: Controls.self, key: "control") ?? Controls.tap
+        let savedControl = settingsManager.getControl()
         let control = controlOptionItem(index: index)
         
         if savedControl.title != control.title {
-            saveControl(control: control)
+            settingsManager.saveOption(option: control, key: "control")
             delegate?.reloadData()
         }
     }
     
-    func saveControl(control: Controls) {
-        UserDefaults.saveData(object: control, key: "control") {
-            print("Управление сохранено!")
-        }
-    }
-    
     func isControlSelected(index: Int)-> Bool {
-        let savedControl = UserDefaults.loadData(type: Controls.self, key: "control") ?? Controls.tap
+        let savedControl = settingsManager.getControl()
         let control = controlOptionItem(index: index)
         
         if savedControl.title == control.title {

@@ -12,6 +12,8 @@ enum Colors: CaseIterable, Codable {
     case red
     case yellow
     case orange
+    case blue
+    case green
     
     var title: String {
         switch self {
@@ -21,6 +23,10 @@ enum Colors: CaseIterable, Codable {
             return "желтый"
         case .orange:
             return "оранжевый"
+        case .blue:
+            return "синий"
+        case .green:
+            return "зеленый"
         }
     }
     
@@ -32,6 +38,10 @@ enum Colors: CaseIterable, Codable {
             return UIColor.systemYellow
         case .orange:
             return UIColor.systemOrange
+        case .blue:
+            return UIColor.systemBlue
+        case .green:
+            return UIColor.systemGreen
         }
     }
 }

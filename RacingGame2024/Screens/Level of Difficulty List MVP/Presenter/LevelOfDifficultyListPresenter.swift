@@ -9,6 +9,8 @@ import Foundation
 
 class LevelOfDifficultyListPresenter {
     
+    private let settingsManager = SettingsManager()
+    
     weak var delegate: LevelOfDifficultyListPresenterDelegate?
     
     func setDelegate(delegate: LevelOfDifficultyListPresenterDelegate) {
@@ -24,23 +26,17 @@ class LevelOfDifficultyListPresenter {
     }
     
     func selectlevelOfDifficulty(index: Int) {
-        let savedLevelOfDifficulty = UserDefaults.loadData(type: LevelOfDifficulty.self, key: "level Of difficulty") ?? LevelOfDifficulty.easy
+        let savedLevelOfDifficulty = settingsManager.getLevelOfDifficulty()
         let levelOfDifficulty = levelOfDifficultyOptionItem(index: index)
         
         if savedLevelOfDifficulty.title != levelOfDifficulty.title {
-            saveLevelOfDifficulty(level: levelOfDifficulty)
+            settingsManager.saveOption(option: levelOfDifficulty, key: "level Of difficulty")
             delegate?.reloadData()
         }
     }
     
-    func saveLevelOfDifficulty(level: LevelOfDifficulty) {
-        UserDefaults.saveData(object: level, key: "level Of difficulty") {
-            print("Уровень сложности сохранен!")
-        }
-    }
-    
     func isLevelOfDifficultySelected(index: Int)-> Bool {
-        let savedLevelOfDifficulty = UserDefaults.loadData(type: LevelOfDifficulty.self, key: "level Of difficulty") ?? LevelOfDifficulty.easy
+        let savedLevelOfDifficulty = settingsManager.getLevelOfDifficulty()
         let levelOfDifficulty = levelOfDifficultyOptionItem(index: index)
         
         if savedLevelOfDifficulty.title == levelOfDifficulty.title {

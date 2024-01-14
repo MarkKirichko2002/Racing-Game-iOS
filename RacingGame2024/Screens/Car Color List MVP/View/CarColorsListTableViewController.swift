@@ -46,7 +46,7 @@ class CarColorsListTableViewController: UITableViewController {
     
     private func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
         let colorOption = presenter.colorOptionItem(index: index)
-        cell.tintColor = .systemGreen
+        cell.tintColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
         cell.textLabel?.text = colorOption.title
         cell.textLabel?.textColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
         cell.accessoryType = presenter.isColorSelected(index: index) ? .checkmark : .none

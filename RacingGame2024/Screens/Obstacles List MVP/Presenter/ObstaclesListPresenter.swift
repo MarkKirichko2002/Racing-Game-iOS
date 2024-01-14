@@ -9,6 +9,8 @@ import Foundation
 
 class ObstaclesListPresenter {
     
+    private let settingsManager = SettingsManager()
+    
     weak var delegate: ObstaclesListPresenterDelegate?
     
     func setDelegate(delegate: ObstaclesListPresenterDelegate) {
@@ -24,23 +26,17 @@ class ObstaclesListPresenter {
     }
     
     func selectObstacle(index: Int) {
-        let savedObstacle = UserDefaults.loadData(type: Obstacles.self, key: "obstacle") ?? Obstacles.tree
+        let savedObstacle = settingsManager.getObstacle()
         let obstacle = obstacleOptionItem(index: index)
         
         if savedObstacle.title != obstacle.title {
-            saveObstacle(obstacle: obstacle)
+            settingsManager.saveOption(option: obstacle, key: "obstacle")
             delegate?.reloadData()
         }
     }
-    
-    func saveObstacle(obstacle: Obstacles) {
-        UserDefaults.saveData(object: obstacle, key: "obstacle") {
-            print("Препятствие сохранено!")
-        }
-    }
-    
+        
     func isObstacleSelected(index: Int)-> Bool {
-        let savedObstacle = UserDefaults.loadData(type: Obstacles.self, key: "obstacle") ?? Obstacles.tree
+        let savedObstacle = settingsManager.getObstacle()
         let obstacle = obstacleOptionItem(index: index)
         
         if savedObstacle.title == obstacle.title {

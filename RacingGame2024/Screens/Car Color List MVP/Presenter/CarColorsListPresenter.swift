@@ -9,6 +9,8 @@ import UIKit
 
 class CarColorsListPresenter {
     
+    private let settingsManager = SettingsManager()
+    
     weak var delegate: CarColorsListPresenterDelegate?
     
     func setDelegate(delegate: CarColorsListPresenterDelegate) {
@@ -24,23 +26,17 @@ class CarColorsListPresenter {
     }
     
     func selectColor(index: Int) {
-        let savedColor = UserDefaults.loadData(type: Colors.self, key: "car color") ?? Colors.red
+        let savedColor = settingsManager.getCarColor()
         let color = colorOptionItem(index: index)
         
         if savedColor.color != color.color {
-            saveColor(color: color)
+            settingsManager.saveOption(option: color, key: "car color")
             delegate?.reloadData()
         }
     }
     
-    func saveColor(color: Colors) {
-        UserDefaults.saveData(object: color, key: "car color") {
-            print("цвет машины сохранен!")
-        }
-    }
-    
     func isColorSelected(index: Int)-> Bool {
-        let savedColor = UserDefaults.loadData(type: Colors.self, key: "car color") ?? Colors.red
+        let savedColor = settingsManager.getCarColor()
         let color = colorOptionItem(index: index)
         
         if savedColor.color == color.color {

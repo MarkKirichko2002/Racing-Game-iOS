@@ -28,16 +28,26 @@ class GameViewController: UIViewController {
         return label
     }()
     
-    private let carObject: UIImageView = {
-       let car = UIImageView()
-       car.image = UIImage(named: "car")
-       car.translatesAutoresizingMaskIntoConstraints = false
-       return car
+    private let levelOfDifficultyLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Сложность: ..."
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    // MARK: - vars
+    private let carObject: UIView = {
+       let view = UIView()
+       view.translatesAutoresizingMaskIntoConstraints = false
+       return view
+    }()
+    
+    // MARK: - vars/lets
+    private let settingsManager = SettingsManager()
     private var timer: Timer?
     var seconds = 0
+    var score = 0
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -59,12 +69,31 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         startTimer()
+        createCars()
     }
     
     // MARK: - Flow funcs
     private func setUpView() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        view.addSubviews(views: carObject, ScoreLabel, timeLabel)
+        view.addSubviews(views: carObject, ScoreLabel, timeLabel, levelOfDifficultyLabel)
+        levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
+        setUpCar()
+    }
+    
+    private func setUpCar() {
+        carObject.backgroundColor = settingsManager.getCarColor().color
+    }
+    
+    private func checkLevelOfDifficulty()-> Double {
+        let level = settingsManager.getLevelOfDifficulty()
+        switch level {
+        case .easy:
+            return 4.0
+        case .normal:
+            return 3.0
+        case .hard:
+            return 1.5
+        }
     }
     
     private func setUpNavigation() {
@@ -88,12 +117,46 @@ class GameViewController: UIViewController {
             timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: 45),
             timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
-            carObject.widthAnchor.constraint(equalToConstant: 70),
-            carObject.heightAnchor.constraint(equalToConstant: 70),
+            levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: 45),
+            levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            carObject.widthAnchor.constraint(equalToConstant: 50),
+            carObject.heightAnchor.constraint(equalToConstant: 50),
             
             carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             carObject.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
+    }
+    
+    private func createCars() {
+        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+
+        let bottomCoordinate = CGPoint(x: screenWidth / 4, y: screenHeight)
+        
+        let randomColors = [UIColor.systemRed, UIColor.systemYellow, UIColor.systemOrange, UIColor.systemBlue, UIColor.systemGreen]
+        
+        var car = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
+            let randomPosition = CGRect(x: screenWidth / 4, y: 100, width: 50, height: 50)
+            car = UIView(frame: randomPosition)
+            car.backgroundColor = randomColors.randomElement()!
+            self.view.addSubview(car)
+            
+            UIView.animate(withDuration: self.checkLevelOfDifficulty()) {
+                car.frame.origin = bottomCoordinate
+            }
+        }
+    }
+    
+    private func increaseСounter() {
+        score += 1
+        DispatchQueue.main.async { [weak self] in
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
+        }
     }
     
     private func startTimer() {
@@ -121,7 +184,6 @@ class GameViewController: UIViewController {
     
     @objc private func swipeGestureLeft() {
         print("left")
-        showAlert()
     }
     
     @objc private func swipeGestureRight() {
@@ -139,4 +201,3 @@ class GameViewController: UIViewController {
         present(alertController, animated: true)
     }
 }
-

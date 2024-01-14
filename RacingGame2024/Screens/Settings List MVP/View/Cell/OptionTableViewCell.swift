@@ -50,8 +50,8 @@ class OptionTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(option: Options) {
+    func configure(option: Options, info: String) {
         optionIcon.image = UIImage(named: option.icon)
-        optionTitle.text = option.title
+        optionTitle.text = info
     }
 }

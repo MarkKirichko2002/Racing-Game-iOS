@@ -9,6 +9,8 @@ import UIKit
 
 class LevelOfDifficultyListTableViewController: UITableViewController {
 
+    weak var delegate: OptionsDelegate?
+    
     private let presenter = LevelOfDifficultyListPresenter()
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.selectlevelOfDifficulty(index: indexPath.row)
+        delegate?.optionSelected()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

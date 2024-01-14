@@ -9,6 +9,8 @@ import UIKit
 
 class ControlsListTableViewController: UITableViewController {
 
+    weak var delegate: OptionsDelegate?
+    
     private let presenter = ControlsListPresenter()
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class ControlsListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.selectControl(index: indexPath.row)
+        delegate?.optionSelected()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

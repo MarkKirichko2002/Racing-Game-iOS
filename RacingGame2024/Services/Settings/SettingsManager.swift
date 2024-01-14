@@ -9,6 +9,11 @@ import Foundation
 
 class SettingsManager {
     
+    func getPlayerName()-> String {
+        let name = UserDefaults.standard.object(forKey: "player name") as? String ?? "Игрок"
+        return name
+    }
+    
     func getCarColor()-> Colors {
         let color = UserDefaults.loadData(type: Colors.self, key: "car color") ?? Colors.red
         return color

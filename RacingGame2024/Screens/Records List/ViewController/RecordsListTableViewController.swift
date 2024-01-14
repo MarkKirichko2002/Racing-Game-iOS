@@ -9,6 +9,8 @@ import UIKit
 
 class RecordsListTableViewController: UITableViewController {
 
+    private let settingsManager = SettingsManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
@@ -35,16 +37,13 @@ class RecordsListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as? PlayerTableViewCell else {return UITableViewCell()}
+        cell.configure(name: settingsManager.getPlayerName())
         return cell
     }
 }

@@ -9,6 +9,8 @@ import UIKit
 
 class ObstaclesListTableViewController: UITableViewController {
 
+    weak var delegate: OptionsDelegate?
+    
     let presenter = ObstaclesListPresenter()
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class ObstaclesListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.selectObstacle(index: indexPath.row)
+        delegate?.optionSelected()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

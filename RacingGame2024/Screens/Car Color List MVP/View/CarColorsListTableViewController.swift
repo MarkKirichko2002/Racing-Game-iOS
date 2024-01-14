@@ -9,6 +9,8 @@ import UIKit
 
 class CarColorsListTableViewController: UITableViewController {
 
+    weak var delegate: OptionsDelegate?
+    
     let presenter = CarColorsListPresenter()
     
     override func viewDidLoad() {
@@ -32,6 +34,8 @@ class CarColorsListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.selectColor(index: indexPath.row)
+        delegate?.optionSelected()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

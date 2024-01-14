@@ -9,6 +9,8 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
+    let animation = AnimationManager()
+    
     // MARK: - UI
     private let icon: UIImageView = {
        let image = UIImageView()
@@ -69,7 +71,11 @@ class SplashScreenViewController: UIViewController {
             self.titleLabel.layer.opacity = 1
         }
         
-        Timer.scheduledTimer(withTimeInterval: 4, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
+            self.animation.springView(view: self.icon)
+        }
+    
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
             self.showStartScreen()
         }
     }

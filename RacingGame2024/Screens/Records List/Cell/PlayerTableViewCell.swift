@@ -76,5 +76,8 @@ class PlayerTableViewCell: UITableViewCell {
             dateLabel.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: 20),
         ])
     }
+    
+    func configure(name: String) {
+        playerName.text = name
+    }
 }
-

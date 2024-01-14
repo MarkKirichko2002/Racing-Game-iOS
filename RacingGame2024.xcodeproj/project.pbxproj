@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443A92B53A7EA00ED8851 /* AnimationManager.swift */; };
+		824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443AE2B548AC200ED8851 /* OptionsDelegate.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
 		828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE52B51A1DC0022FDB3 /* ViewController.swift */; };
@@ -18,7 +20,7 @@
 		828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E042B51A2E50022FDB3 /* StartViewController.swift */; };
 		828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E062B51A3130022FDB3 /* GameViewController.swift */; };
 		828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */; };
-		828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */; };
+		828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */; };
 		828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */; };
 		828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */; };
 		828D8E182B51B65A0022FDB3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E172B51B65A0022FDB3 /* Options.swift */; };
@@ -41,9 +43,13 @@
 		828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */; };
 		828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */; };
 		828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E5C2B538D010022FDB3 /* SettingsManager.swift */; };
+		828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */; };
+		828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		824443A92B53A7EA00ED8851 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		824443AE2B548AC200ED8851 /* OptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,7 +63,7 @@
 		828D8E042B51A2E50022FDB3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		828D8E062B51A3130022FDB3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListTableViewController.swift; sourceTree = "<group>"; };
-		828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOptionTableViewCell.swift; sourceTree = "<group>"; };
+		828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E172B51B65A0022FDB3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -80,6 +86,8 @@
 		828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenter.swift; sourceTree = "<group>"; };
 		828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenterDelegate.swift; sourceTree = "<group>"; };
 		828D8E5C2B538D010022FDB3 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenterDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824443A82B53A7DD00ED8851 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				824443A92B53A7EA00ED8851 /* AnimationManager.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		824443AD2B548AB200ED8851 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				824443AE2B548AC200ED8851 /* OptionsDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		828D8DD52B51A1DC0022FDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				828D8DF52B51A1F80022FDB3 /* Extensions */,
+				824443AD2B548AB200ED8851 /* Protocols */,
 				828D8DF62B51A1FF0022FDB3 /* Services */,
 				828D8DF72B51A2040022FDB3 /* Screens */,
 				828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */,
@@ -138,6 +163,7 @@
 		828D8DF62B51A1FF0022FDB3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				824443A82B53A7DD00ED8851 /* Animation */,
 				828D8DFA2B51A2370022FDB3 /* Date */,
 				828D8E5B2B538CF00022FDB3 /* Settings */,
 			);
@@ -150,7 +176,7 @@
 				828D8E012B51A2A70022FDB3 /* Splash Screen */,
 				828D8E002B51A2A50022FDB3 /* Start */,
 				828D8DFF2B51A2A30022FDB3 /* Game */,
-				828D8DFE2B51A2A10022FDB3 /* Settings List */,
+				828D8DFE2B51A2A10022FDB3 /* Settings List MVP */,
 				828D8E192B5270040022FDB3 /* Car Color List MVP */,
 				828D8E312B52821E0022FDB3 /* Obstacles List MVP */,
 				828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */,
@@ -177,13 +203,15 @@
 			path = "Records List";
 			sourceTree = "<group>";
 		};
-		828D8DFE2B51A2A10022FDB3 /* Settings List */ = {
+		828D8DFE2B51A2A10022FDB3 /* Settings List MVP */ = {
 			isa = PBXGroup;
 			children = (
 				828D8E162B51B64A0022FDB3 /* Model */,
 				828D8E2C2B52819A0022FDB3 /* View */,
+				828D8E5E2B5393270022FDB3 /* Presenter */,
+				828D8E5F2B53932A0022FDB3 /* Protocol */,
 			);
-			path = "Settings List";
+			path = "Settings List MVP";
 			sourceTree = "<group>";
 		};
 		828D8DFF2B51A2A30022FDB3 /* Game */ = {
@@ -213,7 +241,7 @@
 		828D8E082B51A3260022FDB3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */,
+				828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -439,6 +467,22 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		828D8E5E2B5393270022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E5F2B53932A0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -513,10 +557,12 @@
 				828D8DF92B51A21C0022FDB3 /* UIView + Extensions.swift in Sources */,
 				828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */,
 				828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */,
+				824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */,
 				828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */,
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
 				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
 				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
+				828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */,
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
 				828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */,
 				828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */,
@@ -530,13 +576,15 @@
 				828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */,
 				828D8E182B51B65A0022FDB3 /* Options.swift in Sources */,
 				828D8E512B5290010022FDB3 /* Controls.swift in Sources */,
+				828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
 				828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */,
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
-				828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */,
+				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,
 				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,

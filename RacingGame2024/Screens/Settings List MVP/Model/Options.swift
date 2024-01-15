@@ -35,7 +35,7 @@ enum Options: CaseIterable {
         case .playerInfo:
             return "racer"
         case .carColor:
-            return "car icon"
+            return SettingsManager().getCarColor().image
         case .obstacle:
             return "obstacle"
         case .difficultyLevel:

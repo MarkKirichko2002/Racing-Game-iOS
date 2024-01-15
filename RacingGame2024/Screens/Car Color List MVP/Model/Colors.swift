@@ -44,4 +44,19 @@ enum Colors: CaseIterable, Codable {
             return UIColor.systemGreen
         }
     }
+    
+    var image: String {
+        switch self {
+        case .red:
+            return "car red"
+        case .yellow:
+            return "car yellow"
+        case .orange:
+            return "car orange"
+        case .blue:
+            return "car blue"
+        case .green:
+            return "car green"
+        }
+    }
 }

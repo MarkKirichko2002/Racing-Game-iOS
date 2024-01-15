@@ -24,6 +24,7 @@ class PlayerTableViewCell: UITableViewCell {
        let label = UILabel()
        label.text = "Игрок"
        label.textColor = .label
+       label.font = .systemFont(ofSize: 16, weight: .bold)
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
     }()
@@ -32,6 +33,7 @@ class PlayerTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "счет: 10"
         label.textColor = .label
+        label.font = .systemFont(ofSize: 16, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -41,6 +43,7 @@ class PlayerTableViewCell: UITableViewCell {
         label.text = "12.01.2024 12:30"
         label.numberOfLines = 0
         label.textColor = .label
+        label.font = .systemFont(ofSize: 16, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

@@ -23,4 +23,15 @@ enum Obstacles: CaseIterable, Codable {
             return "ничего"
         }
     }
+    
+    var image: String {
+        switch self {
+        case .tree:
+            return "tree"
+        case .bush:
+            return "bush"
+        case .none:
+            return ""
+        }
+    }
 }

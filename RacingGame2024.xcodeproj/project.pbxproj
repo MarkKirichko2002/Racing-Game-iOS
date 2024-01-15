@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443A92B53A7EA00ED8851 /* AnimationManager.swift */; };
 		824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443AE2B548AC200ED8851 /* OptionsDelegate.swift */; };
+		824443B22B55265D00ED8851 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 824443B12B55265D00ED8851 /* car.mp3 */; };
+		824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443B42B55269C00ED8851 /* AudioPlayerClass.swift */; };
+		824443B72B5527AE00ED8851 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 824443B62B5527AE00ED8851 /* explode.mp3 */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
-		828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE52B51A1DC0022FDB3 /* ViewController.swift */; };
 		828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */; };
 		828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEC2B51A1DF0022FDB3 /* LaunchScreen.storyboard */; };
 		828D8DF92B51A21C0022FDB3 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DF82B51A21C0022FDB3 /* UIView + Extensions.swift */; };
@@ -50,10 +52,12 @@
 /* Begin PBXFileReference section */
 		824443A92B53A7EA00ED8851 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		824443AE2B548AC200ED8851 /* OptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
+		824443B12B55265D00ED8851 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = car.mp3; path = ../../../../Downloads/car.mp3; sourceTree = "<group>"; };
+		824443B42B55269C00ED8851 /* AudioPlayerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClass.swift; sourceTree = "<group>"; };
+		824443B62B5527AE00ED8851 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = explode.mp3; path = ../../../../Downloads/explode.mp3; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		828D8DE52B51A1DC0022FDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		828D8DED2B51A1DF0022FDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		828D8DEF2B51A1DF0022FDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +121,23 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		824443B02B55263B00ED8851 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				824443B62B5527AE00ED8851 /* explode.mp3 */,
+				824443B12B55265D00ED8851 /* car.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		824443B32B55268600ED8851 /* Audio Player */ = {
+			isa = PBXGroup;
+			children = (
+				824443B42B55269C00ED8851 /* AudioPlayerClass.swift */,
+			);
+			path = "Audio Player";
+			sourceTree = "<group>";
+		};
 		828D8DD52B51A1DC0022FDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -136,13 +157,13 @@
 		828D8DE02B51A1DC0022FDB3 /* RacingGame2024 */ = {
 			isa = PBXGroup;
 			children = (
+				824443B02B55263B00ED8851 /* Sounds */,
 				828D8DF52B51A1F80022FDB3 /* Extensions */,
 				824443AD2B548AB200ED8851 /* Protocols */,
 				828D8DF62B51A1FF0022FDB3 /* Services */,
 				828D8DF72B51A2040022FDB3 /* Screens */,
 				828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */,
 				828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */,
-				828D8DE52B51A1DC0022FDB3 /* ViewController.swift */,
 				828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */,
 				828D8DEC2B51A1DF0022FDB3 /* LaunchScreen.storyboard */,
 				828D8DEF2B51A1DF0022FDB3 /* Info.plist */,
@@ -163,6 +184,7 @@
 		828D8DF62B51A1FF0022FDB3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				824443B32B55268600ED8851 /* Audio Player */,
 				824443A82B53A7DD00ED8851 /* Animation */,
 				828D8DFA2B51A2370022FDB3 /* Date */,
 				828D8E5B2B538CF00022FDB3 /* Settings */,
@@ -541,7 +563,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824443B22B55265D00ED8851 /* car.mp3 in Resources */,
 				828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */,
+				824443B72B5527AE00ED8851 /* explode.mp3 in Resources */,
 				828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,7 +603,6 @@
 				828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
-				828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */,
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
@@ -588,6 +611,7 @@
 				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
+				824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

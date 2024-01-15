@@ -45,10 +45,11 @@ class GameViewController: UIViewController {
         return label
     }()
     
-    private let carObject: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    private let carObject: UIImageView = {
+        let car = UIImageView()
+        car.image = UIImage(named: "car icon")
+        car.translatesAutoresizingMaskIntoConstraints = false
+        return car
     }()
     
     // MARK: - vars/lets
@@ -89,7 +90,7 @@ class GameViewController: UIViewController {
     }
         
     private func setUpCar() {
-        carObject.backgroundColor = settingsManager.getCarColor().color
+        carObject.image = UIImage(named: settingsManager.getCarColor().image)
     }
     
     private func checkLevelOfDifficulty()-> Double {
@@ -125,8 +126,8 @@ class GameViewController: UIViewController {
             levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: 45),
             levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
-            carObject.widthAnchor.constraint(equalToConstant: 50),
-            carObject.heightAnchor.constraint(equalToConstant: 50),
+            carObject.widthAnchor.constraint(equalToConstant: 70),
+            carObject.heightAnchor.constraint(equalToConstant: 70),
             
             carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             carObject.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -141,14 +142,14 @@ class GameViewController: UIViewController {
         
         let bottomCoordinate = CGPoint(x: screenWidth / 4, y: screenHeight)
         
-        let randomColors = [UIColor.systemRed, UIColor.systemYellow, UIColor.systemOrange, UIColor.systemBlue, UIColor.systemGreen]
+        let randomColors = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
         
         let level = self.checkLevelOfDifficulty()
         
         timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
-            let randomPosition = CGRect(x: screenWidth / 4, y: 100, width: 50, height: 50)
-            let car = UIView(frame: randomPosition)
-            car.backgroundColor = randomColors.randomElement()!
+            let randomPosition = CGRect(x: screenWidth / 4, y: 0, width: 70, height: 70)
+            let car = UIImageView(frame: randomPosition)
+            car.image = UIImage(named: randomColors.randomElement()!)
             self.view.addSubview(car)
             
             UIView.animate(withDuration: level, animations: {
@@ -173,7 +174,7 @@ class GameViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.seconds += 1
             DispatchQueue.main.async { [weak self] in
-                self?.timeLabel.text = "Время: \(self?.seconds ?? 0) секунд"
+                self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
             }
         }
     }

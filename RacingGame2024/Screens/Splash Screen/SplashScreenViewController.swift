@@ -9,13 +9,14 @@ import UIKit
 
 class SplashScreenViewController: UIViewController {
 
-    let animation = AnimationManager()
+    private let animation = AnimationManager()
+    private let audioPlayerClass = AudioPlayerClass()
+    private let settingsManager = SettingsManager()
     
     // MARK: - UI
     private let icon: UIImageView = {
        let image = UIImageView()
-       image.image = UIImage(named: "racer")
-       image.tintColor = .label
+       image.image = UIImage(named: "car red")
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()
@@ -24,7 +25,7 @@ class SplashScreenViewController: UIViewController {
        let label = UILabel()
        label.font = .systemFont(ofSize: 22, weight: .black)
        label.text = "Гонки 2024"
-       label.textColor = .label
+       label.textColor = .white
        label.layer.opacity = 0
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
@@ -42,11 +43,11 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        icon.image = UIImage(named: settingsManager.getCarColor().image)
         showAnimation()
     }
     
     private func setUpView() {
-        view.backgroundColor = .systemBackground
         view.addSubviews(views: icon, titleLabel)
     }
     
@@ -67,16 +68,28 @@ class SplashScreenViewController: UIViewController {
     
     private func showAnimation() {
         
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
+        let bottomCoordinate = CGPoint(x: screenWidth / 4, y: -screenHeight)
+        
         UIView.animate(withDuration: 2.5) {
             self.titleLabel.layer.opacity = 1
         }
         
         Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-            self.animation.springView(view: self.icon)
-        }
-    
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
-            self.showStartScreen()
+            
+            self.audioPlayerClass.playSound(sound: "car")
+            
+            UIView.animate(withDuration: 2, animations: {
+                self.icon.frame.origin = bottomCoordinate
+            }) { _ in
+                if self.icon.frame.maxY <= screenHeight {
+                    self.audioPlayerClass.playSound(sound: "explode")
+                    self.showStartScreen()
+                }
+            }
         }
     }
     

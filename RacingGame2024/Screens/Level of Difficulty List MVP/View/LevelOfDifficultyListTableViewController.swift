@@ -52,6 +52,7 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
         let levelOfDifficultyOption = presenter.levelOfDifficultyOptionItem(index: index)
         cell.tintColor = .systemGreen
         cell.textLabel?.text = levelOfDifficultyOption.title
+        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
         cell.accessoryType = presenter.isLevelOfDifficultySelected(index: index) ? .checkmark : .none
         return cell
     }

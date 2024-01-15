@@ -84,9 +84,8 @@ class StartViewController: UIViewController {
     
     @objc private func startGame() {
         let vc = GameViewController()
-        let navVC = UINavigationController(rootViewController: vc)
-        navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: true)
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     @objc private func openSettings() {

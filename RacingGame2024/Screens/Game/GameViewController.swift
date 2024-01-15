@@ -10,19 +10,27 @@ import UIKit
 class GameViewController: UIViewController {
     
     // MARK: - UI
+    private var closeButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .label
+        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private let ScoreLabel: UILabel = {
-       let label = UILabel()
-       label.text = "Счет: 0"
-       label.textColor = .white
-       label.font = .systemFont(ofSize: 18, weight: .bold)
-       label.translatesAutoresizingMaskIntoConstraints = false
-       return label
+        let label = UILabel()
+        label.text = "Счет: 0"
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.text = "Время: 0 секунд"
-        label.textColor = .white
+        label.textColor = .label
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,16 +39,16 @@ class GameViewController: UIViewController {
     private let levelOfDifficultyLabel: UILabel = {
         let label = UILabel()
         label.text = "Сложность: ..."
-        label.textColor = .white
+        label.textColor = .label
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let carObject: UIView = {
-       let view = UIView()
-       view.translatesAutoresizingMaskIntoConstraints = false
-       return view
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     // MARK: - vars/lets
@@ -53,7 +61,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
-        setUpNavigation()
     }
     
     override func viewWillLayoutSubviews() {
@@ -74,12 +81,13 @@ class GameViewController: UIViewController {
     
     // MARK: - Flow funcs
     private func setUpView() {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
-        view.addSubviews(views: carObject, ScoreLabel, timeLabel, levelOfDifficultyLabel)
+        view.backgroundColor = .systemBackground
+        view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
+        closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
         setUpCar()
     }
-    
+        
     private func setUpCar() {
         carObject.backgroundColor = settingsManager.getCarColor().color
     }
@@ -96,12 +104,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func setUpNavigation() {
-        let closeButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .done, target: self, action: #selector(closeScreen))
-        closeButton.tintColor = .white
-        navigationItem.rightBarButtonItem = closeButton
-    }
-    
     @objc private func closeScreen() {
         stopTimer()
         dismiss(animated: true)
@@ -111,7 +113,10 @@ class GameViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            ScoreLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 120),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            ScoreLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
             ScoreLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
             timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: 45),
@@ -133,21 +138,25 @@ class GameViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
-
+        
         let bottomCoordinate = CGPoint(x: screenWidth / 4, y: screenHeight)
         
         let randomColors = [UIColor.systemRed, UIColor.systemYellow, UIColor.systemOrange, UIColor.systemBlue, UIColor.systemGreen]
         
-        var car = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        let level = self.checkLevelOfDifficulty()
         
-        Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
             let randomPosition = CGRect(x: screenWidth / 4, y: 100, width: 50, height: 50)
-            car = UIView(frame: randomPosition)
+            let car = UIView(frame: randomPosition)
             car.backgroundColor = randomColors.randomElement()!
             self.view.addSubview(car)
             
-            UIView.animate(withDuration: self.checkLevelOfDifficulty()) {
+            UIView.animate(withDuration: level, animations: {
                 car.frame.origin = bottomCoordinate
+            }) { _ in
+                if car.frame.maxY >= screenHeight {
+                    self.increaseСounter()
+                }
             }
         }
     }
@@ -183,10 +192,12 @@ class GameViewController: UIViewController {
     }
     
     @objc private func swipeGestureLeft() {
+        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x - 60, y: carObject.frame.origin.y)
         print("left")
     }
     
     @objc private func swipeGestureRight() {
+        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + 60, y: carObject.frame.origin.y)
         print("right")
     }
     

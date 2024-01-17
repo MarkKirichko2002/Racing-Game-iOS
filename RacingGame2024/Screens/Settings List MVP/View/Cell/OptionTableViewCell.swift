@@ -41,6 +41,7 @@ class OptionTableViewCell: UITableViewCell {
     // MARK: - Flow funcs
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
+            
             optionIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             optionIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
             optionIcon.widthAnchor.constraint(equalToConstant: 80),

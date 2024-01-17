@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443A92B53A7EA00ED8851 /* AnimationManager.swift */; };
 		824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443AE2B548AC200ED8851 /* OptionsDelegate.swift */; };
-		824443B22B55265D00ED8851 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 824443B12B55265D00ED8851 /* car.mp3 */; };
 		824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443B42B55269C00ED8851 /* AudioPlayerClass.swift */; };
-		824443B72B5527AE00ED8851 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 824443B62B5527AE00ED8851 /* explode.mp3 */; };
+		82456BF42B553B2F00F31566 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF22B553B2F00F31566 /* explode.mp3 */; };
+		82456BF52B553B2F00F31566 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF32B553B2F00F31566 /* car.mp3 */; };
+		82456BF82B56ED9300F31566 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BF72B56ED9300F31566 /* GameObject.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
 		828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */; };
@@ -52,9 +53,10 @@
 /* Begin PBXFileReference section */
 		824443A92B53A7EA00ED8851 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		824443AE2B548AC200ED8851 /* OptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
-		824443B12B55265D00ED8851 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = car.mp3; path = ../../../../Downloads/car.mp3; sourceTree = "<group>"; };
 		824443B42B55269C00ED8851 /* AudioPlayerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClass.swift; sourceTree = "<group>"; };
-		824443B62B5527AE00ED8851 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = explode.mp3; path = ../../../../Downloads/explode.mp3; sourceTree = "<group>"; };
+		82456BF22B553B2F00F31566 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
+		82456BF32B553B2F00F31566 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
+		82456BF72B56ED9300F31566 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,8 +126,8 @@
 		824443B02B55263B00ED8851 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				824443B62B5527AE00ED8851 /* explode.mp3 */,
-				824443B12B55265D00ED8851 /* car.mp3 */,
+				82456BF32B553B2F00F31566 /* car.mp3 */,
+				82456BF22B553B2F00F31566 /* explode.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -136,6 +138,14 @@
 				824443B42B55269C00ED8851 /* AudioPlayerClass.swift */,
 			);
 			path = "Audio Player";
+			sourceTree = "<group>";
+		};
+		82456BF62B56ED7200F31566 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82456BF72B56ED9300F31566 /* GameObject.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		828D8DD52B51A1DC0022FDB3 = {
@@ -157,6 +167,7 @@
 		828D8DE02B51A1DC0022FDB3 /* RacingGame2024 */ = {
 			isa = PBXGroup;
 			children = (
+				82456BF62B56ED7200F31566 /* Models */,
 				824443B02B55263B00ED8851 /* Sounds */,
 				828D8DF52B51A1F80022FDB3 /* Extensions */,
 				824443AD2B548AB200ED8851 /* Protocols */,
@@ -563,10 +574,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				824443B22B55265D00ED8851 /* car.mp3 in Resources */,
 				828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */,
-				824443B72B5527AE00ED8851 /* explode.mp3 in Resources */,
 				828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */,
+				82456BF42B553B2F00F31566 /* explode.mp3 in Resources */,
+				82456BF52B553B2F00F31566 /* car.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +618,7 @@
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				82456BF82B56ED9300F31566 /* GameObject.swift in Sources */,
 				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,
 				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,

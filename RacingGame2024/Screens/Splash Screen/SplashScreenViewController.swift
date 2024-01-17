@@ -16,7 +16,6 @@ class SplashScreenViewController: UIViewController {
     // MARK: - UI
     private let icon: UIImageView = {
        let image = UIImageView()
-       image.image = UIImage(named: "car red")
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()
@@ -84,10 +83,13 @@ class SplashScreenViewController: UIViewController {
             
             UIView.animate(withDuration: 2, animations: {
                 self.icon.frame.origin = bottomCoordinate
-            }) { _ in
-                if self.icon.frame.maxY <= screenHeight {
+            })
+            
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+                if self.icon.frame.origin.y < screenHeight {
                     self.audioPlayerClass.playSound(sound: "explode")
                     self.showStartScreen()
+                    timer.invalidate()
                 }
             }
         }

@@ -102,7 +102,7 @@ extension SettingsListTableViewController: OptionsDelegate {
 extension SettingsListTableViewController {
     
     func showAlert() {
-        let alertController = UIAlertController(title: "Изменение данных игрока", message: "Вы хотите точно хотите изменить данные?", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Изменение данных игрока", message: "Вы хотите точно изменить данные?", preferredStyle: .alert)
         
         alertController.addTextField { (textField) in
             textField.placeholder = "Имя"

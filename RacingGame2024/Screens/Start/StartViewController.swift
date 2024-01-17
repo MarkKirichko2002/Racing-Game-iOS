@@ -66,6 +66,7 @@ class StartViewController: UIViewController {
     }
     
     private func makeConstraints() {
+        
         NSLayoutConstraint.activate([
             
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),

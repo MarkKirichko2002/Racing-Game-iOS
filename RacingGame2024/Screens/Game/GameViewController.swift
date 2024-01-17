@@ -22,16 +22,16 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Счет: 0"
         label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Время: 0 секунд"
+        label.text = "Время: 0 с"
         label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -40,7 +40,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Сложность: ..."
         label.textColor = .label
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -55,8 +55,9 @@ class GameViewController: UIViewController {
     // MARK: - vars/lets
     private let settingsManager = SettingsManager()
     private var timer: Timer?
-    var seconds = 0
-    var score = 0
+    private var timer2: Timer?
+    private var timer3: Timer?
+    private var objects: [GameObject] = []
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -76,8 +77,8 @@ class GameViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        runGame()
         startTimer()
-        createCars()
     }
     
     // MARK: - Flow funcs
@@ -86,22 +87,48 @@ class GameViewController: UIViewController {
         view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
         closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
-        setUpCar()
-    }
-        
-    private func setUpCar() {
         carObject.image = UIImage(named: settingsManager.getCarColor().image)
     }
     
-    private func checkLevelOfDifficulty()-> Double {
-        let level = settingsManager.getLevelOfDifficulty()
-        switch level {
-        case .easy:
-            return 4.0
-        case .normal:
-            return 3.0
-        case .hard:
-            return 1.5
+    private func runGame() {
+        // Запускаем бесконечный игровой цикл
+        timer2 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
+        
+        // Запускаем бесконечный цикл для обновления движения квадратов
+        timer3 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
+    }
+    
+    @objc func createObject() {
+        let randomCars = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
+        let car = GameObject()
+        car.view.image = UIImage(named: randomCars.randomElement()!)
+        self.view.addSubview(car.view)
+        objects.append(car)
+    }
+    
+    @objc func updateObjects() {
+        
+        // Обновляем положение каждого обьекта
+        for object in objects {
+            
+            object.view.frame.origin.y += object.speed
+            
+            // Проверяем, вышел ли квадрат за границы экрана
+            if object.view.frame.origin.y > UIScreen.main.bounds.height {
+                // Уничтожаем квадрат
+                object.view.removeFromSuperview()
+                if let index = objects.firstIndex(of: object) {
+                    objects.remove(at: index)
+                }
+            }
+            
+            if object.view.frame.intersects(carObject.frame) {
+                print("Столкновение")
+                timer?.invalidate()
+                timer2?.invalidate()
+                timer3?.invalidate()
+                showAlert()
+            }
         }
     }
     
@@ -134,47 +161,21 @@ class GameViewController: UIViewController {
         ])
     }
     
-    private func createCars() {
-        
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
-        
-        let bottomCoordinate = CGPoint(x: screenWidth / 4, y: screenHeight)
-        
-        let randomColors = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
-        
-        let level = self.checkLevelOfDifficulty()
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
-            let randomPosition = CGRect(x: screenWidth / 4, y: 0, width: 70, height: 70)
-            let car = UIImageView(frame: randomPosition)
-            car.image = UIImage(named: randomColors.randomElement()!)
-            self.view.addSubview(car)
-            
-            UIView.animate(withDuration: level, animations: {
-                car.frame.origin = bottomCoordinate
-            }) { _ in
-                if car.frame.maxY >= screenHeight {
-                    self.increaseСounter()
-                }
-            }
-        }
-    }
-    
     private func increaseСounter() {
+        var score = 0
         score += 1
         DispatchQueue.main.async { [weak self] in
-            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
+            self?.ScoreLabel.text = "Счет: \(score)"
         }
     }
     
     private func startTimer() {
+        var seconds = 0
         timer?.fire()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            self.seconds += 1
+            seconds += 1
             DispatchQueue.main.async { [weak self] in
-                self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
+                self?.timeLabel.text = "Время: \(seconds) с"
             }
         }
     }
@@ -194,12 +195,10 @@ class GameViewController: UIViewController {
     
     @objc private func swipeGestureLeft() {
         carObject.frame.origin = CGPoint(x: carObject.frame.origin.x - 60, y: carObject.frame.origin.y)
-        print("left")
     }
     
     @objc private func swipeGestureRight() {
         carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + 60, y: carObject.frame.origin.y)
-        print("right")
     }
     
     private func showAlert() {

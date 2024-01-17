@@ -39,4 +39,16 @@ class SettingsManager {
             print("опция сохранена!")
         }
     }
+    
+    func checkLevelOfDifficulty()-> Double {
+        let level = getLevelOfDifficulty()
+        switch level {
+        case .easy:
+            return 4.0
+        case .normal:
+            return 3.0
+        case .hard:
+            return 1.5
+        }
+    }
 }

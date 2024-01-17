@@ -74,6 +74,7 @@ class GameViewController: UIViewController {
     private var timer2: Timer?
     private var timer3: Timer?
     private var objects: [GameObject] = []
+    private let accelerometerManager = AccelerometerManager()
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -150,6 +151,7 @@ class GameViewController: UIViewController {
     
     @objc private func closeScreen() {
         stopGame()
+        accelerometerManager.stopAccelerometerUpdates()
         dismiss(animated: true)
     }
     
@@ -185,7 +187,7 @@ class GameViewController: UIViewController {
         case .swipe:
             setUpSwipeControl()
         case .accelerometer:
-            break
+            setUpAccelerometerControl()
         }
     }
     
@@ -218,7 +220,7 @@ class GameViewController: UIViewController {
     }
     
     private func setUpTapControl() {
-    
+        
         leftButton.addTarget(self, action: #selector(goLeft), for: .touchUpInside)
         rightButton.addTarget(self, action: #selector(goRight), for: .touchUpInside)
         
@@ -231,6 +233,17 @@ class GameViewController: UIViewController {
             rightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30)
         ])
+    }
+    
+    private func setUpAccelerometerControl() {
+        accelerometerManager.checkAccelerometer()
+        accelerometerManager.registerAccelerometerHandler { xAcceleration in
+            if xAcceleration > 0 {
+                self.goRight()
+            } else {
+                self.goLeft()
+            }
+        }
     }
     
     @objc private func goLeft() {

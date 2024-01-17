@@ -13,6 +13,7 @@
 		82456BF42B553B2F00F31566 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF22B553B2F00F31566 /* explode.mp3 */; };
 		82456BF52B553B2F00F31566 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF32B553B2F00F31566 /* car.mp3 */; };
 		82456BF82B56ED9300F31566 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BF72B56ED9300F31566 /* GameObject.swift */; };
+		82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BFC2B582C7500F31566 /* AccelerometerManager.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
 		828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		82456BF22B553B2F00F31566 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
 		82456BF32B553B2F00F31566 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		82456BF72B56ED9300F31566 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		82456BFC2B582C7500F31566 /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		82456BFB2B582C5900F31566 /* Accelerometer */ = {
+			isa = PBXGroup;
+			children = (
+				82456BFC2B582C7500F31566 /* AccelerometerManager.swift */,
+			);
+			path = Accelerometer;
+			sourceTree = "<group>";
+		};
 		828D8DD52B51A1DC0022FDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +205,7 @@
 		828D8DF62B51A1FF0022FDB3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82456BFB2B582C5900F31566 /* Accelerometer */,
 				824443B32B55268600ED8851 /* Audio Player */,
 				824443A82B53A7DD00ED8851 /* Animation */,
 				828D8DFA2B51A2370022FDB3 /* Date */,
@@ -617,6 +628,7 @@
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
+				82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
 				82456BF82B56ED9300F31566 /* GameObject.swift in Sources */,
 				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,

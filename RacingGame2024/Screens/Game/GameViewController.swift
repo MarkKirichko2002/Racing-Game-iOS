@@ -52,6 +52,22 @@ class GameViewController: UIViewController {
         return car
     }()
     
+    private let leftButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+        button.tintColor = .label
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let rightButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
+        button.tintColor = .label
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     // MARK: - vars/lets
     private let settingsManager = SettingsManager()
     private var timer: Timer?
@@ -63,16 +79,12 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
+        checkControl()
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         setUpConstraints()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        setUpGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -124,16 +136,20 @@ class GameViewController: UIViewController {
             
             if object.view.frame.intersects(carObject.frame) {
                 print("Столкновение")
-                timer?.invalidate()
-                timer2?.invalidate()
-                timer3?.invalidate()
+                stopGame()
                 showAlert()
             }
         }
     }
     
+    private func stopGame() {
+        timer?.invalidate()
+        timer2?.invalidate()
+        timer3?.invalidate()
+    }
+    
     @objc private func closeScreen() {
-        stopTimer()
+        stopGame()
         dismiss(animated: true)
     }
     
@@ -161,6 +177,18 @@ class GameViewController: UIViewController {
         ])
     }
     
+    private func checkControl() {
+        let control = settingsManager.getControl()
+        switch control {
+        case .tap:
+            setUpTapControl()
+        case .swipe:
+            setUpSwipeControl()
+        case .accelerometer:
+            break
+        }
+    }
+    
     private func increaseСounter() {
         var score = 0
         score += 1
@@ -180,24 +208,36 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func stopTimer() {
-        timer?.invalidate()
-    }
-    
-    private func setUpGestures() {
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureLeft))
+    private func setUpSwipeControl() {
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(goLeft))
         swipeLeft.direction = .left
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureRight))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(goRight))
         swipeRight.direction = .right
         view.addGestureRecognizer(swipeLeft)
         view.addGestureRecognizer(swipeRight)
     }
     
-    @objc private func swipeGestureLeft() {
+    private func setUpTapControl() {
+    
+        leftButton.addTarget(self, action: #selector(goLeft), for: .touchUpInside)
+        rightButton.addTarget(self, action: #selector(goRight), for: .touchUpInside)
+        
+        view.addSubviews(views: leftButton, rightButton)
+        
+        NSLayoutConstraint.activate([
+            leftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            leftButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            
+            rightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30)
+        ])
+    }
+    
+    @objc private func goLeft() {
         carObject.frame.origin = CGPoint(x: carObject.frame.origin.x - 60, y: carObject.frame.origin.y)
     }
     
-    @objc private func swipeGestureRight() {
+    @objc private func goRight() {
         carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + 60, y: carObject.frame.origin.y)
     }
     
@@ -205,7 +245,7 @@ class GameViewController: UIViewController {
         let back = UIAlertAction(title: "Назад", style: .default)
         let restart = UIAlertAction(title: "Повторить", style: .default)
         let save = UIAlertAction(title: "Сохранить результат", style: .default)
-        let alertController = UIAlertController(title: "Ваш счет: 10", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Ваш счет: 0", message: "", preferredStyle: .alert)
         alertController.addAction(restart)
         alertController.addAction(back)
         alertController.addAction(save)

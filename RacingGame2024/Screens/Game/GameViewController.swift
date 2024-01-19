@@ -10,9 +10,16 @@ import UIKit
 class GameViewController: UIViewController {
     
     // MARK: - UI
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isScrollEnabled = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
     private var closeButton: UIButton = {
         let button = UIButton()
-        button.tintColor = .label
+        button.tintColor = .white
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -21,7 +28,7 @@ class GameViewController: UIViewController {
     private let ScoreLabel: UILabel = {
         let label = UILabel()
         label.text = "Счет: 0"
-        label.textColor = .label
+        label.textColor = .white
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -30,7 +37,7 @@ class GameViewController: UIViewController {
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.text = "Время: 0 с"
-        label.textColor = .label
+        label.textColor = .white
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -39,7 +46,7 @@ class GameViewController: UIViewController {
     private let levelOfDifficultyLabel: UILabel = {
         let label = UILabel()
         label.text = "Сложность: ..."
-        label.textColor = .label
+        label.textColor = .white
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -55,7 +62,7 @@ class GameViewController: UIViewController {
     private let leftButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
-        button.tintColor = .label
+        button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -63,7 +70,7 @@ class GameViewController: UIViewController {
     private let rightButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
-        button.tintColor = .label
+        button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -75,6 +82,7 @@ class GameViewController: UIViewController {
     private var timer3: Timer?
     private var objects: [GameObject] = []
     private let accelerometerManager = AccelerometerManager()
+    private var score = 0
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -96,7 +104,7 @@ class GameViewController: UIViewController {
     
     // MARK: - Flow funcs
     private func setUpView() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
         closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
@@ -132,6 +140,7 @@ class GameViewController: UIViewController {
                 object.view.removeFromSuperview()
                 if let index = objects.firstIndex(of: object) {
                     objects.remove(at: index)
+                    increaseСounter()
                 }
             }
             
@@ -192,10 +201,9 @@ class GameViewController: UIViewController {
     }
     
     private func increaseСounter() {
-        var score = 0
         score += 1
         DispatchQueue.main.async { [weak self] in
-            self?.ScoreLabel.text = "Счет: \(score)"
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
         }
     }
     
@@ -258,7 +266,7 @@ class GameViewController: UIViewController {
         let back = UIAlertAction(title: "Назад", style: .default)
         let restart = UIAlertAction(title: "Повторить", style: .default)
         let save = UIAlertAction(title: "Сохранить результат", style: .default)
-        let alertController = UIAlertController(title: "Ваш счет: 0", message: "", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Ваш счет: \(score)", message: "", preferredStyle: .alert)
         alertController.addAction(restart)
         alertController.addAction(back)
         alertController.addAction(save)

@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     private var closeButton: UIButton = {
         let button = UIButton()
         button.tintColor = .white
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.setImage(UIImage(named: "cross"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Счет: 0"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,7 +38,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Время: 0 с"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -47,36 +47,20 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Сложность: ..."
         label.textColor = .white
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let carObject: UIImageView = {
         let car = UIImageView()
-        car.image = UIImage(named: "car icon")
         car.translatesAutoresizingMaskIntoConstraints = false
         return car
     }()
     
-    private let leftButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "arrow.left"), for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    private let rightButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "arrow.right"), for: .normal)
-        button.tintColor = .white
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     // MARK: - vars/lets
     private let settingsManager = SettingsManager()
+    private var seconds = 0
     private var timer: Timer?
     private var timer2: Timer?
     private var timer3: Timer?
@@ -99,7 +83,6 @@ class GameViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         runGame()
-        startTimer()
     }
     
     // MARK: - Flow funcs
@@ -112,14 +95,21 @@ class GameViewController: UIViewController {
     }
     
     private func runGame() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
         // Запускаем бесконечный игровой цикл
         timer2 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
-        
         // Запускаем бесконечный цикл для обновления движения квадратов
         timer3 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
     }
     
-    @objc func createObject() {
+    @objc private func startTimer() {
+        seconds += 1
+        DispatchQueue.main.async { [weak self] in
+            self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
+        }
+    }
+    
+    @objc private func createObject() {
         let randomCars = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
         let car = GameObject()
         car.view.image = UIImage(named: randomCars.randomElement()!)
@@ -127,7 +117,7 @@ class GameViewController: UIViewController {
         objects.append(car)
     }
     
-    @objc func updateObjects() {
+    @objc private func updateObjects() {
         
         // Обновляем положение каждого обьекта
         for object in objects {
@@ -200,24 +190,6 @@ class GameViewController: UIViewController {
         }
     }
     
-    private func increaseСounter() {
-        score += 1
-        DispatchQueue.main.async { [weak self] in
-            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
-        }
-    }
-    
-    private func startTimer() {
-        var seconds = 0
-        timer?.fire()
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            seconds += 1
-            DispatchQueue.main.async { [weak self] in
-                self?.timeLabel.text = "Время: \(seconds) с"
-            }
-        }
-    }
-    
     private func setUpSwipeControl() {
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(goLeft))
         swipeLeft.direction = .left
@@ -228,6 +200,16 @@ class GameViewController: UIViewController {
     }
     
     private func setUpTapControl() {
+        
+        let leftButton = UIButton()
+        leftButton.setImage(UIImage(named: "left"), for: .normal)
+        leftButton.tintColor = .white
+        leftButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let rightButton = UIButton()
+        rightButton.setImage(UIImage(named: "right"), for: .normal)
+        rightButton.tintColor = .white
+        rightButton.translatesAutoresizingMaskIntoConstraints = false
         
         leftButton.addTarget(self, action: #selector(goLeft), for: .touchUpInside)
         rightButton.addTarget(self, action: #selector(goRight), for: .touchUpInside)
@@ -260,6 +242,13 @@ class GameViewController: UIViewController {
     
     @objc private func goRight() {
         carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + 60, y: carObject.frame.origin.y)
+    }
+    
+    private func increaseСounter() {
+        score += 1
+        DispatchQueue.main.async { [weak self] in
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
+        }
     }
     
     private func showAlert() {

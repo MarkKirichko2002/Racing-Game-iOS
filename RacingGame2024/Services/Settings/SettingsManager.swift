@@ -44,11 +44,11 @@ class SettingsManager {
         let level = getLevelOfDifficulty()
         switch level {
         case .easy:
-            return 4.0
+            return 8
         case .normal:
-            return 3.0
+            return 15
         case .hard:
-            return 1.5
+            return 20
         }
     }
 }

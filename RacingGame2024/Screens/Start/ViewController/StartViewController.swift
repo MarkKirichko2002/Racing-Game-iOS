@@ -10,9 +10,16 @@ import UIKit
 class StartViewController: UIViewController {
 
     // MARK: - UI
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isScrollEnabled = false
+        return scrollView
+    }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Гонки 2024"
+        label.textColor = .white
         label.font = .systemFont(ofSize: 23, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,6 +52,9 @@ class StartViewController: UIViewController {
         return button
     }()
     
+    // vars/lets
+    private var timer: Timer?
+    
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +66,21 @@ class StartViewController: UIViewController {
         makeConstraints()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        scrollBackground()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopTimer()
+    }
+    
     // MARK: - Flow funcs
     private func setUpView() {
-        view.backgroundColor = .systemBackground
+        view.addSubview(scrollView)
+        scrollView.frame = view.bounds
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         view.addSubviews(views: titleLabel, StartButton, SettingsButton, RecordsButton)
         StartButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
         SettingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
@@ -83,6 +105,12 @@ class StartViewController: UIViewController {
         ])
     }
     
+    @objc private func scrollBackground() {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
+            self.scrollView.setContentOffset(CGPoint(x: 0, y: self.scrollView.contentOffset.y - 100), animated: true)
+        }
+    }
+    
     @objc private func startGame() {
         let vc = GameViewController()
         vc.modalPresentationStyle = .fullScreen
@@ -101,5 +129,9 @@ class StartViewController: UIViewController {
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
+    }
+    
+    @objc private func stopTimer() {
+        timer?.invalidate()
     }
 }

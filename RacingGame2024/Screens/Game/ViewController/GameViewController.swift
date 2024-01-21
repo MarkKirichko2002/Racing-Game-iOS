@@ -127,6 +127,27 @@ class GameViewController: UIViewController {
         timer3 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
         // Запускаем бесконечный цикл для обновления движения квадратов
         timer4 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
+        audioPlayerClass.playSound(sound: "background music")
+    }
+    
+    private func stopGame() {
+        timer?.invalidate()
+        timer2?.invalidate()
+        timer3?.invalidate()
+        timer4?.invalidate()
+    }
+    
+    private func restartGame() {
+        score = 0
+        seconds = 0
+        DispatchQueue.main.async { [weak self] in
+            self?.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
+            self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
+        }
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            self.runGame()
+        }
     }
     
     @objc private func scrollBackground() {
@@ -145,43 +166,39 @@ class GameViewController: UIViewController {
         var randomObjects = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
         if obstacle != .none {
             randomObjects.append(obstacle.image)
-        } else {}
+        }
         let object = GameObject()
         object.view.image = UIImage(named: randomObjects.randomElement()!)
+        object.speed = settingsManager.checkLevelOfDifficulty()
         self.view.addSubview(object.view)
         objects.append(object)
     }
     
     @objc private func updateObjects() {
         
-        // Обновляем положение каждого обьекта
         for object in objects {
             
             object.view.frame.origin.y += object.speed
             
-            // Проверяем, вышел ли квадрат за границы экрана
             if object.view.frame.origin.y > UIScreen.main.bounds.height {
-                // Уничтожаем квадрат
-                object.view.removeFromSuperview()
-                if let index = objects.firstIndex(of: object) {
-                    objects.remove(at: index)
-                    increaseСounter()
-                }
+                removeObject(object: object)
+                increaseСounter()
             }
             
             if object.view.frame.intersects(carObject.frame) {
                 audioPlayerClass.playSound(sound: "explode")
                 stopGame()
                 showAlert()
+                removeObject(object: object)
             }
         }
     }
-    
-    private func stopGame() {
-        timer?.invalidate()
-        timer2?.invalidate()
-        timer3?.invalidate()
-        timer4?.invalidate()
+        
+    private func removeObject(object: GameObject) {
+        object.view.removeFromSuperview()
+        if let index = objects.firstIndex(of: object) {
+            objects.remove(at: index)
+        }
     }
     
     @objc private func closeGameScreen() {
@@ -266,12 +283,14 @@ class GameViewController: UIViewController {
     }
     
     private func showAlert() {
-        let back = UIAlertAction(title: "Назад", style: .default)
-        let restart = UIAlertAction(title: "Повторить", style: .default)
-        let save = UIAlertAction(title: "Сохранить результат", style: .default)
-        let alertController = UIAlertController(title: "Ваш счет: \(score)", message: "", preferredStyle: .alert)
+        let restart = UIAlertAction(title: "Повторить", style: .default) { _ in
+            self.restartGame()
+        }
+        let save = UIAlertAction(title: "Сохранить результат", style: .default) { _ in
+            self.dismiss(animated: true)
+        }
+        let alertController = UIAlertController(title: "Игра окончена", message: "Ваш счет: \(score)", preferredStyle: .alert)
         alertController.addAction(restart)
-        alertController.addAction(back)
         alertController.addAction(save)
         present(alertController, animated: true)
     }

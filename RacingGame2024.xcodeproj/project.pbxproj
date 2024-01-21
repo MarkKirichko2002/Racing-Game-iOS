@@ -55,6 +55,7 @@
 		8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */; };
 		8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */; };
 		8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */; };
+		8298E2892B5D8D0B00003F0E /* background music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8298E2862B5D8D0B00003F0E /* background music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelOfDifficultyListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
 		8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControlsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
 		8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2862B5D8D0B00003F0E /* background music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background music.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				82456BF32B553B2F00F31566 /* car.mp3 */,
 				82456BF22B553B2F00F31566 /* explode.mp3 */,
+				8298E2862B5D8D0B00003F0E /* background music.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 			files = (
 				828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */,
 				828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */,
+				8298E2892B5D8D0B00003F0E /* background music.mp3 in Resources */,
 				82456BF42B553B2F00F31566 /* explode.mp3 in Resources */,
 				82456BF52B553B2F00F31566 /* car.mp3 in Resources */,
 			);

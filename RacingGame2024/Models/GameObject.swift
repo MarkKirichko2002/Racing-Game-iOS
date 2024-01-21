@@ -15,11 +15,9 @@ class GameObject: Equatable {
         let squareSize: CGFloat = 70.0
         let screenWidth = UIScreen.main.bounds.width
         
-        // Создаем UIView для представления квадрата
         view = UIImageView(frame: CGRect(x: CGFloat.random(in: 0...(screenWidth - squareSize)), y: 0, width: squareSize, height: squareSize))
         
-        // Задаем случайную скорость для квадрата
-        speed = 15
+        speed = 10
     }
     
     static func ==(lhs: GameObject, rhs: GameObject) -> Bool {

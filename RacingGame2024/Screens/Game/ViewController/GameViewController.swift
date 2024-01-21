@@ -13,7 +13,6 @@ class GameViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.isScrollEnabled = false
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
@@ -64,6 +63,7 @@ class GameViewController: UIViewController {
     private var timer: Timer?
     private var timer2: Timer?
     private var timer3: Timer?
+    private var timer4: Timer?
     private var objects: [GameObject] = []
     private let accelerometerManager = AccelerometerManager()
     private var score = 0
@@ -87,19 +87,49 @@ class GameViewController: UIViewController {
     
     // MARK: - Flow funcs
     private func setUpView() {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        view.addSubview(scrollView)
+        scrollView.frame = view.bounds
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
+        carObject.image = UIImage(named: settingsManager.getCarColor().image)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
         closeButton.addTarget(self, action: #selector(closeGameScreen), for: .touchUpInside)
-        carObject.image = UIImage(named: settingsManager.getCarColor().image)
+    }
+    
+    private func setUpConstraints() {
+        
+        NSLayoutConstraint.activate([
+            
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            ScoreLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
+            ScoreLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: 45),
+            timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: 45),
+            levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            
+            carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            carObject.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            carObject.widthAnchor.constraint(equalToConstant: 70),
+            carObject.heightAnchor.constraint(equalToConstant: 70)
+        ])
     }
     
     private func runGame() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(scrollBackground), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
         // Запускаем бесконечный игровой цикл
-        timer2 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
+        timer3 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
         // Запускаем бесконечный цикл для обновления движения квадратов
-        timer3 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
+        timer4 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func scrollBackground() {
+        self.scrollView.setContentOffset(CGPoint(x: 0, y: self.scrollView.contentOffset.y - 100), animated: true)
     }
     
     @objc private func startTimer() {
@@ -146,36 +176,13 @@ class GameViewController: UIViewController {
         timer?.invalidate()
         timer2?.invalidate()
         timer3?.invalidate()
+        timer4?.invalidate()
     }
     
     @objc private func closeGameScreen() {
         stopGame()
         accelerometerManager.stopAccelerometerUpdates()
         dismiss(animated: true)
-    }
-    
-    private func setUpConstraints() {
-        
-        NSLayoutConstraint.activate([
-            
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            
-            ScoreLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
-            ScoreLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            
-            timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: 45),
-            timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            
-            levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: 45),
-            levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-            
-            carObject.widthAnchor.constraint(equalToConstant: 70),
-            carObject.heightAnchor.constraint(equalToConstant: 70),
-            
-            carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            carObject.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
     }
     
     private func checkControl() {
@@ -203,12 +210,10 @@ class GameViewController: UIViewController {
         
         let leftButton = UIButton()
         leftButton.setImage(UIImage(named: "left"), for: .normal)
-        leftButton.tintColor = .white
         leftButton.translatesAutoresizingMaskIntoConstraints = false
         
         let rightButton = UIButton()
         rightButton.setImage(UIImage(named: "right"), for: .normal)
-        rightButton.tintColor = .white
         rightButton.translatesAutoresizingMaskIntoConstraints = false
         
         leftButton.addTarget(self, action: #selector(goLeft), for: .touchUpInside)
@@ -219,9 +224,13 @@ class GameViewController: UIViewController {
         NSLayoutConstraint.activate([
             leftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             leftButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
+            leftButton.heightAnchor.constraint(equalToConstant: 50),
+            leftButton.widthAnchor.constraint(equalToConstant: 50),
             
             rightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30)
+            rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+            rightButton.heightAnchor.constraint(equalToConstant: 50),
+            rightButton.widthAnchor.constraint(equalToConstant: 50),
         ])
     }
     

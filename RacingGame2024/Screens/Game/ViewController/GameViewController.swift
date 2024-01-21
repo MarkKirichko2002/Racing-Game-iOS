@@ -66,6 +66,7 @@ class GameViewController: UIViewController {
     private var timer4: Timer?
     private var objects: [GameObject] = []
     private let accelerometerManager = AccelerometerManager()
+    private let audioPlayerClass = AudioPlayerClass()
     private var score = 0
     
     // MARK: - Lifecycle funcs
@@ -140,11 +141,15 @@ class GameViewController: UIViewController {
     }
     
     @objc private func createObject() {
-        let randomCars = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
-        let car = GameObject()
-        car.view.image = UIImage(named: randomCars.randomElement()!)
-        self.view.addSubview(car.view)
-        objects.append(car)
+        let obstacle = settingsManager.getObstacle()
+        var randomObjects = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
+        if obstacle != .none {
+            randomObjects.append(obstacle.image)
+        } else {}
+        let object = GameObject()
+        object.view.image = UIImage(named: randomObjects.randomElement()!)
+        self.view.addSubview(object.view)
+        objects.append(object)
     }
     
     @objc private func updateObjects() {
@@ -165,7 +170,7 @@ class GameViewController: UIViewController {
             }
             
             if object.view.frame.intersects(carObject.frame) {
-                print("Столкновение")
+                audioPlayerClass.playSound(sound: "explode")
                 stopGame()
                 showAlert()
             }

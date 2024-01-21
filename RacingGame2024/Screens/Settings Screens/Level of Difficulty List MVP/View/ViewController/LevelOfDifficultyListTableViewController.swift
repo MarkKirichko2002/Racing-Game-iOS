@@ -1,5 +1,5 @@
 //
-//  ObstaclesListTableViewController.swift
+//  LevelOfDifficultyListTableViewController.swift
 //  RacingGame2024
 //
 //  Created by Марк Киричко on 13.01.2024.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ObstaclesListTableViewController: UITableViewController {
+class LevelOfDifficultyListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
     
-    let presenter = ObstaclesListPresenter()
+    let presenter = LevelOfDifficultyListPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +21,12 @@ class ObstaclesListTableViewController: UITableViewController {
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Выберите препятствие"
+        navigationItem.title = "Выберите уровень сложности"
+        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        closeButton.tintColor = .label
+        navigationItem.rightBarButtonItem = closeButton
     }
-
+    
     private func setUpTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -33,36 +36,18 @@ class ObstaclesListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectObstacle(index: indexPath.row)
+        presenter.selectlevelOfDifficulty(index: indexPath.row)
         delegate?.optionSelected()
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.obstaclesCount()
+        return presenter.levelOfDifficultyCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
-    }
-    
-    private func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
-        let obstacleOption = presenter.obstacleOptionItem(index: index)
-        cell.tintColor = .systemGreen
-        cell.textLabel?.text = obstacleOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-        cell.accessoryType = presenter.isObstacleSelected(index: index) ? .checkmark : .none
-        return cell
-    }
-}
-
-extension ObstaclesListTableViewController: ObstaclesListPresenterDelegate {
-    
-    func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
     }
 }

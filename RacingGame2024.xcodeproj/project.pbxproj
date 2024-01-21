@@ -49,6 +49,12 @@
 		828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E5C2B538D010022FDB3 /* SettingsManager.swift */; };
 		828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */; };
 		828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */; };
+		8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */; };
+		8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */; };
+		8298E2682B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */; };
+		8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */; };
+		8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */; };
+		8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +102,12 @@
 		828D8E5C2B538D010022FDB3 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
 		828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenter.swift; sourceTree = "<group>"; };
 		828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarColorsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObstaclesListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelOfDifficultyListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControlsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +210,7 @@
 				828D8DF82B51A21C0022FDB3 /* UIView + Extensions.swift */,
 				828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */,
 				828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */,
+				8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,14 +230,10 @@
 		828D8DF72B51A2040022FDB3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E012B51A2A70022FDB3 /* Splash Screen */,
+				828D8E012B51A2A70022FDB3 /* Splash */,
 				828D8E002B51A2A50022FDB3 /* Start */,
 				828D8DFF2B51A2A30022FDB3 /* Game */,
-				828D8DFE2B51A2A10022FDB3 /* Settings List MVP */,
-				828D8E192B5270040022FDB3 /* Car Color List MVP */,
-				828D8E312B52821E0022FDB3 /* Obstacles List MVP */,
-				828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */,
-				828D8E4B2B528E9D0022FDB3 /* Control List MVP */,
+				8298E2712B5CF92F00003F0E /* Settings Screens */,
 				828D8DFD2B51A29F0022FDB3 /* Records List */,
 			);
 			path = Screens;
@@ -261,7 +270,7 @@
 		828D8DFF2B51A2A30022FDB3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E062B51A3130022FDB3 /* GameViewController.swift */,
+				8298E2742B5CF97700003F0E /* ViewController */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -269,17 +278,17 @@
 		828D8E002B51A2A50022FDB3 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E042B51A2E50022FDB3 /* StartViewController.swift */,
+				8298E2732B5CF96900003F0E /* ViewController */,
 			);
 			path = Start;
 			sourceTree = "<group>";
 		};
-		828D8E012B51A2A70022FDB3 /* Splash Screen */ = {
+		828D8E012B51A2A70022FDB3 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E022B51A2CB0022FDB3 /* SplashScreenViewController.swift */,
+				8298E2722B5CF95E00003F0E /* ViewController */,
 			);
-			path = "Splash Screen";
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		828D8E082B51A3260022FDB3 /* Cell */ = {
@@ -344,7 +353,8 @@
 		828D8E1B2B5270420022FDB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */,
+				8298E2612B5CF72200003F0E /* ViewController */,
+				8298E2622B5CF72A00003F0E /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,6 +380,7 @@
 			children = (
 				828D8E092B51A3290022FDB3 /* ViewController */,
 				828D8E082B51A3260022FDB3 /* Cell */,
+				8298E25E2B5CF6C300003F0E /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -404,7 +415,8 @@
 		828D8E342B5282470022FDB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */,
+				8298E2662B5CF78400003F0E /* ViewController */,
+				8298E2652B5CF78200003F0E /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -447,7 +459,8 @@
 		828D8E412B5288FA0022FDB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */,
+				8298E26A2B5CF7E700003F0E /* ViewController */,
+				8298E2692B5CF7E500003F0E /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,7 +503,8 @@
 		828D8E4E2B528FE30022FDB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */,
+				8298E26E2B5CF84500003F0E /* ViewController */,
+				8298E26D2B5CF84300003F0E /* Extensions */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -525,6 +539,114 @@
 				828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8298E25E2B5CF6C300003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2612B5CF72200003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2622B5CF72A00003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2652B5CF78200003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2662B5CF78400003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2692B5CF7E500003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E26A2B5CF7E700003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E26D2B5CF84300003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E26E2B5CF84500003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2712B5CF92F00003F0E /* Settings Screens */ = {
+			isa = PBXGroup;
+			children = (
+				828D8DFE2B51A2A10022FDB3 /* Settings List MVP */,
+				828D8E192B5270040022FDB3 /* Car Color List MVP */,
+				828D8E312B52821E0022FDB3 /* Obstacles List MVP */,
+				828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */,
+				828D8E4B2B528E9D0022FDB3 /* Control List MVP */,
+			);
+			path = "Settings Screens";
+			sourceTree = "<group>";
+		};
+		8298E2722B5CF95E00003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E022B51A2CB0022FDB3 /* SplashScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2732B5CF96900003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E042B51A2E50022FDB3 /* StartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2742B5CF97700003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E062B51A3130022FDB3 /* GameViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,14 +728,18 @@
 				824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */,
 				828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */,
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
+				8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */,
 				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
 				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
 				828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */,
+				8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */,
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
+				8298E2682B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift in Sources */,
 				828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */,
 				828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */,
 				828D8E3D2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift in Sources */,
 				828D8E202B5271020022FDB3 /* CarColorsListPresenter.swift in Sources */,
+				8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */,
 				828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */,
 				828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */,
 				828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */,
@@ -627,6 +753,7 @@
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
+				8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
@@ -634,6 +761,7 @@
 				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,
 				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
+				8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
 				824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  LevelOfDifficultyListTableViewController.swift
+//  ObstaclesListTableViewController.swift
 //  RacingGame2024
 //
 //  Created by Марк Киричко on 13.01.2024.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class LevelOfDifficultyListTableViewController: UITableViewController {
+class ObstaclesListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
     
-    private let presenter = LevelOfDifficultyListPresenter()
+    let presenter = ObstaclesListPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +21,12 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Выберите уровень сложности"
+        navigationItem.title = "Выберите препятствие"
+        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        closeButton.tintColor = .label
+        navigationItem.rightBarButtonItem = closeButton
     }
-
+    
     private func setUpTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -33,36 +36,18 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectlevelOfDifficulty(index: indexPath.row)
+        presenter.selectObstacle(index: indexPath.row)
         delegate?.optionSelected()
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.levelOfDifficultyCount()
+        return presenter.obstaclesCount()
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
-    }
-    
-    private func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
-        let levelOfDifficultyOption = presenter.levelOfDifficultyOptionItem(index: index)
-        cell.tintColor = .systemGreen
-        cell.textLabel?.text = levelOfDifficultyOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-        cell.accessoryType = presenter.isLevelOfDifficultySelected(index: index) ? .checkmark : .none
-        return cell
-    }
-}
-
-extension LevelOfDifficultyListTableViewController: LevelOfDifficultyListPresenterDelegate {
-    
-    func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
     }
 }

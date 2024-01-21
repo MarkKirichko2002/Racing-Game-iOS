@@ -22,8 +22,11 @@ class CarColorsListTableViewController: UITableViewController {
     
     private func setUpNavigation() {
         navigationItem.title = "Выберите цвет"
+        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        closeButton.tintColor = .label
+        navigationItem.rightBarButtonItem = closeButton
     }
-
+    
     private func setUpTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -46,24 +49,5 @@ class CarColorsListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
-    }
-    
-    private func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
-        let colorOption = presenter.colorOptionItem(index: index)
-        cell.tintColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
-        cell.textLabel?.text = colorOption.title
-        cell.textLabel?.textColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-        cell.accessoryType = presenter.isColorSelected(index: index) ? .checkmark : .none
-        return cell
-    }
-}
-
-extension CarColorsListTableViewController: CarColorsListPresenterDelegate {
-    
-    func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
     }
 }

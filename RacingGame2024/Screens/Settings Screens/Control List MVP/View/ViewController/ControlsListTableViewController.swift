@@ -11,7 +11,7 @@ class ControlsListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
     
-    private let presenter = ControlsListPresenter()
+    let presenter = ControlsListPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +22,11 @@ class ControlsListTableViewController: UITableViewController {
     
     private func setUpNavigation() {
         navigationItem.title = "Выберите управление"
+        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        closeButton.tintColor = .label
+        navigationItem.rightBarButtonItem = closeButton
     }
-
+    
     private func setUpTable() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
@@ -46,23 +49,5 @@ class ControlsListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
-    }
-    
-    private func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
-        let controlOption = presenter.controlOptionItem(index: index)
-        cell.tintColor = .systemGreen
-        cell.textLabel?.text = controlOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-        cell.accessoryType = presenter.isControlSelected(index: index) ? .checkmark : .none
-        return cell
-    }
-}
-
-extension ControlsListTableViewController: ControlsListPresenterDelegate {
-    
-    func reloadData() {
-        DispatchQueue.main.async { [weak self] in
-            self?.tableView.reloadData()
-        }
     }
 }

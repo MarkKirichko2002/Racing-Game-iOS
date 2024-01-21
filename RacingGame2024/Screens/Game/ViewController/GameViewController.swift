@@ -90,7 +90,7 @@ class GameViewController: UIViewController {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
-        closeButton.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(closeGameScreen), for: .touchUpInside)
         carObject.image = UIImage(named: settingsManager.getCarColor().image)
     }
     
@@ -148,7 +148,7 @@ class GameViewController: UIViewController {
         timer3?.invalidate()
     }
     
-    @objc private func closeScreen() {
+    @objc private func closeGameScreen() {
         stopGame()
         accelerometerManager.stopAccelerometerUpdates()
         dismiss(animated: true)

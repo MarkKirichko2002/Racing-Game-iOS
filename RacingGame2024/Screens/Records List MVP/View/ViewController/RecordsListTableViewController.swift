@@ -9,12 +9,13 @@ import UIKit
 
 class RecordsListTableViewController: UITableViewController {
 
-    private let settingsManager = SettingsManager()
+    private let presenter = RecordsListPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
         setUpNavigation()
+        setUpPresenter()
     }
     
     private func setUpTable() {
@@ -29,17 +30,22 @@ class RecordsListTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem = closeButton
     }
     
+    private func setUpPresenter() {
+        presenter.setDelegate(delegate: self)
+        presenter.getResults()
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return presenter.results.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlayerTableViewCell.identifier, for: indexPath) as? PlayerTableViewCell else {return UITableViewCell()}
-        cell.configure(name: settingsManager.getPlayerName())
+        cell.configure(result: presenter.results[indexPath.row])
         return cell
     }
 }

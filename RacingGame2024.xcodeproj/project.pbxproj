@@ -56,6 +56,11 @@
 		8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */; };
 		8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */; };
 		8298E2892B5D8D0B00003F0E /* background music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8298E2862B5D8D0B00003F0E /* background music.mp3 */; };
+		82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */; };
+		82C449D62B5E6C2B0039B0F3 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */; };
+		82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */; };
+		82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */; };
+		82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +115,11 @@
 		8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControlsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
 		8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
 		8298E2862B5D8D0B00003F0E /* background music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background music.mp3"; sourceTree = "<group>"; };
+		82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
+		82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenter.swift; sourceTree = "<group>"; };
+		82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				82456BF72B56ED9300F31566 /* GameObject.swift */,
+				82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 				82456BFB2B582C5900F31566 /* Accelerometer */,
 				824443B32B55268600ED8851 /* Audio Player */,
 				824443A82B53A7DD00ED8851 /* Animation */,
+				82C449D22B5E6BDD0039B0F3 /* Data Storage */,
 				828D8DFA2B51A2370022FDB3 /* Date */,
 				828D8E5B2B538CF00022FDB3 /* Settings */,
 			);
@@ -237,7 +249,7 @@
 				828D8E002B51A2A50022FDB3 /* Start */,
 				828D8DFF2B51A2A30022FDB3 /* Game */,
 				8298E2712B5CF92F00003F0E /* Settings Screens */,
-				828D8DFD2B51A29F0022FDB3 /* Records List */,
+				828D8DFD2B51A29F0022FDB3 /* Records List MVP */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -250,13 +262,14 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		828D8DFD2B51A29F0022FDB3 /* Records List */ = {
+		828D8DFD2B51A29F0022FDB3 /* Records List MVP */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E112B51A3810022FDB3 /* ViewController */,
-				828D8E102B51A37F0022FDB3 /* Cell */,
+				82C449D82B5E71780039B0F3 /* View */,
+				82C449D72B5E71760039B0F3 /* Presenter */,
+				82C449DD2B5E72710039B0F3 /* Protocol */,
 			);
-			path = "Records List";
+			path = "Records List MVP";
 			sourceTree = "<group>";
 		};
 		828D8DFE2B51A2A10022FDB3 /* Settings List MVP */ = {
@@ -652,6 +665,48 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		82C449D22B5E6BDD0039B0F3 /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */,
+			);
+			path = "Data Storage";
+			sourceTree = "<group>";
+		};
+		82C449D72B5E71760039B0F3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82C449D82B5E71780039B0F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E112B51A3810022FDB3 /* ViewController */,
+				828D8E102B51A37F0022FDB3 /* Cell */,
+				82C449DE2B5E72C90039B0F3 /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82C449DD2B5E72710039B0F3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82C449DE2B5E72C90039B0F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -747,6 +802,7 @@
 				828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */,
 				828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */,
 				828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */,
+				82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */,
 				828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */,
 				828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */,
 				828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */,
@@ -755,7 +811,9 @@
 				828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
+				82C449D62B5E6C2B0039B0F3 /* ResultModel.swift in Sources */,
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
+				82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
@@ -768,6 +826,8 @@
 				8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
 				824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */,
+				82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */,
+				82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

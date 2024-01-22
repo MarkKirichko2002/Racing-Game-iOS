@@ -80,7 +80,9 @@ class PlayerTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(name: String) {
-        playerName.text = name
+    func configure(result: ResultModel) {
+        playerName.text = result.playerName
+        scoreLabel.text = "Счет: \(result.score)"
+        dateLabel.text = "\(result.date) \(result.time)"
     }
 }

@@ -58,16 +58,18 @@ class GameViewController: UIViewController {
     }()
     
     // MARK: - vars/lets
-    private let settingsManager = SettingsManager()
     private var seconds = 0
+    private var score = 0
+    private var objects: [GameObject] = []
     private var timer: Timer?
     private var timer2: Timer?
     private var timer3: Timer?
     private var timer4: Timer?
-    private var objects: [GameObject] = []
     private let accelerometerManager = AccelerometerManager()
     private let audioPlayerClass = AudioPlayerClass()
-    private var score = 0
+    private let dateManager = DateManager()
+    private let dataStorageManager = DataStorageManager()
+    private let settingsManager = SettingsManager()
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -114,7 +116,7 @@ class GameViewController: UIViewController {
             levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
             
             carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            carObject.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            carObject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
             carObject.widthAnchor.constraint(equalToConstant: 70),
             carObject.heightAnchor.constraint(equalToConstant: 70)
         ])
@@ -258,11 +260,11 @@ class GameViewController: UIViewController {
     
     private func setUpAccelerometerControl() {
         accelerometerManager.checkAccelerometer()
-        accelerometerManager.registerAccelerometerHandler { xAcceleration in
+        accelerometerManager.registerAccelerometerHandler { [weak self] xAcceleration in
             if xAcceleration > 0 {
-                self.goRight()
+                self?.goRight()
             } else {
-                self.goLeft()
+                self?.goLeft()
             }
         }
     }
@@ -283,11 +285,16 @@ class GameViewController: UIViewController {
     }
     
     private func showAlert() {
-        let restart = UIAlertAction(title: "Повторить", style: .default) { _ in
-            self.restartGame()
+        let restart = UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
+            self?.restartGame()
         }
-        let save = UIAlertAction(title: "Сохранить результат", style: .default) { _ in
-            self.dismiss(animated: true)
+        let save = UIAlertAction(title: "Сохранить результат", style: .default) { [weak self] _ in
+            let playerName = self?.settingsManager.getPlayerName() ?? "-"
+            let currentDate = self?.dateManager.getCurrentDate() ?? "-"
+            let currentTime = self?.dateManager.getCurrentTime() ?? "-"
+            let result = ResultModel(playerName: playerName, score: self?.score ?? 0, date: currentDate, time: currentTime)
+            self?.dataStorageManager.saveResult(result: result)
+            self?.dismiss(animated: true)
         }
         let alertController = UIAlertController(title: "Игра окончена", message: "Ваш счет: \(score)", preferredStyle: .alert)
         alertController.addAction(restart)

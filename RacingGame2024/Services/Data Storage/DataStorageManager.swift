@@ -16,7 +16,7 @@ class DataStorageManager {
     }
     
     func getResult()-> ResultModel {
-        let result = UserDefaults.loadData(type: ResultModel.self, key: "result") ?? ResultModel(playerName: "Гонщик", score: 0, date: "-", time: "-")
+        let result = UserDefaults.loadData(type: ResultModel.self, key: "result") ?? ResultModel(playerName: "Гонщик", image: Data(), score: 0, date: "-", time: "-")
         return result
     }
 }

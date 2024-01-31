@@ -7,6 +7,10 @@
 
 import UIKit
 
+private extension CGFloat {
+    static let fontSize: Self = 18
+}
+
 class GameViewController: UIViewController {
     
     // MARK: - UI
@@ -19,7 +23,7 @@ class GameViewController: UIViewController {
     private var closeButton: UIButton = {
         let button = UIButton()
         button.tintColor = .white
-        button.setImage(UIImage(named: "cross"), for: .normal)
+        button.setImage(UIImage(named: Constants.cross), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -28,7 +32,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Счет: 0"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -37,7 +41,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Время: 0 с"
         label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,7 +50,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.text = "Сложность: ..."
         label.textColor = .white
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -92,7 +96,7 @@ class GameViewController: UIViewController {
     private func setUpView() {
         view.addSubview(scrollView)
         scrollView.frame = view.bounds
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        scrollView.backgroundColor = UIColor(patternImage: Constants.background)
         view.addSubviews(views: carObject, closeButton, ScoreLabel, timeLabel, levelOfDifficultyLabel)
         carObject.image = UIImage(named: settingsManager.getCarColor().image)
         levelOfDifficultyLabel.text = "Уровень: \(settingsManager.getLevelOfDifficulty().title)"
@@ -292,7 +296,7 @@ class GameViewController: UIViewController {
             let playerName = self?.settingsManager.getPlayerName() ?? "-"
             let currentDate = self?.dateManager.getCurrentDate() ?? "-"
             let currentTime = self?.dateManager.getCurrentTime() ?? "-"
-            let result = ResultModel(playerName: playerName, score: self?.score ?? 0, date: currentDate, time: currentTime)
+            let result = ResultModel(playerName: playerName, image: Data(), score: self?.score ?? 0, date: currentDate, time: currentTime)
             self?.dataStorageManager.saveResult(result: result)
             self?.dismiss(animated: true)
         }

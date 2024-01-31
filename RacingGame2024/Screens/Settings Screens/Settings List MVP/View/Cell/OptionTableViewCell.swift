@@ -7,21 +7,27 @@
 
 import UIKit
 
+private extension CGFloat {
+    static let top: Self = 10
+    static let left: Self = 20
+    static let width: Self = 80
+    static let height: Self = 80
+}
+
 class OptionTableViewCell: UITableViewCell {
 
-    static let identifier = "OptionTableViewCell"
+    static var identifier: String { "\(Self.self)" }
     
     // MARK: - UI
     private let optionIcon: UIImageView = {
        let image = UIImageView()
-       image.tintColor = .label
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()
     
     private let optionTitle: UILabel = {
        let label = UILabel()
-       label.font = .systemFont(ofSize: 16, weight: .bold)
+       label.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
        label.textColor = .label
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
@@ -40,15 +46,15 @@ class OptionTableViewCell: UITableViewCell {
     
     // MARK: - Flow funcs
     private func setUpConstraints() {
+        
         NSLayoutConstraint.activate([
-            
-            optionIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            optionIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
-            optionIcon.widthAnchor.constraint(equalToConstant: 80),
-            optionIcon.heightAnchor.constraint(equalToConstant: 80),
+            optionIcon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: CGFloat.top),
+            optionIcon.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: CGFloat.left),
+            optionIcon.widthAnchor.constraint(equalToConstant: CGFloat.width),
+            optionIcon.heightAnchor.constraint(equalToConstant: CGFloat.height),
             
             optionTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: contentView.frame.height),
-            optionTitle.leftAnchor.constraint(equalTo: optionIcon.rightAnchor, constant: 20)
+            optionTitle.leftAnchor.constraint(equalTo: optionIcon.rightAnchor, constant: CGFloat.left)
         ])
     }
     

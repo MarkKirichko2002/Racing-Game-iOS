@@ -22,7 +22,7 @@ extension LevelOfDifficultyListTableViewController {
         let levelOfDifficultyOption = presenter.levelOfDifficultyOptionItem(index: index)
         cell.tintColor = .systemGreen
         cell.textLabel?.text = levelOfDifficultyOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        cell.textLabel?.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         cell.accessoryType = presenter.isLevelOfDifficultySelected(index: index) ? .checkmark : .none
         return cell
     }

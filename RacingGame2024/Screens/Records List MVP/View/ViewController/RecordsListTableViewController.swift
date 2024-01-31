@@ -19,13 +19,13 @@ class RecordsListTableViewController: UITableViewController {
     }
     
     private func setUpTable() {
-        tableView.rowHeight = 100
+        tableView.rowHeight = Constants.rowHeight
         tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: PlayerTableViewCell.identifier)
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Рекорды 🏆"
-        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        navigationItem.title = Constants.recordsTitle
+        let closeButton = UIBarButtonItem(image: UIImage(named: Constants.cross), style: .done, target: self, action: #selector(closeScreen))
         closeButton.tintColor = .label
         navigationItem.rightBarButtonItem = closeButton
     }

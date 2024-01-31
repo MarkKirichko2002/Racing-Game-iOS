@@ -7,6 +7,24 @@
 
 import UIKit
 
+private extension String {
+    static let start: Self = "Начать игру 🏎️"
+}
+
+private extension TimeInterval {
+    static let interval: Self = 0.1
+}
+
+private extension CGFloat {
+    static let titleFontSize: Self = 23
+    static let fontSize: Self = 18
+    static let top: Self = 100
+    static let top2: Self = 135
+    static let top3: Self = 85
+    static let x: Self = 0
+    static let y: Self = 100
+}
+
 class StartViewController: UIViewController {
 
     // MARK: - UI
@@ -18,36 +36,36 @@ class StartViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Гонки 2024"
+        label.text = Constants.title
         label.textColor = .white
-        label.font = .systemFont(ofSize: 23, weight: .bold)
+        label.font = .systemFont(ofSize: CGFloat.titleFontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let StartButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Начать игру 🏎️", for: .normal)
+        button.setTitle(String.start, for: .normal)
         button.setTitleColor(UIColor.systemGreen, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private let SettingsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Настройки ⚙️", for: .normal)
+        button.setTitle(Constants.settingsTitle, for: .normal)
         button.setTitleColor(UIColor.systemGray, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private let RecordsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Рекорды 🏆", for: .normal)
+        button.setTitle(Constants.recordsTitle, for: .normal)
         button.setTitleColor(UIColor.systemYellow, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .black)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -80,7 +98,7 @@ class StartViewController: UIViewController {
     private func setUpView() {
         view.addSubview(scrollView)
         scrollView.frame = view.bounds
-        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        scrollView.backgroundColor = UIColor(patternImage: Constants.background)
         view.addSubviews(views: titleLabel, StartButton, SettingsButton, RecordsButton)
         StartButton.addTarget(self, action: #selector(startGame), for: .touchUpInside)
         SettingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
@@ -91,23 +109,23 @@ class StartViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat.top),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            StartButton.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 135),
+            StartButton.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: CGFloat.top2),
             StartButton.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
             
-            SettingsButton.topAnchor.constraint(equalTo: StartButton.topAnchor, constant: 85),
+            SettingsButton.topAnchor.constraint(equalTo: StartButton.topAnchor, constant: CGFloat.top3),
             SettingsButton.centerXAnchor.constraint(equalTo: StartButton.centerXAnchor),
             
-            RecordsButton.topAnchor.constraint(equalTo: SettingsButton.topAnchor, constant: 85),
+            RecordsButton.topAnchor.constraint(equalTo: SettingsButton.topAnchor, constant: CGFloat.top3),
             RecordsButton.centerXAnchor.constraint(equalTo: SettingsButton.centerXAnchor),
         ])
     }
     
     @objc private func scrollBackground() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
-            self.scrollView.setContentOffset(CGPoint(x: 0, y: self.scrollView.contentOffset.y - 100), animated: true)
+        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval.interval, repeats: true) { _ in
+            self.scrollView.setContentOffset(CGPoint(x: CGFloat.x, y: self.scrollView.contentOffset.y - CGFloat.y), animated: true)
         }
     }
     

@@ -21,7 +21,7 @@ extension ObstaclesListTableViewController {
         let obstacleOption = presenter.obstacleOptionItem(index: index)
         cell.tintColor = .systemGreen
         cell.textLabel?.text = obstacleOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        cell.textLabel?.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         cell.accessoryType = presenter.isObstacleSelected(index: index) ? .checkmark : .none
         return cell
     }

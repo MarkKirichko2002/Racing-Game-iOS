@@ -19,13 +19,13 @@ class SettingsListTableViewController: UITableViewController {
     }
     
     private func setUpTable() {
-        tableView.rowHeight = 100
+        tableView.rowHeight = Constants.rowHeight
         tableView.register(OptionTableViewCell.self, forCellReuseIdentifier: OptionTableViewCell.identifier)
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Настройки ⚙️"
-        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        navigationItem.title = Constants.settingsTitle
+        let closeButton = UIBarButtonItem(image: UIImage(named: Constants.cross), style: .done, target: self, action: #selector(closeScreen))
         closeButton.tintColor = .label
         navigationItem.rightBarButtonItem = closeButton
     }

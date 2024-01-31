@@ -23,7 +23,7 @@ extension CarColorsListTableViewController {
         cell.tintColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
         cell.textLabel?.text = colorOption.title
         cell.textLabel?.textColor = presenter.isColorSelected(index: index) ? colorOption.color : .label
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        cell.textLabel?.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         cell.accessoryType = presenter.isColorSelected(index: index) ? .checkmark : .none
         return cell
     }

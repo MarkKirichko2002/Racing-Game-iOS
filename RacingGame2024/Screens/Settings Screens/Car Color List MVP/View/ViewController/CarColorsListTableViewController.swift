@@ -7,6 +7,11 @@
 
 import UIKit
 
+private extension String {
+    static let title = "Выберите цвет"
+    static let identifier = "carColorsCell"
+}
+
 class CarColorsListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
@@ -21,14 +26,14 @@ class CarColorsListTableViewController: UITableViewController {
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Выберите цвет"
-        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        navigationItem.title = String.title
+        let closeButton = UIBarButtonItem(image: UIImage(named: Constants.cross), style: .done, target: self, action: #selector(closeScreen))
         closeButton.tintColor = .label
         navigationItem.rightBarButtonItem = closeButton
     }
     
     private func setUpTable() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String.identifier)
     }
     
     private func setUpPresenter() {
@@ -46,7 +51,7 @@ class CarColorsListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.identifier, for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
     }

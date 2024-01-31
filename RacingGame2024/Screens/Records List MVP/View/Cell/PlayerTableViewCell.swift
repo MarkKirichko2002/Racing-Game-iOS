@@ -7,14 +7,20 @@
 
 import UIKit
 
+private extension CGFloat {
+    static let top: Self = 10
+    static let left: Self = 20
+    static let width: Self = 80
+    static let height: Self = 80
+}
+
 class PlayerTableViewCell: UITableViewCell {
 
-    static let identifier = "PlayerTableViewCell"
+    static var identifier: String { "\(Self.self)" }
     
     // MARK: - UI
     private let playerImage: UIImageView = {
        let image = UIImageView()
-       image.image = UIImage(named: "racer")
        image.tintColor = .label
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
@@ -22,28 +28,25 @@ class PlayerTableViewCell: UITableViewCell {
     
     private let playerName: UILabel = {
        let label = UILabel()
-       label.text = "Игрок"
        label.textColor = .label
-       label.font = .systemFont(ofSize: 16, weight: .bold)
+       label.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
     }()
     
     private let scoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "счет: 10"
         label.textColor = .label
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "12.01.2024 12:30"
         label.numberOfLines = 0
         label.textColor = .label
-        label.font = .systemFont(ofSize: 16, weight: .bold)
+        label.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -64,23 +67,24 @@ class PlayerTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            playerImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            playerImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 20),
-            playerImage.widthAnchor.constraint(equalToConstant: 80),
-            playerImage.heightAnchor.constraint(equalToConstant: 80),
+            playerImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: CGFloat.top),
+            playerImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: CGFloat.left),
+            playerImage.widthAnchor.constraint(equalToConstant: CGFloat.width),
+            playerImage.heightAnchor.constraint(equalToConstant: CGFloat.height),
             
-            playerName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            playerName.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: 20),
+            playerName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: CGFloat.top),
+            playerName.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: CGFloat.left),
             
-            scoreLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: 10),
-            scoreLabel.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: 20),
+            scoreLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: CGFloat.top),
+            scoreLabel.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: CGFloat.left),
             
-            dateLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: 10),
-            dateLabel.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: 20),
+            dateLabel.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor, constant: CGFloat.top),
+            dateLabel.leftAnchor.constraint(equalTo: playerImage.rightAnchor, constant: CGFloat.left),
         ])
     }
     
     func configure(result: ResultModel) {
+        playerImage.image = UIImage(data: result.image)
         playerName.text = result.playerName
         scoreLabel.text = "Счет: \(result.score)"
         dateLabel.text = "\(result.date) \(result.time)"

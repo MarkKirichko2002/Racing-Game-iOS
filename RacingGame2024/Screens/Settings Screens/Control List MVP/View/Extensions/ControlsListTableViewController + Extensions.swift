@@ -17,11 +17,12 @@ extension ControlsListTableViewController: ControlsListPresenterDelegate {
 }
 
 extension ControlsListTableViewController {
+    
     func configureCell(cell: UITableViewCell, index: Int)-> UITableViewCell {
         let controlOption = presenter.controlOptionItem(index: index)
         cell.tintColor = .systemGreen
         cell.textLabel?.text = controlOption.title
-        cell.textLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        cell.textLabel?.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         cell.accessoryType = presenter.isControlSelected(index: index) ? .checkmark : .none
         return cell
     }

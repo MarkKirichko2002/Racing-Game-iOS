@@ -14,6 +14,7 @@
 		82456BF52B553B2F00F31566 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF32B553B2F00F31566 /* car.mp3 */; };
 		82456BF82B56ED9300F31566 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BF72B56ED9300F31566 /* GameObject.swift */; };
 		82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BFC2B582C7500F31566 /* AccelerometerManager.swift */; };
+		82535E042B69724B00A79136 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82535E032B69724B00A79136 /* Constants.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
 		828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		82456BF32B553B2F00F31566 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		82456BF72B56ED9300F31566 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		82456BFC2B582C7500F31566 /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
+		82535E032B69724B00A79136 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +186,14 @@
 			path = Accelerometer;
 			sourceTree = "<group>";
 		};
+		82535E022B69724200A79136 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				82535E032B69724B00A79136 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		828D8DD52B51A1DC0022FDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 		828D8DE02B51A1DC0022FDB3 /* RacingGame2024 */ = {
 			isa = PBXGroup;
 			children = (
+				82535E022B69724200A79136 /* Constants */,
 				82456BF62B56ED7200F31566 /* Models */,
 				824443B02B55263B00ED8851 /* Sounds */,
 				828D8DF52B51A1F80022FDB3 /* Extensions */,
@@ -814,6 +825,7 @@
 				82C449D62B5E6C2B0039B0F3 /* ResultModel.swift in Sources */,
 				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
 				82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */,
+				82535E042B69724B00A79136 /* Constants.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
 				8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,

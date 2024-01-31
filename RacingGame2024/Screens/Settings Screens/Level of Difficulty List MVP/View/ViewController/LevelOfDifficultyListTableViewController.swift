@@ -7,6 +7,11 @@
 
 import UIKit
 
+private extension String {
+    static let title = "Выберите уровень сложности"
+    static let identifier = "levelOfDifficultyListCell"
+}
+
 class LevelOfDifficultyListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
@@ -21,14 +26,14 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
     }
     
     private func setUpNavigation() {
-        navigationItem.title = "Выберите уровень сложности"
-        let closeButton = UIBarButtonItem(image: UIImage(named: "cross"), style: .done, target: self, action: #selector(closeScreen))
+        navigationItem.title = String.title
+        let closeButton = UIBarButtonItem(image: UIImage(named: Constants.cross), style: .done, target: self, action: #selector(closeScreen))
         closeButton.tintColor = .label
         navigationItem.rightBarButtonItem = closeButton
     }
     
     private func setUpTable() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String.identifier)
     }
     
     private func setUpPresenter() {
@@ -46,7 +51,7 @@ class LevelOfDifficultyListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.identifier, for: indexPath)
         let configuredCell = configureCell(cell: cell, index: indexPath.row)
         return configuredCell
     }

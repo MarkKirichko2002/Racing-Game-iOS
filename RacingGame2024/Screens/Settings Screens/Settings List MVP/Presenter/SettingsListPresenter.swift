@@ -17,7 +17,7 @@ class SettingsListPresenter {
         self.delegate = delegate
     }
     
-    func updatePlayerInfo(name: String) {
+    func updatePlayerButtonTapped(name: String) {
         UserDefaults.standard.setValue(name, forKey: "player name")
         delegate?.reloadData()
     }

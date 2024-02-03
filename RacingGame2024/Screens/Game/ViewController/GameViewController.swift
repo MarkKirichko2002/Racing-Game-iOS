@@ -296,8 +296,8 @@ class GameViewController: UIViewController {
             let playerName = self?.settingsManager.getPlayerName() ?? "-"
             let currentDate = self?.dateManager.getCurrentDate() ?? "-"
             let currentTime = self?.dateManager.getCurrentTime() ?? "-"
-            let result = ResultModel(playerName: playerName, image: Data(), score: self?.score ?? 0, date: currentDate, time: currentTime)
-            self?.dataStorageManager.saveResult(result: result)
+            let result = ResultModel(playerName: playerName, image: nil, score: self?.score ?? 0, date: currentDate, time: currentTime)
+            self?.dataStorageManager.saveResults(result: result)
             self?.dismiss(animated: true)
         }
         let alertController = UIAlertController(title: "Игра окончена", message: "Ваш счет: \(score)", preferredStyle: .alert)

@@ -21,7 +21,6 @@ class PlayerTableViewCell: UITableViewCell {
     // MARK: - UI
     private let playerImage: UIImageView = {
        let image = UIImageView()
-       image.tintColor = .label
        image.translatesAutoresizingMaskIntoConstraints = false
        return image
     }()
@@ -84,7 +83,11 @@ class PlayerTableViewCell: UITableViewCell {
     }
     
     func configure(result: ResultModel) {
-        playerImage.image = UIImage(data: result.image)
+        if let image = result.image {
+            playerImage.image = UIImage(data: image)
+        } else {
+            playerImage.image = UIImage(named: "racer")
+        }
         playerName.text = result.playerName
         scoreLabel.text = "Счет: \(result.score)"
         dateLabel.text = "\(result.date) \(result.time)"

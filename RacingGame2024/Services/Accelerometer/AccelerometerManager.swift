@@ -22,6 +22,7 @@ class AccelerometerManager {
     }
     
     func startAccelerometerUpdates() {
+        
         manager.accelerometerUpdateInterval = 1.0 / 10.0
         
         manager.startAccelerometerUpdates(to: OperationQueue.current!) { [weak self] accelerometerData, error in

@@ -9,14 +9,31 @@ import Foundation
 
 class DataStorageManager {
     
-    func saveResult(result: ResultModel) {
-        UserDefaults.saveData(object: result, key: "result") {
-            print("результат сохранен")
+    func loadResults()-> [ResultModel] {
+        var data = [ResultModel]()
+        if let result = UserDefaults.standard.object(forKey: "results") as? Data {
+            do {
+                data = try JSONDecoder().decode([ResultModel].self, from: result)
+            } catch {
+                print(error)
+            }
         }
+        return data
     }
     
-    func getResult()-> ResultModel {
-        let result = UserDefaults.loadData(type: ResultModel.self, key: "result") ?? ResultModel(playerName: "Гонщик", image: Data(), score: 0, date: "-", time: "-")
-        return result
+    func saveResults(result: ResultModel) {
+        var array = loadResults()
+        if let index = array.firstIndex(where: { $0.playerName == result.playerName && $0.score < result.score }) {
+            array.remove(at: index)
+            array.append(result)
+        } else {
+            array.append(result)
+        }
+        do {
+            let arr = try JSONEncoder().encode(array)
+            UserDefaults.standard.setValue(arr, forKey: "results")
+        } catch {
+            print(error)
+        }
     }
 }

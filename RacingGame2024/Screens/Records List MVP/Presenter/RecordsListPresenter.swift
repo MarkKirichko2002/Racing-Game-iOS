@@ -20,8 +20,7 @@ class RecordsListPresenter {
     }
     
     func getResults() {
-        let result = dataStorageManager.getResult()
-        results.append(result)
+        results = dataStorageManager.loadResults().sorted { $0.score > $1.score }
         delegate?.reloadData()
     }
 }

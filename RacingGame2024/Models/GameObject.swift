@@ -8,6 +8,7 @@
 import UIKit
 
 class GameObject: Equatable {
+    
     var view: UIImageView
     var speed: CGFloat
     

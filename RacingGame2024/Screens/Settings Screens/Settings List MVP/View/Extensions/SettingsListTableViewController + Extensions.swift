@@ -35,7 +35,7 @@ extension SettingsListTableViewController {
         }
         let save = UIAlertAction(title: "Сохранить", style: .default) { _ in
             if let name = alertController.textFields![0].text {
-                self.presenter.updatePlayerInfo(name: name)
+                self.presenter.updatePlayerButtonTapped(name: name)
             }
         }
         let cancel = UIAlertAction(title: "Отмена", style: .destructive)

@@ -9,7 +9,7 @@ import Foundation
 
 struct ResultModel: Codable {
     let playerName: String
-    let image: Data
+    let image: Data?
     let score: Int
     let date: String
     let time: String

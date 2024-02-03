@@ -22,13 +22,29 @@ class DataStorageManager {
     }
     
     func saveResults(result: ResultModel) {
+        
         var array = loadResults()
-        if let index = array.firstIndex(where: { $0.playerName == result.playerName && $0.score < result.score }) {
+        
+        if let index = array.firstIndex(where: { $0.playerName == result.playerName && ($0.score <= result.score || $0.score >= result.score)}) {
             array.remove(at: index)
             array.append(result)
         } else {
             array.append(result)
         }
+        saveArray(array: array)
+    }
+    
+    func deleteResult(result: ResultModel) {
+        
+        var array = loadResults()
+        
+        if let index = array.firstIndex(where: { $0.playerName == result.playerName }) {
+            array.remove(at: index)
+        }
+        saveArray(array: array)
+    }
+    
+    private func saveArray(array: [ResultModel]) {
         do {
             let arr = try JSONEncoder().encode(array)
             UserDefaults.standard.setValue(arr, forKey: "results")

@@ -12,6 +12,7 @@ class RecordsListPresenter {
     weak var delegate: RecordsListPresenterDelegate?
     
     private let dataStorageManager = DataStorageManager()
+    private let settingsManager = SettingsManager()
     
     var results = [ResultModel]()
     
@@ -22,5 +23,13 @@ class RecordsListPresenter {
     func getResults() {
         results = dataStorageManager.loadResults().sorted { $0.score > $1.score }
         delegate?.reloadData()
+    }
+    
+    func deleteResult(result: ResultModel) {
+        let playerName = settingsManager.getPlayerName()
+        if playerName == result.playerName {
+            dataStorageManager.deleteResult(result: result)
+            getResults()
+        }
     }
 }

@@ -28,10 +28,12 @@ extension SettingsListTableViewController: OptionsDelegate {
 extension SettingsListTableViewController {
     
     func showAlert() {
+        
         let alertController = UIAlertController(title: "Изменение данных игрока", message: "Вы хотите точно изменить данные?", preferredStyle: .alert)
         
         alertController.addTextField { (textField) in
             textField.placeholder = "Имя"
+            textField.text = self.presenter.getProfileName()
         }
         
         let photoAction = UIAlertAction(title: "Выбрать фото", style: .default) { _ in
@@ -44,7 +46,9 @@ extension SettingsListTableViewController {
         
         let save = UIAlertAction(title: "Сохранить", style: .default) { _ in
             if let name = alertController.textFields![0].text {
-                self.presenter.updatePlayerButtonTapped(name: name)
+                if !name.isEmpty {
+                    self.presenter.updatePlayerButtonTapped(name: name)
+                }
             }
         }
         let cancel = UIAlertAction(title: "Отмена", style: .destructive)

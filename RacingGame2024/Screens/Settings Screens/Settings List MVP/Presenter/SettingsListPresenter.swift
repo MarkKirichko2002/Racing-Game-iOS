@@ -18,6 +18,11 @@ class SettingsListPresenter {
         self.delegate = delegate
     }
     
+    func getProfileName()-> String {
+        let profile = settingsManager.getProfile()
+        return profile.playerName
+    }
+    
     func updatePlayerButtonTapped(name: String) {
         var profile = settingsManager.getProfile()
         profile.playerName = name

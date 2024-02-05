@@ -293,11 +293,11 @@ class GameViewController: UIViewController {
             self?.restartGame()
         }
         let save = UIAlertAction(title: "Сохранить результат", style: .default) { [weak self] _ in
-            let playerName = self?.settingsManager.getPlayerName() ?? "-"
+            let player = self?.settingsManager.getProfile()
             let currentDate = self?.dateManager.getCurrentDate() ?? "-"
             let currentTime = self?.dateManager.getCurrentTime() ?? "-"
-            let result = ResultModel(playerName: playerName, image: nil, score: self?.score ?? 0, date: currentDate, time: currentTime)
-            self?.dataStorageManager.saveResults(result: result)
+            let result = ResultModel(playerName: player?.playerName ?? "Игрок", image: player?.image, score: self?.score ?? 0, date: currentDate, time: currentTime)
+            self?.dataStorageManager.saveResult(result: result)
             self?.dismiss(animated: true)
         }
         let alertController = UIAlertController(title: "Игра окончена", message: "Ваш счет: \(score)", preferredStyle: .alert)

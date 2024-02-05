@@ -62,6 +62,7 @@
 		82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */; };
 		82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */; };
 		82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */; };
+		82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F578922B7152B000BC64C1 /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenter.swift; sourceTree = "<group>"; };
 		82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenterDelegate.swift; sourceTree = "<group>"; };
 		82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		82F578922B7152B000BC64C1 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				82456BF72B56ED9300F31566 /* GameObject.swift */,
 				82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */,
+				82F578922B7152B000BC64C1 /* ProfileModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
 				8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */,
 				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
+				82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */,
 				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
 				828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */,
 				8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */,

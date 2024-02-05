@@ -5,9 +5,42 @@
 //  Created by Марк Киричко on 22.01.2024.
 //
 
-import Foundation
+import UIKit
 
 class DataStorageManager {
+    
+    func saveFileURL(url: String) {
+        UserDefaults.standard.setValue(url, forKey: "fileURL")
+    }
+    
+    func getFileURL()-> String {
+        let url = UserDefaults.standard.string(forKey: "fileURL") ?? ""
+        return url
+    }
+    
+    func saveImage(_ image: UIImage) throws -> String? {
+        guard let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        let name = UUID().uuidString
+        let fileURL = directory.appendingPathComponent(name, conformingTo: .fileURL)
+        
+        guard let data = image.jpegData(compressionQuality: 1.0) else {return nil}
+        try data.write(to: fileURL)
+        
+        return name
+    }
+    
+    func loadImage(from fileName: String)-> Data? {
+        guard let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return nil}
+        let fileURL = directory.appendingPathComponent(fileName, conformingTo: .fileURL)
+        do {
+            let data = try Data(contentsOf: fileURL)
+            return data
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
     
     func loadResults()-> [ResultModel] {
         var data = [ResultModel]()
@@ -21,7 +54,7 @@ class DataStorageManager {
         return data
     }
     
-    func saveResults(result: ResultModel) {
+    func saveResult(result: ResultModel) {
         
         var array = loadResults()
         

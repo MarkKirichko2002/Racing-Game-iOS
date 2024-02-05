@@ -9,9 +9,13 @@ import Foundation
 
 class SettingsManager {
     
-    func getPlayerName()-> String {
-        let name = UserDefaults.standard.object(forKey: "player name") as? String ?? "Игрок"
-        return name
+    func saveProfile(profile: ProfileModel) {
+        UserDefaults.saveData(object: profile, key: "profile") {}
+    }
+    
+    func getProfile()-> ProfileModel {
+        let player = UserDefaults.loadData(type: ProfileModel.self, key: "profile") ?? ProfileModel(playerName: "Игрок", image: nil)
+        return player
     }
     
     func getCarColor()-> Colors {

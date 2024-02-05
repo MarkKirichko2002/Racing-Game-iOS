@@ -62,4 +62,9 @@ class OptionTableViewCell: UITableViewCell {
         optionIcon.image = UIImage(named: option.icon)
         optionTitle.text = info
     }
+    
+    func configureProfileCell(profile: ProfileModel) {
+        optionIcon.image = UIImage(data: profile.image ?? Data())
+        optionTitle.text = profile.playerName
+    }
 }

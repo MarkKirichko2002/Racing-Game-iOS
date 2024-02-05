@@ -5,11 +5,12 @@
 //  Created by Марк Киричко on 14.01.2024.
 //
 
-import Foundation
+import UIKit
 
 class SettingsListPresenter {
     
     private let settingsManager = SettingsManager()
+    private let dataStorageManager = DataStorageManager()
     
     weak var delegate: SettingsListPresenterDelegate?
     
@@ -18,14 +19,27 @@ class SettingsListPresenter {
     }
     
     func updatePlayerButtonTapped(name: String) {
-        UserDefaults.standard.setValue(name, forKey: "player name")
+        var profile = settingsManager.getProfile()
+        profile.playerName = name
+        settingsManager.saveProfile(profile: profile)
+        delegate?.reloadData()
+    }
+    
+    func savePhotoButtonTapped(image: UIImage) {
+        var profile = settingsManager.getProfile()
+        if let fileURL = try? dataStorageManager.saveImage(image) {
+            dataStorageManager.saveFileURL(url: fileURL)
+        }
+        let image = dataStorageManager.loadImage(from: dataStorageManager.getFileURL())
+        profile.image = image
+        settingsManager.saveProfile(profile: profile)
         delegate?.reloadData()
     }
     
     func getInfoForOption(option: Options)-> String {
         switch option {
         case .playerInfo:
-            return settingsManager.getPlayerName()
+            return settingsManager.getProfile().playerName
         case .carColor:
             return settingsManager.getCarColor().title
         case .obstacle:
@@ -35,5 +49,10 @@ class SettingsListPresenter {
         case .control:
             return settingsManager.getControl().title
         }
+    }
+    
+    func getProfileInfo()-> ProfileModel {
+        let profile = settingsManager.getProfile()
+        return profile
     }
 }

@@ -26,10 +26,7 @@ class RecordsListPresenter {
     }
     
     func deleteResult(result: ResultModel) {
-        let playerName = settingsManager.getPlayerName()
-        if playerName == result.playerName {
-            dataStorageManager.deleteResult(result: result)
-            getResults()
-        }
+        dataStorageManager.deleteResult(result: result)
+        getResults()
     }
 }

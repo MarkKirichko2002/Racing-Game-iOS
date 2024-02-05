@@ -71,7 +71,11 @@ class SettingsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: OptionTableViewCell.identifier, for: indexPath) as? OptionTableViewCell else {return UITableViewCell()}
         let option = Options.allCases[indexPath.row]
-        cell.configure(option: option, info: presenter.getInfoForOption(option: option))
+        if option == .playerInfo {
+            cell.configureProfileCell(profile: presenter.getProfileInfo())
+        } else {
+            cell.configure(option: option, info: presenter.getInfoForOption(option: option))
+        }
         return cell
     }
 }

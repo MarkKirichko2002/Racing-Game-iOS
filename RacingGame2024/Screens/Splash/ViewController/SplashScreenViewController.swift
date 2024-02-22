@@ -28,6 +28,11 @@ private extension TimeInterval {
     static let duration3: Self = 1
 }
 
+private extension String {
+    static let carSound = "car"
+    static let explodeSound = "explode"
+}
+
 class SplashScreenViewController: UIViewController {
 
     private let animation = AnimationManager()
@@ -94,18 +99,18 @@ class SplashScreenViewController: UIViewController {
             self.titleLabel.layer.opacity = Float.opacity2
         }
         
-        Timer.scheduledTimer(withTimeInterval: TimeInterval.duration2, repeats: false) { _ in
+        Timer.scheduledTimer(withTimeInterval: TimeInterval.duration2, repeats: false) { [weak self] _ in
             
-            self.audioPlayerClass.playSound(sound: "car")
+            self?.audioPlayerClass.playSound(sound: String.carSound)
             
             UIView.animate(withDuration: TimeInterval.duration, animations: {
-                self.icon.frame.origin = bottomCoordinate
+                self?.icon.frame.origin = bottomCoordinate
             })
             
-            Timer.scheduledTimer(withTimeInterval: TimeInterval.duration3, repeats: true) { timer in
-                if self.icon.frame.origin.y < CGFloat.y {
-                    self.audioPlayerClass.playSound(sound: "explode")
-                    self.showStartScreen()
+            Timer.scheduledTimer(withTimeInterval: TimeInterval.duration3, repeats: true) { [weak self] timer in
+                if self?.icon.frame.origin.y ?? 0 < CGFloat.y {
+                    self?.audioPlayerClass.playSound(sound: String.explodeSound)
+                    self?.showStartScreen()
                     timer.invalidate()
                 }
             }

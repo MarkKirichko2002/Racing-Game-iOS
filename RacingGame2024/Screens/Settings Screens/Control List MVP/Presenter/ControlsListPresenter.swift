@@ -7,6 +7,10 @@
 
 import Foundation
 
+private extension String {
+    static let key = "control"
+}
+
 class ControlsListPresenter {
     
     private let settingsManager = SettingsManager()
@@ -30,7 +34,7 @@ class ControlsListPresenter {
         let control = controlOptionItem(index: index)
         
         if savedControl.title != control.title {
-            settingsManager.saveOption(option: control, key: "control")
+            settingsManager.saveOption(option: control, key: String.key)
             delegate?.reloadData()
         }
     }

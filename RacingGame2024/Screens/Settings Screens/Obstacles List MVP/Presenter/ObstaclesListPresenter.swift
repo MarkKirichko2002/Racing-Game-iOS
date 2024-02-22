@@ -7,6 +7,10 @@
 
 import Foundation
 
+private extension String {
+    static let key = "obstacle"
+}
+
 class ObstaclesListPresenter {
     
     private let settingsManager = SettingsManager()
@@ -30,7 +34,7 @@ class ObstaclesListPresenter {
         let obstacle = obstacleOptionItem(index: index)
         
         if savedObstacle.title != obstacle.title {
-            settingsManager.saveOption(option: obstacle, key: "obstacle")
+            settingsManager.saveOption(option: obstacle, key: String.key)
             delegate?.reloadData()
         }
     }

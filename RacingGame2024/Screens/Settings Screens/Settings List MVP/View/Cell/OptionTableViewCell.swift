@@ -14,6 +14,10 @@ private extension CGFloat {
     static let height: Self = 80
 }
 
+private extension String {
+    static let defaultImage = "racer"
+}
+
 class OptionTableViewCell: UITableViewCell {
 
     static var identifier: String { "\(Self.self)" }
@@ -67,7 +71,7 @@ class OptionTableViewCell: UITableViewCell {
         if let image = profile.image {
             optionIcon.image = UIImage(data: image)
         } else {
-            optionIcon.image = UIImage(named: "racer")
+            optionIcon.image = UIImage(named: String.defaultImage)
         }
         optionTitle.text = profile.playerName
     }

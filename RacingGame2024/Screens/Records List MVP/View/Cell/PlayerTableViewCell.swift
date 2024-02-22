@@ -14,6 +14,14 @@ private extension CGFloat {
     static let height: Self = 80
 }
 
+private extension String {
+    static let defaultImage = "racer"
+}
+
+private extension Int {
+    static let numberOfLines = 0
+}
+
 class PlayerTableViewCell: UITableViewCell {
 
     static var identifier: String { "\(Self.self)" }
@@ -43,7 +51,7 @@ class PlayerTableViewCell: UITableViewCell {
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = Int.numberOfLines
         label.textColor = .label
         label.font = .systemFont(ofSize: Constants.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +94,7 @@ class PlayerTableViewCell: UITableViewCell {
         if let image = result.image {
             playerImage.image = UIImage(data: image)
         } else {
-            playerImage.image = UIImage(named: "racer")
+            playerImage.image = UIImage(named: String.defaultImage)
         }
         playerName.text = result.playerName
         scoreLabel.text = "Счет: \(result.score)"

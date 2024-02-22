@@ -23,7 +23,6 @@ extension UserDefaults {
         do {
             if let data = UserDefaults.standard.data(forKey: key) {
                 let object = try JSONDecoder().decode(T.self, from: data)
-                print(object)
                 return object
             }
         } catch {

@@ -18,9 +18,10 @@ private extension TimeInterval {
 private extension CGFloat {
     static let titleFontSize: Self = 23
     static let fontSize: Self = 18
-    static let top: Self = 100
-    static let top2: Self = 135
-    static let top3: Self = 85
+    static let titleLabelTop: Self = 100
+    static let startButtonTop: Self = 135
+    static let settingsButtonTop: Self = 85
+    static let recordsButtonTop: Self = 85
     static let x: Self = 0
     static let y: Self = 100
 }
@@ -109,23 +110,23 @@ class StartViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat.top),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat.titleLabelTop),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            StartButton.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: CGFloat.top2),
+            StartButton.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: CGFloat.startButtonTop),
             StartButton.centerXAnchor.constraint(equalTo: titleLabel.centerXAnchor),
             
-            SettingsButton.topAnchor.constraint(equalTo: StartButton.topAnchor, constant: CGFloat.top3),
+            SettingsButton.topAnchor.constraint(equalTo: StartButton.topAnchor, constant: CGFloat.settingsButtonTop),
             SettingsButton.centerXAnchor.constraint(equalTo: StartButton.centerXAnchor),
             
-            RecordsButton.topAnchor.constraint(equalTo: SettingsButton.topAnchor, constant: CGFloat.top3),
+            RecordsButton.topAnchor.constraint(equalTo: SettingsButton.topAnchor, constant: CGFloat.recordsButtonTop),
             RecordsButton.centerXAnchor.constraint(equalTo: SettingsButton.centerXAnchor),
         ])
     }
     
     @objc private func scrollBackground() {
-        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval.interval, repeats: true) { _ in
-            self.scrollView.setContentOffset(CGPoint(x: CGFloat.x, y: self.scrollView.contentOffset.y - CGFloat.y), animated: true)
+        timer = Timer.scheduledTimer(withTimeInterval: TimeInterval.interval, repeats: true) { [weak self] _ in
+            self?.scrollView.setContentOffset(CGPoint(x: CGFloat.x, y: (self?.scrollView.contentOffset.y ?? 0) - CGFloat.y), animated: true)
         }
     }
     

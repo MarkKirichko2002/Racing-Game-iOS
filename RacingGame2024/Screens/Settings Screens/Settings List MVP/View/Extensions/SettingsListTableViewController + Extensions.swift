@@ -36,18 +36,18 @@ extension SettingsListTableViewController {
             textField.text = self.presenter.getProfileName()
         }
         
-        let photoAction = UIAlertAction(title: "Выбрать фото", style: .default) { _ in
+        let photoAction = UIAlertAction(title: "Выбрать фото", style: .default) { [weak self] _ in
             let vc = UIImagePickerController()
             vc.sourceType = .photoLibrary
             vc.allowsEditing = true
             vc.delegate = self
-            self.present(vc, animated: true)
+            self?.present(vc, animated: true)
         }
         
-        let save = UIAlertAction(title: "Сохранить", style: .default) { _ in
+        let save = UIAlertAction(title: "Сохранить", style: .default) { [weak self] _ in
             if let name = alertController.textFields![0].text {
                 if !name.isEmpty {
-                    self.presenter.updatePlayerButtonTapped(name: name)
+                    self?.presenter.updatePlayerButtonTapped(name: name)
                 }
             }
         }

@@ -151,8 +151,8 @@ class GameViewController: UIViewController {
             self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
             self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
         }
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            self.runGame()
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in
+            self?.runGame()
         }
     }
     

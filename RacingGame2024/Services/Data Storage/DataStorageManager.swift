@@ -7,14 +7,23 @@
 
 import UIKit
 
+private extension String {
+    static let keyfileURL = "fileURL"
+    static let keyResults = "results"
+}
+
+private extension CGFloat {
+    static let compressionQuality = 1.0
+}
+
 class DataStorageManager {
     
     func saveFileURL(url: String) {
-        UserDefaults.standard.setValue(url, forKey: "fileURL")
+        UserDefaults.standard.setValue(url, forKey: String.keyfileURL)
     }
     
     func getFileURL()-> String {
-        let url = UserDefaults.standard.string(forKey: "fileURL") ?? ""
+        let url = UserDefaults.standard.string(forKey: String.keyfileURL) ?? ""
         return url
     }
     
@@ -23,7 +32,7 @@ class DataStorageManager {
         let name = UUID().uuidString
         let fileURL = directory.appendingPathComponent(name, conformingTo: .fileURL)
         
-        guard let data = image.jpegData(compressionQuality: 1.0) else {return nil}
+        guard let data = image.jpegData(compressionQuality: CGFloat.compressionQuality) else {return nil}
         try data.write(to: fileURL)
         
         return name
@@ -44,7 +53,7 @@ class DataStorageManager {
     
     func loadResults()-> [ResultModel] {
         var data = [ResultModel]()
-        if let result = UserDefaults.standard.object(forKey: "results") as? Data {
+        if let result = UserDefaults.standard.object(forKey: String.keyResults) as? Data {
             do {
                 data = try JSONDecoder().decode([ResultModel].self, from: result)
             } catch {
@@ -80,7 +89,7 @@ class DataStorageManager {
     private func saveArray(array: [ResultModel]) {
         do {
             let arr = try JSONEncoder().encode(array)
-            UserDefaults.standard.setValue(arr, forKey: "results")
+            UserDefaults.standard.setValue(arr, forKey: String.keyResults)
         } catch {
             print(error)
         }

@@ -7,6 +7,10 @@
 
 import CoreMotion
 
+private extension TimeInterval {
+    static let accelerometerUpdateInterval = 1.0 / 10.0
+}
+
 class AccelerometerManager {
     
     private let manager = CMMotionManager()
@@ -16,14 +20,12 @@ class AccelerometerManager {
     func checkAccelerometer() {
         if manager.isGyroAvailable {
             startAccelerometerUpdates()
-        } else {
-            print("Гироскоп не доступен")
         }
     }
     
     func startAccelerometerUpdates() {
         
-        manager.accelerometerUpdateInterval = 1.0 / 10.0
+        manager.accelerometerUpdateInterval = TimeInterval.accelerometerUpdateInterval
         
         manager.startAccelerometerUpdates(to: OperationQueue.current!) { [weak self] accelerometerData, error in
             if let acceleration = accelerometerData?.acceleration {

@@ -7,6 +7,10 @@
 
 import UIKit
 
+private extension String {
+    static let key = "car color"
+}
+
 class CarColorsListPresenter {
     
     private let settingsManager = SettingsManager()
@@ -30,7 +34,7 @@ class CarColorsListPresenter {
         let color = colorOptionItem(index: index)
         
         if savedColor.color != color.color {
-            settingsManager.saveOption(option: color, key: "car color")
+            settingsManager.saveOption(option: color, key: String.key)
             delegate?.reloadData()
         }
     }

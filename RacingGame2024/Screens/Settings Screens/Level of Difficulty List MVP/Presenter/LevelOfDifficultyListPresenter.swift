@@ -7,6 +7,10 @@
 
 import Foundation
 
+private extension String {
+    static let key = "level Of difficulty"
+}
+
 class LevelOfDifficultyListPresenter {
     
     private let settingsManager = SettingsManager()
@@ -30,7 +34,7 @@ class LevelOfDifficultyListPresenter {
         let levelOfDifficulty = levelOfDifficultyOptionItem(index: index)
         
         if savedLevelOfDifficulty.title != levelOfDifficulty.title {
-            settingsManager.saveOption(option: levelOfDifficulty, key: "level Of difficulty")
+            settingsManager.saveOption(option: levelOfDifficulty, key: String.key)
             delegate?.reloadData()
         }
     }

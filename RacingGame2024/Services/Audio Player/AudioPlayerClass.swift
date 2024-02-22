@@ -7,6 +7,10 @@
 
 import AVFoundation
 
+private extension String {
+    static let format = "mp3"
+}
+
 class AudioPlayerClass {
     
     static let shared = AudioPlayerClass()
@@ -14,9 +18,9 @@ class AudioPlayerClass {
     private var player: AVAudioPlayer?
     
     func playSound(sound: String) {
-        let soundURL = Bundle.main.url(forResource: sound, withExtension: "mp3")
+        guard let soundURL = Bundle.main.url(forResource: sound, withExtension: String.format) else {return}
         do {
-            player = try AVAudioPlayer(contentsOf: soundURL!)
+            player = try AVAudioPlayer(contentsOf: soundURL)
             player?.play()
         } catch {
             print(error)

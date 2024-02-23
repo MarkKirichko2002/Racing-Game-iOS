@@ -7,8 +7,71 @@
 
 import UIKit
 
+private extension [String] {
+    static var randomObjects = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
+}
+
 private extension CGFloat {
     static let fontSize: Self = 18
+}
+
+private extension TimeInterval {
+    static let timeIntervalRunGame = 1.0
+    static let timeIntervalBackground = 0.1
+    static let timeIntervalTimer = 1.0
+    static let timeIntervalCreateObject = 3.0
+    static let timeIntervaUpdateObject = 0.016
+}
+
+private extension String {
+    static let scoreLabelTitle = "Счет: 0"
+    static let timeLabelTitle = "Время: 0 с"
+    static let levelOfDifficultyLabelTitle = "Сложность: ..."
+    static let backgroundMusic = "background music"
+    static let explodeSound = "explode"
+    static let restartTitle = "Повторить"
+    static let leftIcon = "left"
+    static let rightIcon = "right"
+    static let saveTitle = "Сохранить результат"
+    static let defaultString = "-"
+    static let defaultPlayerName = "Игрок"
+    static let gameOverTitle = "Игра окончена"
+}
+
+private extension CGFloat {
+    static let defaultNumber = 0.0
+    static let closeButtonTop = 50.0
+    static let closeButtonRight = -20.0
+    static let scoreLabelTop = 20.0
+    static let scoreLabelRight = -20.0
+    static let timeLabelTop = 45.0
+    static let timeLabelRight = -20.0
+    static let levelOfDifficultyLabelTop = 45.0
+    static let levelOfDifficultyLabelRight = -20.0
+    static let carObjectBottom = -30.0
+    static let carObjectWidth = 70.0
+    static let carObjectHeight = 70.0
+    static let leftButtonBottom = -30.0
+    static let leftButtonLeft = 30.0
+    static let leftButtonWidth = 50.0
+    static let leftButtonHeight = 50.0
+    static let rightButtonBottom = -30.0
+    static let rightButtonRight = -30.0
+    static let rightButtonWidth = 50.0
+    static let rightButtonHeight = 50.0
+    static let backgroundOffSet = 100.0
+    static let carObjectRightOffset = 60.0
+    static let carObjectLeftOffset = 60.0
+    
+}
+
+private extension Int {
+    static let defaultNumber = 0
+    static let increaseCount = 1
+}
+
+private extension Double {
+    static let defaultNumber = 0.0
 }
 
 class GameViewController: UIViewController {
@@ -30,7 +93,7 @@ class GameViewController: UIViewController {
     
     private let ScoreLabel: UILabel = {
         let label = UILabel()
-        label.text = "Счет: 0"
+        label.text = String.scoreLabelTitle
         label.textColor = .white
         label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +102,7 @@ class GameViewController: UIViewController {
     
     private let timeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Время: 0 с"
+        label.text = String.timeLabelTitle
         label.textColor = .white
         label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +111,7 @@ class GameViewController: UIViewController {
     
     private let levelOfDifficultyLabel: UILabel = {
         let label = UILabel()
-        label.text = "Сложность: ..."
+        label.text = String.levelOfDifficultyLabelTitle
         label.textColor = .white
         label.font = .systemFont(ofSize: CGFloat.fontSize, weight: Constants.fontWeight)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -62,8 +125,8 @@ class GameViewController: UIViewController {
     }()
     
     // MARK: - vars/lets
-    private var seconds = 0
-    private var score = 0
+    private var seconds = Int.defaultNumber
+    private var score = Int.defaultNumber
     private var objects: [GameObject] = []
     private var timer: Timer?
     private var timer2: Timer?
@@ -107,33 +170,33 @@ class GameViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: CGFloat.closeButtonTop),
+            closeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: CGFloat.closeButtonRight),
             
-            ScoreLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 20),
-            ScoreLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            ScoreLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: CGFloat.scoreLabelTop),
+            ScoreLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: CGFloat.scoreLabelRight),
             
-            timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: 45),
-            timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            timeLabel.topAnchor.constraint(equalTo: ScoreLabel.topAnchor, constant: CGFloat.timeLabelTop),
+            timeLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: CGFloat.timeLabelRight),
             
-            levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: 45),
-            levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+            levelOfDifficultyLabel.topAnchor.constraint(equalTo: timeLabel.topAnchor, constant: CGFloat.levelOfDifficultyLabelTop),
+            levelOfDifficultyLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: CGFloat.levelOfDifficultyLabelRight),
             
             carObject.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            carObject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            carObject.widthAnchor.constraint(equalToConstant: 70),
-            carObject.heightAnchor.constraint(equalToConstant: 70)
+            carObject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat.carObjectBottom),
+            carObject.widthAnchor.constraint(equalToConstant: CGFloat.carObjectWidth),
+            carObject.heightAnchor.constraint(equalToConstant: CGFloat.carObjectHeight)
         ])
     }
     
     private func runGame() {
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(scrollBackground), userInfo: nil, repeats: true)
-        timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval.timeIntervalBackground, target: self, selector: #selector(scrollBackground), userInfo: nil, repeats: true)
+        timer2 = Timer.scheduledTimer(timeInterval: TimeInterval.timeIntervalTimer, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
         // Запускаем бесконечный игровой цикл
-        timer3 = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
+        timer3 = Timer.scheduledTimer(timeInterval: TimeInterval.timeIntervalCreateObject, target: self, selector: #selector(createObject), userInfo: nil, repeats: true)
         // Запускаем бесконечный цикл для обновления движения квадратов
-        timer4 = Timer.scheduledTimer(timeInterval: 1 / 60, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
-        audioPlayerClass.playSound(sound: "background music")
+        timer4 = Timer.scheduledTimer(timeInterval: TimeInterval.timeIntervaUpdateObject, target: self, selector: #selector(updateObjects), userInfo: nil, repeats: true)
+        audioPlayerClass.playSound(sound: String.backgroundMusic)
     }
     
     private func stopGame() {
@@ -144,32 +207,32 @@ class GameViewController: UIViewController {
     }
     
     private func restartGame() {
-        score = 0
-        seconds = 0
+        score = Int.defaultNumber
+        seconds = Int.defaultNumber
         DispatchQueue.main.async { [weak self] in
-            self?.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
-            self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
+            self?.scrollView.setContentOffset(CGPoint(x: Int.defaultNumber, y: Int.defaultNumber), animated: true)
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? Int.defaultNumber)"
+            self?.timeLabel.text = "Время: \(self?.seconds ?? Int.defaultNumber) с"
         }
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: TimeInterval.timeIntervalRunGame, repeats: false) { [weak self] _ in
             self?.runGame()
         }
     }
     
     @objc private func scrollBackground() {
-        self.scrollView.setContentOffset(CGPoint(x: 0, y: self.scrollView.contentOffset.y - 100), animated: true)
+        self.scrollView.setContentOffset(CGPoint(x: CGFloat.defaultNumber, y: self.scrollView.contentOffset.y - CGFloat.backgroundOffSet), animated: true)
     }
     
     @objc private func startTimer() {
-        seconds += 1
+        seconds += Int.increaseCount
         DispatchQueue.main.async { [weak self] in
-            self?.timeLabel.text = "Время: \(self?.seconds ?? 0) с"
+            self?.timeLabel.text = "Время: \(self?.seconds ?? Int.defaultNumber) с"
         }
     }
     
     @objc private func createObject() {
         let obstacle = settingsManager.getObstacle()
-        var randomObjects = ["car red rotated", "car yellow rotated", "car orange rotated", "car blue rotated", "car green rotated"]
+        var randomObjects = Array.randomObjects
         if obstacle != .none {
             randomObjects.append(obstacle.image)
         }
@@ -192,7 +255,7 @@ class GameViewController: UIViewController {
             }
             
             if object.view.frame.intersects(carObject.frame) {
-                audioPlayerClass.playSound(sound: "explode")
+                audioPlayerClass.playSound(sound: String.explodeSound)
                 stopGame()
                 showAlert()
                 removeObject(object: object)
@@ -237,11 +300,11 @@ class GameViewController: UIViewController {
     private func setUpTapControl() {
         
         let leftButton = UIButton()
-        leftButton.setImage(UIImage(named: "left"), for: .normal)
+        leftButton.setImage(UIImage(named: String.leftIcon), for: .normal)
         leftButton.translatesAutoresizingMaskIntoConstraints = false
         
         let rightButton = UIButton()
-        rightButton.setImage(UIImage(named: "right"), for: .normal)
+        rightButton.setImage(UIImage(named: String.rightIcon), for: .normal)
         rightButton.translatesAutoresizingMaskIntoConstraints = false
         
         leftButton.addTarget(self, action: #selector(goLeft), for: .touchUpInside)
@@ -250,22 +313,22 @@ class GameViewController: UIViewController {
         view.addSubviews(views: leftButton, rightButton)
         
         NSLayoutConstraint.activate([
-            leftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            leftButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 30),
-            leftButton.heightAnchor.constraint(equalToConstant: 50),
-            leftButton.widthAnchor.constraint(equalToConstant: 50),
+            leftButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat.leftButtonBottom),
+            leftButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: CGFloat.leftButtonLeft),
+            leftButton.widthAnchor.constraint(equalToConstant: CGFloat.leftButtonWidth),
+            leftButton.heightAnchor.constraint(equalToConstant: CGFloat.leftButtonHeight),
             
-            rightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
-            rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
-            rightButton.heightAnchor.constraint(equalToConstant: 50),
-            rightButton.widthAnchor.constraint(equalToConstant: 50),
+            rightButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat.rightButtonBottom),
+            rightButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: CGFloat.rightButtonRight),
+            rightButton.widthAnchor.constraint(equalToConstant: CGFloat.rightButtonWidth),
+            rightButton.heightAnchor.constraint(equalToConstant: CGFloat.rightButtonHeight)
         ])
     }
     
     private func setUpAccelerometerControl() {
         accelerometerManager.checkAccelerometer()
         accelerometerManager.registerAccelerometerHandler { [weak self] xAcceleration in
-            if xAcceleration > 0 {
+            if xAcceleration > Double.defaultNumber {
                 self?.goRight()
             } else {
                 self?.goLeft()
@@ -274,33 +337,33 @@ class GameViewController: UIViewController {
     }
     
     @objc private func goLeft() {
-        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x - 60, y: carObject.frame.origin.y)
+        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x - CGFloat.carObjectLeftOffset, y: carObject.frame.origin.y)
     }
     
     @objc private func goRight() {
-        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + 60, y: carObject.frame.origin.y)
+        carObject.frame.origin = CGPoint(x: carObject.frame.origin.x + CGFloat.carObjectRightOffset, y: carObject.frame.origin.y)
     }
     
     private func increaseСounter() {
-        score += 1
+        score += Int.increaseCount
         DispatchQueue.main.async { [weak self] in
-            self?.ScoreLabel.text = "Счет: \(self?.score ?? 0)"
+            self?.ScoreLabel.text = "Счет: \(self?.score ?? Int.defaultNumber)"
         }
     }
     
     private func showAlert() {
-        let restart = UIAlertAction(title: "Повторить", style: .default) { [weak self] _ in
+        let restart = UIAlertAction(title: String.restartTitle, style: .default) { [weak self] _ in
             self?.restartGame()
         }
-        let save = UIAlertAction(title: "Сохранить результат", style: .default) { [weak self] _ in
+        let save = UIAlertAction(title: String.saveTitle, style: .default) { [weak self] _ in
             let player = self?.settingsManager.getProfile()
-            let currentDate = self?.dateManager.getCurrentDate() ?? "-"
-            let currentTime = self?.dateManager.getCurrentTime() ?? "-"
-            let result = ResultModel(playerName: player?.playerName ?? "Игрок", image: player?.image, score: self?.score ?? 0, date: currentDate, time: currentTime)
+            let currentDate = self?.dateManager.getCurrentDate() ?? String.defaultString
+            let currentTime = self?.dateManager.getCurrentTime() ?? String.defaultString
+            let result = ResultModel(playerName: player?.playerName ?? String.defaultPlayerName, image: player?.image, score: self?.score ?? Int.defaultNumber, date: currentDate, time: currentTime)
             self?.dataStorageManager.saveResult(result: result)
             self?.dismiss(animated: true)
         }
-        let alertController = UIAlertController(title: "Игра окончена", message: "Ваш счет: \(score)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: String.gameOverTitle, message: "Ваш счет: \(score)", preferredStyle: .alert)
         alertController.addAction(restart)
         alertController.addAction(save)
         present(alertController, animated: true)

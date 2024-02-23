@@ -16,10 +16,10 @@ private extension CGFloat {
     static let x: Self = UIScreen.main.bounds.width / 4
     static let y: Self = UIScreen.main.bounds.height
     static let fontSize: Self = 22
-    static let width: Self = 150
-    static let height: Self = 150
-    static let height2: Self = 30
-    static let top: Self = 50
+    static let iconWidth: Self = 150
+    static let iconHeight: Self = 150
+    static let titleLabelHeight: Self = 30
+    static let titleLabelTop: Self = 50
 }
 
 private extension TimeInterval {
@@ -81,13 +81,13 @@ class SplashScreenViewController: UIViewController {
         NSLayoutConstraint.activate([
             
             icon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            icon.widthAnchor.constraint(equalToConstant: CGFloat.width),
-            icon.heightAnchor.constraint(equalToConstant: CGFloat.height),
+            icon.widthAnchor.constraint(equalToConstant: CGFloat.iconWidth),
+            icon.heightAnchor.constraint(equalToConstant: CGFloat.iconHeight),
             
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            titleLabel.heightAnchor.constraint(equalToConstant: CGFloat.height2),
-            titleLabel.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: CGFloat.top)
+            titleLabel.heightAnchor.constraint(equalToConstant: CGFloat.titleLabelHeight),
+            titleLabel.topAnchor.constraint(equalTo: icon.bottomAnchor, constant: CGFloat.titleLabelTop)
         ])
     }
     
@@ -108,7 +108,7 @@ class SplashScreenViewController: UIViewController {
             })
             
             Timer.scheduledTimer(withTimeInterval: TimeInterval.duration3, repeats: true) { [weak self] timer in
-                if self?.icon.frame.origin.y ?? 0 < CGFloat.y {
+                if (self?.icon.frame.origin.y ?? 0) < CGFloat.y {
                     self?.audioPlayerClass.playSound(sound: String.explodeSound)
                     self?.showStartScreen()
                     timer.invalidate()

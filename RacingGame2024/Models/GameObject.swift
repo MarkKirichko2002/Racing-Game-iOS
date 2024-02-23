@@ -7,18 +7,24 @@
 
 import UIKit
 
+private extension CGFloat {
+    static let number = 0.0
+    static let squareSize = 70.0
+    static let speed = 10.0
+}
+
 class GameObject: Equatable {
     
     var view: UIImageView
     var speed: CGFloat
     
     init() {
-        let squareSize: CGFloat = 70.0
+        let squareSize = CGFloat.squareSize
         let screenWidth = UIScreen.main.bounds.width
         
-        view = UIImageView(frame: CGRect(x: CGFloat.random(in: 0...(screenWidth - squareSize)), y: 0, width: squareSize, height: squareSize))
+        view = UIImageView(frame: CGRect(x: CGFloat.random(in: CGFloat.number...(screenWidth - squareSize)), y: CGFloat.number, width: squareSize, height: squareSize))
         
-        speed = 10
+        speed = CGFloat.speed
     }
     
     static func ==(lhs: GameObject, rhs: GameObject) -> Bool {

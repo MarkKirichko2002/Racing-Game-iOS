@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "free-icon-easy-5110455.png",
+      "filename" : "free-icon-easy-5278670.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -19,6 +19,6 @@
     "version" : 1
   },
   "properties" : {
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

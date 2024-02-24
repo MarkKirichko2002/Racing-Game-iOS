@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "free-icon-racer-2822745.png",
+      "filename" : "free-icon-bmx-5025728 (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -19,6 +19,6 @@
     "version" : 1
   },
   "properties" : {
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

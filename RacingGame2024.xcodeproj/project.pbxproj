@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443A92B53A7EA00ED8851 /* AnimationManager.swift */; };
+		824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443AE2B548AC200ED8851 /* OptionsDelegate.swift */; };
+		824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824443B42B55269C00ED8851 /* AudioPlayerClass.swift */; };
+		82456BF42B553B2F00F31566 /* explode.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF22B553B2F00F31566 /* explode.mp3 */; };
+		82456BF52B553B2F00F31566 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF32B553B2F00F31566 /* car.mp3 */; };
+		82456BF82B56ED9300F31566 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BF72B56ED9300F31566 /* GameObject.swift */; };
+		82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BFC2B582C7500F31566 /* AccelerometerManager.swift */; };
+		82535E042B69724B00A79136 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82535E032B69724B00A79136 /* Constants.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
-		828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE52B51A1DC0022FDB3 /* ViewController.swift */; };
 		828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */; };
 		828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828D8DEC2B51A1DF0022FDB3 /* LaunchScreen.storyboard */; };
 		828D8DF92B51A21C0022FDB3 /* UIView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DF82B51A21C0022FDB3 /* UIView + Extensions.swift */; };
@@ -18,17 +25,58 @@
 		828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E042B51A2E50022FDB3 /* StartViewController.swift */; };
 		828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E062B51A3130022FDB3 /* GameViewController.swift */; };
 		828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */; };
-		828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */; };
+		828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */; };
 		828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */; };
 		828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */; };
 		828D8E182B51B65A0022FDB3 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E172B51B65A0022FDB3 /* Options.swift */; };
+		828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E1D2B5270620022FDB3 /* Colors.swift */; };
+		828D8E202B5271020022FDB3 /* CarColorsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */; };
+		828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */; };
+		828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */; };
+		828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */; };
+		828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */; };
+		828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E362B5282670022FDB3 /* Obstacles.swift */; };
+		828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */; };
+		828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */; };
+		828D8E3D2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */; };
+		828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */; };
+		828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */; };
+		828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */; };
+		828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */; };
+		828D8E512B5290010022FDB3 /* Controls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E502B5290010022FDB3 /* Controls.swift */; };
+		828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */; };
+		828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */; };
+		828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */; };
+		828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E5C2B538D010022FDB3 /* SettingsManager.swift */; };
+		828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */; };
+		828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */; };
+		8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */; };
+		8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */; };
+		8298E2682B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */; };
+		8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */; };
+		8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */; };
+		8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */; };
+		8298E2892B5D8D0B00003F0E /* background music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8298E2862B5D8D0B00003F0E /* background music.mp3 */; };
+		82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */; };
+		82C449D62B5E6C2B0039B0F3 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */; };
+		82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */; };
+		82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */; };
+		82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */; };
+		82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F578922B7152B000BC64C1 /* ProfileModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		824443A92B53A7EA00ED8851 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
+		824443AE2B548AC200ED8851 /* OptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
+		824443B42B55269C00ED8851 /* AudioPlayerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClass.swift; sourceTree = "<group>"; };
+		82456BF22B553B2F00F31566 /* explode.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explode.mp3; sourceTree = "<group>"; };
+		82456BF32B553B2F00F31566 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
+		82456BF72B56ED9300F31566 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
+		82456BFC2B582C7500F31566 /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
+		82535E032B69724B00A79136 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		828D8DE52B51A1DC0022FDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		828D8DED2B51A1DF0022FDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		828D8DEF2B51A1DF0022FDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -38,10 +86,44 @@
 		828D8E042B51A2E50022FDB3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		828D8E062B51A3130022FDB3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		828D8E0A2B51A33B0022FDB3 /* SettingsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListTableViewController.swift; sourceTree = "<group>"; };
-		828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerOptionTableViewCell.swift; sourceTree = "<group>"; };
+		828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E122B51A3920022FDB3 /* RecordsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListTableViewController.swift; sourceTree = "<group>"; };
 		828D8E142B51A3A60022FDB3 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		828D8E172B51B65A0022FDB3 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		828D8E1D2B5270620022FDB3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColorsListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extensions.swift"; sourceTree = "<group>"; };
+		828D8E362B5282670022FDB3 /* Obstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacles.swift; sourceTree = "<group>"; };
+		828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListPresenter.swift; sourceTree = "<group>"; };
+		828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstaclesListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficulty.swift; sourceTree = "<group>"; };
+		828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListPresenter.swift; sourceTree = "<group>"; };
+		828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelOfDifficultyListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E502B5290010022FDB3 /* Controls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controls.swift; sourceTree = "<group>"; };
+		828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListTableViewController.swift; sourceTree = "<group>"; };
+		828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		828D8E5C2B538D010022FDB3 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenter.swift; sourceTree = "<group>"; };
+		828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CarColorsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObstaclesListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelOfDifficultyListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControlsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extensions.swift"; sourceTree = "<group>"; };
+		8298E2862B5D8D0B00003F0E /* background music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "background music.mp3"; sourceTree = "<group>"; };
+		82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageManager.swift; sourceTree = "<group>"; };
+		82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
+		82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenter.swift; sourceTree = "<group>"; };
+		82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
+		82F578922B7152B000BC64C1 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +137,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824443A82B53A7DD00ED8851 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				824443A92B53A7EA00ED8851 /* AnimationManager.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		824443AD2B548AB200ED8851 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				824443AE2B548AC200ED8851 /* OptionsDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		824443B02B55263B00ED8851 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				82456BF32B553B2F00F31566 /* car.mp3 */,
+				82456BF22B553B2F00F31566 /* explode.mp3 */,
+				8298E2862B5D8D0B00003F0E /* background music.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		824443B32B55268600ED8851 /* Audio Player */ = {
+			isa = PBXGroup;
+			children = (
+				824443B42B55269C00ED8851 /* AudioPlayerClass.swift */,
+			);
+			path = "Audio Player";
+			sourceTree = "<group>";
+		};
+		82456BF62B56ED7200F31566 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82456BF72B56ED9300F31566 /* GameObject.swift */,
+				82C449D52B5E6C2B0039B0F3 /* ResultModel.swift */,
+				82F578922B7152B000BC64C1 /* ProfileModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		82456BFB2B582C5900F31566 /* Accelerometer */ = {
+			isa = PBXGroup;
+			children = (
+				82456BFC2B582C7500F31566 /* AccelerometerManager.swift */,
+			);
+			path = Accelerometer;
+			sourceTree = "<group>";
+		};
+		82535E022B69724200A79136 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				82535E032B69724B00A79136 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		828D8DD52B51A1DC0022FDB3 = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +216,15 @@
 		828D8DE02B51A1DC0022FDB3 /* RacingGame2024 */ = {
 			isa = PBXGroup;
 			children = (
+				82535E022B69724200A79136 /* Constants */,
+				82456BF62B56ED7200F31566 /* Models */,
+				824443B02B55263B00ED8851 /* Sounds */,
 				828D8DF52B51A1F80022FDB3 /* Extensions */,
+				824443AD2B548AB200ED8851 /* Protocols */,
 				828D8DF62B51A1FF0022FDB3 /* Services */,
 				828D8DF72B51A2040022FDB3 /* Screens */,
 				828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */,
 				828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */,
-				828D8DE52B51A1DC0022FDB3 /* ViewController.swift */,
 				828D8DEA2B51A1DF0022FDB3 /* Assets.xcassets */,
 				828D8DEC2B51A1DF0022FDB3 /* LaunchScreen.storyboard */,
 				828D8DEF2B51A1DF0022FDB3 /* Info.plist */,
@@ -91,6 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				828D8DF82B51A21C0022FDB3 /* UIView + Extensions.swift */,
+				828D8E282B527A530022FDB3 /* UIColor + Extensions.swift */,
+				828D8E2A2B527C4B0022FDB3 /* UserDefaults + Extensions.swift */,
+				8298E2772B5CFC7E00003F0E /* UIViewController + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -98,7 +246,12 @@
 		828D8DF62B51A1FF0022FDB3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82456BFB2B582C5900F31566 /* Accelerometer */,
+				824443B32B55268600ED8851 /* Audio Player */,
+				824443A82B53A7DD00ED8851 /* Animation */,
+				82C449D22B5E6BDD0039B0F3 /* Data Storage */,
 				828D8DFA2B51A2370022FDB3 /* Date */,
+				828D8E5B2B538CF00022FDB3 /* Settings */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -106,11 +259,11 @@
 		828D8DF72B51A2040022FDB3 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E012B51A2A70022FDB3 /* Splash Screen */,
+				828D8E012B51A2A70022FDB3 /* Splash */,
 				828D8E002B51A2A50022FDB3 /* Start */,
 				828D8DFF2B51A2A30022FDB3 /* Game */,
-				828D8DFE2B51A2A10022FDB3 /* Settings */,
-				828D8DFD2B51A29F0022FDB3 /* Records */,
+				8298E2712B5CF92F00003F0E /* Settings Screens */,
+				828D8DFD2B51A29F0022FDB3 /* Records List MVP */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -123,29 +276,31 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
-		828D8DFD2B51A29F0022FDB3 /* Records */ = {
+		828D8DFD2B51A29F0022FDB3 /* Records List MVP */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E112B51A3810022FDB3 /* ViewController */,
-				828D8E102B51A37F0022FDB3 /* Cell */,
+				82C449D82B5E71780039B0F3 /* View */,
+				82C449D72B5E71760039B0F3 /* Presenter */,
+				82C449DD2B5E72710039B0F3 /* Protocol */,
 			);
-			path = Records;
+			path = "Records List MVP";
 			sourceTree = "<group>";
 		};
-		828D8DFE2B51A2A10022FDB3 /* Settings */ = {
+		828D8DFE2B51A2A10022FDB3 /* Settings List MVP */ = {
 			isa = PBXGroup;
 			children = (
 				828D8E162B51B64A0022FDB3 /* Model */,
-				828D8E092B51A3290022FDB3 /* ViewController */,
-				828D8E082B51A3260022FDB3 /* Cell */,
+				828D8E2C2B52819A0022FDB3 /* View */,
+				828D8E5E2B5393270022FDB3 /* Presenter */,
+				828D8E5F2B53932A0022FDB3 /* Protocol */,
 			);
-			path = Settings;
+			path = "Settings List MVP";
 			sourceTree = "<group>";
 		};
 		828D8DFF2B51A2A30022FDB3 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E062B51A3130022FDB3 /* GameViewController.swift */,
+				8298E2742B5CF97700003F0E /* ViewController */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -153,23 +308,23 @@
 		828D8E002B51A2A50022FDB3 /* Start */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E042B51A2E50022FDB3 /* StartViewController.swift */,
+				8298E2732B5CF96900003F0E /* ViewController */,
 			);
 			path = Start;
 			sourceTree = "<group>";
 		};
-		828D8E012B51A2A70022FDB3 /* Splash Screen */ = {
+		828D8E012B51A2A70022FDB3 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E022B51A2CB0022FDB3 /* SplashScreenViewController.swift */,
+				8298E2722B5CF95E00003F0E /* ViewController */,
 			);
-			path = "Splash Screen";
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		828D8E082B51A3260022FDB3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E0C2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift */,
+				828D8E0C2B51A3520022FDB3 /* OptionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -204,6 +359,366 @@
 				828D8E172B51B65A0022FDB3 /* Options.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E192B5270040022FDB3 /* Car Color List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1C2B5270440022FDB3 /* Model */,
+				828D8E1B2B5270420022FDB3 /* View */,
+				828D8E1A2B52703F0022FDB3 /* Presenter */,
+				828D8E212B52712F0022FDB3 /* Protocol */,
+			);
+			path = "Car Color List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E1A2B52703F0022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E1B2B5270420022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2612B5CF72200003F0E /* ViewController */,
+				8298E2622B5CF72A00003F0E /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E1C2B5270440022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1D2B5270620022FDB3 /* Colors.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E212B52712F0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E222B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E2C2B52819A0022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E092B51A3290022FDB3 /* ViewController */,
+				828D8E082B51A3260022FDB3 /* Cell */,
+				8298E25E2B5CF6C300003F0E /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E312B52821E0022FDB3 /* Obstacles List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E352B52824B0022FDB3 /* Model */,
+				828D8E342B5282470022FDB3 /* View */,
+				828D8E332B5282430022FDB3 /* Presenter */,
+				828D8E322B5282410022FDB3 /* Protocol */,
+			);
+			path = "Obstacles List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E322B5282410022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E3C2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E332B5282430022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E342B5282470022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2662B5CF78400003F0E /* ViewController */,
+				8298E2652B5CF78200003F0E /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E352B52824B0022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E362B5282670022FDB3 /* Obstacles.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E422B5288FC0022FDB3 /* Model */,
+				828D8E412B5288FA0022FDB3 /* View */,
+				828D8E402B5288F90022FDB3 /* Presenter */,
+				828D8E3F2B5288F70022FDB3 /* Protocol */,
+			);
+			path = "Level of Difficulty List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E3F2B5288F70022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E492B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E402B5288F90022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E412B5288FA0022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26A2B5CF7E700003F0E /* ViewController */,
+				8298E2692B5CF7E500003F0E /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E422B5288FC0022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E432B52892E0022FDB3 /* LevelOfDifficulty.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E4B2B528E9D0022FDB3 /* Control List MVP */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E4F2B528FE80022FDB3 /* Model */,
+				828D8E4E2B528FE30022FDB3 /* View */,
+				828D8E4D2B528FE10022FDB3 /* Presenter */,
+				828D8E4C2B528FDF0022FDB3 /* Protocol */,
+			);
+			path = "Control List MVP";
+			sourceTree = "<group>";
+		};
+		828D8E4C2B528FDF0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E562B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		828D8E4D2B528FE10022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E4E2B528FE30022FDB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26E2B5CF84500003F0E /* ViewController */,
+				8298E26D2B5CF84300003F0E /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		828D8E4F2B528FE80022FDB3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E502B5290010022FDB3 /* Controls.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		828D8E5B2B538CF00022FDB3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E5C2B538D010022FDB3 /* SettingsManager.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		828D8E5E2B5393270022FDB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		828D8E5F2B53932A0022FDB3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E622B53936E0022FDB3 /* SettingsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		8298E25E2B5CF6C300003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E25F2B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2612B5CF72200003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E242B5274F90022FDB3 /* CarColorsListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2622B5CF72A00003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2632B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2652B5CF78200003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E2672B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E2662B5CF78400003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E382B5283B60022FDB3 /* ObstaclesListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2692B5CF7E500003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26B2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E26A2B5CF7E700003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E452B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E26D2B5CF84300003F0E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8298E26F2B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8298E26E2B5CF84500003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E522B5290870022FDB3 /* ControlsListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2712B5CF92F00003F0E /* Settings Screens */ = {
+			isa = PBXGroup;
+			children = (
+				828D8DFE2B51A2A10022FDB3 /* Settings List MVP */,
+				828D8E192B5270040022FDB3 /* Car Color List MVP */,
+				828D8E312B52821E0022FDB3 /* Obstacles List MVP */,
+				828D8E3E2B5288CE0022FDB3 /* Level of Difficulty List MVP */,
+				828D8E4B2B528E9D0022FDB3 /* Control List MVP */,
+			);
+			path = "Settings Screens";
+			sourceTree = "<group>";
+		};
+		8298E2722B5CF95E00003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E022B51A2CB0022FDB3 /* SplashScreenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2732B5CF96900003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E042B51A2E50022FDB3 /* StartViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8298E2742B5CF97700003F0E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E062B51A3130022FDB3 /* GameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		82C449D22B5E6BDD0039B0F3 /* Data Storage */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */,
+			);
+			path = "Data Storage";
+			sourceTree = "<group>";
+		};
+		82C449D72B5E71760039B0F3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82C449D82B5E71780039B0F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E112B51A3810022FDB3 /* ViewController */,
+				828D8E102B51A37F0022FDB3 /* Cell */,
+				82C449DE2B5E72C90039B0F3 /* Extensions */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82C449DD2B5E72710039B0F3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82C449DE2B5E72C90039B0F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +781,9 @@
 			files = (
 				828D8DEE2B51A1DF0022FDB3 /* LaunchScreen.storyboard in Resources */,
 				828D8DEB2B51A1DF0022FDB3 /* Assets.xcassets in Resources */,
+				8298E2892B5D8D0B00003F0E /* background music.mp3 in Resources */,
+				82456BF42B553B2F00F31566 /* explode.mp3 in Resources */,
+				82456BF52B553B2F00F31566 /* car.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,18 +794,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828D8E552B5290B60022FDB3 /* ControlsListPresenter.swift in Sources */,
 				828D8DF92B51A21C0022FDB3 /* UIView + Extensions.swift in Sources */,
 				828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */,
+				828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */,
+				824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */,
+				828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */,
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
+				8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */,
+				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
+				82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */,
+				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
+				828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */,
+				8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */,
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
+				8298E2682B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift in Sources */,
+				828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */,
+				828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */,
+				828D8E3D2B5284CE0022FDB3 /* ObstaclesListPresenterDelegate.swift in Sources */,
+				828D8E202B5271020022FDB3 /* CarColorsListPresenter.swift in Sources */,
+				8298E2782B5CFC7E00003F0E /* UIViewController + Extensions.swift in Sources */,
+				828D8E232B52713C0022FDB3 /* CarColorsListPresenterDelegate.swift in Sources */,
+				828D8E572B5290CB0022FDB3 /* ControlsListPresenterDelegate.swift in Sources */,
 				828D8E132B51A3920022FDB3 /* RecordsListTableViewController.swift in Sources */,
+				82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */,
+				828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */,
 				828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */,
+				828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */,
 				828D8E182B51B65A0022FDB3 /* Options.swift in Sources */,
+				828D8E512B5290010022FDB3 /* Controls.swift in Sources */,
+				828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */,
 				828D8E152B51A3A60022FDB3 /* PlayerTableViewCell.swift in Sources */,
 				828D8E072B51A3130022FDB3 /* GameViewController.swift in Sources */,
-				828D8DE62B51A1DC0022FDB3 /* ViewController.swift in Sources */,
-				828D8E0D2B51A3520022FDB3 /* PlayerOptionTableViewCell.swift in Sources */,
+				82C449D62B5E6C2B0039B0F3 /* ResultModel.swift in Sources */,
+				828D8E4A2B5289BA0022FDB3 /* LevelOfDifficultyListPresenterDelegate.swift in Sources */,
+				82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */,
+				82535E042B69724B00A79136 /* Constants.swift in Sources */,
+				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
+				8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */,
+				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
+				82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				82456BF82B56ED9300F31566 /* GameObject.swift in Sources */,
+				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,
+				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
+				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
+				8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */,
+				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
+				824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */,
+				82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */,
+				82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

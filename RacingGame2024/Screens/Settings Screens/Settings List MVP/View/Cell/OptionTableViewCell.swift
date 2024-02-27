@@ -18,7 +18,7 @@ private extension String {
     static let defaultImage = "racer"
 }
 
-class OptionTableViewCell: UITableViewCell {
+final class OptionTableViewCell: UITableViewCell {
 
     static var identifier: String { "\(Self.self)" }
     

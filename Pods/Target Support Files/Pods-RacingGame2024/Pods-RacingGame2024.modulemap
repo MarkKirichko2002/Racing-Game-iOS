@@ -1,0 +1,6 @@
+framework module Pods_RacingGame2024 {
+  umbrella header "Pods-RacingGame2024-umbrella.h"
+
+  export *
+  module * { export * }
+}

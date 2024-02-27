@@ -22,7 +22,7 @@ private extension Int {
     static let numberOfLines = 0
 }
 
-class PlayerTableViewCell: UITableViewCell {
+final class PlayerTableViewCell: UITableViewCell {
 
     static var identifier: String { "\(Self.self)" }
     

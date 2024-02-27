@@ -7,9 +7,18 @@
 
 import UIKit
 
-class SettingsListTableViewController: UITableViewController {
+final class SettingsListTableViewController: UITableViewController {
 
-    let presenter = SettingsListPresenter()
+    var presenter: ISettingsListPresenter
+    
+    init(presenter: ISettingsListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,22 +48,22 @@ class SettingsListTableViewController: UITableViewController {
         case 0:
             showAlert()
         case 1:
-            let vc = CarColorsListTableViewController()
+            guard let vc = ScreensFactory.createScreen(screen: .carColorsList) as? CarColorsListTableViewController else {return}
             vc.delegate = self
             let navVC = UINavigationController(rootViewController: vc)
             present(navVC, animated: true)
         case 2:
-            let vc = ObstaclesListTableViewController()
+            guard let vc = ScreensFactory.createScreen(screen: .obstaclesList) as? ObstaclesListTableViewController else {return}
             vc.delegate = self
             let navVC = UINavigationController(rootViewController: vc)
             present(navVC, animated: true)
         case 3:
-            let vc = LevelOfDifficultyListTableViewController()
+            guard let vc = ScreensFactory.createScreen(screen: .levelOfDifficultyList) as? LevelOfDifficultyListTableViewController else {return}
             vc.delegate = self
             let navVC = UINavigationController(rootViewController: vc)
             present(navVC, animated: true)
         case 4:
-            let vc = ControlsListTableViewController()
+            guard let vc = ScreensFactory.createScreen(screen: .controlsList) as? ControlsListTableViewController else {return}
             vc.delegate = self
             let navVC = UINavigationController(rootViewController: vc)
             present(navVC, animated: true)

@@ -26,7 +26,7 @@ private extension CGFloat {
     static let y: Self = 100
 }
 
-class StartViewController: UIViewController {
+final class StartViewController: UIViewController {
 
     // MARK: - UI
     private let scrollView: UIScrollView = {
@@ -131,20 +131,20 @@ class StartViewController: UIViewController {
     }
     
     @objc private func startGame() {
-        let vc = GameViewController()
+        let vc = ScreensFactory.createScreen(screen: .game)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     
     @objc private func openSettings() {
-        let vc = SettingsListTableViewController()
+        let vc = ScreensFactory.createScreen(screen: .settingsList)
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)
     }
     
     @objc private func openRecords() {
-        let vc = RecordsListTableViewController()
+        let vc = ScreensFactory.createScreen(screen: .records)
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: true)

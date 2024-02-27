@@ -33,11 +33,11 @@ private extension String {
     static let explodeSound = "explode"
 }
 
-class SplashScreenViewController: UIViewController {
+final class SplashScreenViewController: UIViewController {
 
-    private let animation = AnimationManager()
-    private let audioPlayerClass = AudioPlayerClass()
-    private let settingsManager = SettingsManager()
+    private let animationManager: IAnimationManager
+    private let audioPlayerClass: IAudioPlayerClass
+    private let settingsManager: ISettingsManager
     
     // MARK: - UI
     private let icon: UIImageView = {
@@ -55,6 +55,17 @@ class SplashScreenViewController: UIViewController {
        label.translatesAutoresizingMaskIntoConstraints = false
        return label
     }()
+    
+    init(animationManager: IAnimationManager, audioPlayerClass: IAudioPlayerClass, settingsManager: ISettingsManager) {
+        self.animationManager = animationManager
+        self.audioPlayerClass = audioPlayerClass
+        self.settingsManager = settingsManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

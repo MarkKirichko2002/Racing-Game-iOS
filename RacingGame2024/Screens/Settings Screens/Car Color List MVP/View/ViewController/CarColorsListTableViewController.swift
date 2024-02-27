@@ -12,11 +12,20 @@ private extension String {
     static let identifier = "carColorsCell"
 }
 
-class CarColorsListTableViewController: UITableViewController {
+final class CarColorsListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
     
-    let presenter = CarColorsListPresenter()
+    var presenter: ICarColorsListPresenter
+    
+    init(presenter: ICarColorsListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

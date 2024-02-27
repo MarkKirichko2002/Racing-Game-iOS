@@ -74,7 +74,7 @@ private extension Double {
     static let defaultNumber = 0.0
 }
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
     
     // MARK: - UI
     private let scrollView: UIScrollView = {
@@ -132,11 +132,25 @@ class GameViewController: UIViewController {
     private var timer2: Timer?
     private var timer3: Timer?
     private var timer4: Timer?
-    private let accelerometerManager = AccelerometerManager()
-    private let audioPlayerClass = AudioPlayerClass()
-    private let dateManager = DateManager()
-    private let dataStorageManager = DataStorageManager()
-    private let settingsManager = SettingsManager()
+    
+    private let accelerometerManager: IAccelerometerManager
+    private let audioPlayerClass: IAudioPlayerClass
+    private let dateManager: IDateManager
+    private let dataStorageManager: IDataStorageManager
+    private let settingsManager: ISettingsManager
+    
+    init(accelerometerManager: IAccelerometerManager, audioPlayerClass: IAudioPlayerClass, dateManager: IDateManager, dataStorageManager: IDataStorageManager, settingsManager: ISettingsManager) {
+        self.accelerometerManager = accelerometerManager
+        self.audioPlayerClass = audioPlayerClass
+        self.dateManager = dateManager
+        self.dataStorageManager = dataStorageManager
+        self.settingsManager = settingsManager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {

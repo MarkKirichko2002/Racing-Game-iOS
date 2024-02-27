@@ -14,6 +14,20 @@
 		82456BF52B553B2F00F31566 /* car.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 82456BF32B553B2F00F31566 /* car.mp3 */; };
 		82456BF82B56ED9300F31566 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BF72B56ED9300F31566 /* GameObject.swift */; };
 		82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82456BFC2B582C7500F31566 /* AccelerometerManager.swift */; };
+		82474ACA2B8DC5C0000247FB /* IAccelerometerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AC92B8DC5C0000247FB /* IAccelerometerManager.swift */; };
+		82474ACD2B8DF864000247FB /* InjectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474ACC2B8DF864000247FB /* InjectionManager.swift */; };
+		82474ACF2B8DF900000247FB /* IAudioPlayerClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474ACE2B8DF900000247FB /* IAudioPlayerClass.swift */; };
+		82474AD12B8DF936000247FB /* IAnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AD02B8DF936000247FB /* IAnimationManager.swift */; };
+		82474AD32B8DF96F000247FB /* IDataStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AD22B8DF96F000247FB /* IDataStorageManager.swift */; };
+		82474AD52B8DF9CF000247FB /* IDateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AD42B8DF9CF000247FB /* IDateManager.swift */; };
+		82474AD72B8DFA0A000247FB /* ISettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AD62B8DFA0A000247FB /* ISettingsManager.swift */; };
+		82474ADA2B8DFAE4000247FB /* ScreensFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AD92B8DFAE4000247FB /* ScreensFactory.swift */; };
+		82474AED2B8DFF05000247FB /* IRecordsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AEC2B8DFF05000247FB /* IRecordsListPresenter.swift */; };
+		82474AF12B8DFF85000247FB /* ISettingsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AF02B8DFF85000247FB /* ISettingsListPresenter.swift */; };
+		82474AF52B8DFFF6000247FB /* ICarColorsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AF42B8DFFF6000247FB /* ICarColorsListPresenter.swift */; };
+		82474AF92B8E0059000247FB /* IObstaclesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AF82B8E0059000247FB /* IObstaclesListPresenter.swift */; };
+		82474AFD2B8E00C1000247FB /* ILevelOfDifficultyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474AFC2B8E00C1000247FB /* ILevelOfDifficultyListPresenter.swift */; };
+		82474B012B8E010F000247FB /* IControlsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82474B002B8E010F000247FB /* IControlsListPresenter.swift */; };
 		82535E042B69724B00A79136 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82535E032B69724B00A79136 /* Constants.swift */; };
 		828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */; };
 		828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D8DE32B51A1DC0022FDB3 /* SceneDelegate.swift */; };
@@ -63,9 +77,12 @@
 		82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */; };
 		82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */; };
 		82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F578922B7152B000BC64C1 /* ProfileModel.swift */; };
+		D7DAA034648B5696664500C6 /* Pods_RacingGame2024.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48267E88215DFA1467024BEB /* Pods_RacingGame2024.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3003CF9857D145650FD608EE /* Pods-RacingGame2024.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RacingGame2024.debug.xcconfig"; path = "Target Support Files/Pods-RacingGame2024/Pods-RacingGame2024.debug.xcconfig"; sourceTree = "<group>"; };
+		48267E88215DFA1467024BEB /* Pods_RacingGame2024.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RacingGame2024.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		824443A92B53A7EA00ED8851 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 		824443AE2B548AC200ED8851 /* OptionsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsDelegate.swift; sourceTree = "<group>"; };
 		824443B42B55269C00ED8851 /* AudioPlayerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClass.swift; sourceTree = "<group>"; };
@@ -73,6 +90,20 @@
 		82456BF32B553B2F00F31566 /* car.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = car.mp3; sourceTree = "<group>"; };
 		82456BF72B56ED9300F31566 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
 		82456BFC2B582C7500F31566 /* AccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerManager.swift; sourceTree = "<group>"; };
+		82474AC92B8DC5C0000247FB /* IAccelerometerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAccelerometerManager.swift; sourceTree = "<group>"; };
+		82474ACC2B8DF864000247FB /* InjectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InjectionManager.swift; sourceTree = "<group>"; };
+		82474ACE2B8DF900000247FB /* IAudioPlayerClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAudioPlayerClass.swift; sourceTree = "<group>"; };
+		82474AD02B8DF936000247FB /* IAnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAnimationManager.swift; sourceTree = "<group>"; };
+		82474AD22B8DF96F000247FB /* IDataStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataStorageManager.swift; sourceTree = "<group>"; };
+		82474AD42B8DF9CF000247FB /* IDateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDateManager.swift; sourceTree = "<group>"; };
+		82474AD62B8DFA0A000247FB /* ISettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISettingsManager.swift; sourceTree = "<group>"; };
+		82474AD92B8DFAE4000247FB /* ScreensFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreensFactory.swift; sourceTree = "<group>"; };
+		82474AEC2B8DFF05000247FB /* IRecordsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRecordsListPresenter.swift; sourceTree = "<group>"; };
+		82474AF02B8DFF85000247FB /* ISettingsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISettingsListPresenter.swift; sourceTree = "<group>"; };
+		82474AF42B8DFFF6000247FB /* ICarColorsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICarColorsListPresenter.swift; sourceTree = "<group>"; };
+		82474AF82B8E0059000247FB /* IObstaclesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IObstaclesListPresenter.swift; sourceTree = "<group>"; };
+		82474AFC2B8E00C1000247FB /* ILevelOfDifficultyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILevelOfDifficultyListPresenter.swift; sourceTree = "<group>"; };
+		82474B002B8E010F000247FB /* IControlsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IControlsListPresenter.swift; sourceTree = "<group>"; };
 		82535E032B69724B00A79136 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		828D8DDE2B51A1DC0022FDB3 /* RacingGame2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacingGame2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828D8DE12B51A1DC0022FDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +155,7 @@
 		82C449DB2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListPresenterDelegate.swift; sourceTree = "<group>"; };
 		82C449DF2B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecordsListTableViewController + Extensions.swift"; sourceTree = "<group>"; };
 		82F578922B7152B000BC64C1 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		969A32BE6E2B731B9B77F9FC /* Pods-RacingGame2024.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RacingGame2024.release.xcconfig"; path = "Target Support Files/Pods-RacingGame2024/Pods-RacingGame2024.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,16 +163,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7DAA034648B5696664500C6 /* Pods_RacingGame2024.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2AFB66870C6C47147F7FEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3003CF9857D145650FD608EE /* Pods-RacingGame2024.debug.xcconfig */,
+				969A32BE6E2B731B9B77F9FC /* Pods-RacingGame2024.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		824443A82B53A7DD00ED8851 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
-				824443A92B53A7EA00ED8851 /* AnimationManager.swift */,
+				82474AE22B8DFE41000247FB /* Protocol */,
+				82474AE32B8DFE42000247FB /* Service */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -148,7 +191,7 @@
 		824443AD2B548AB200ED8851 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				824443AE2B548AC200ED8851 /* OptionsDelegate.swift */,
+				82474AC22B8DC55F000247FB /* Options */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -166,7 +209,8 @@
 		824443B32B55268600ED8851 /* Audio Player */ = {
 			isa = PBXGroup;
 			children = (
-				824443B42B55269C00ED8851 /* AudioPlayerClass.swift */,
+				82474AE02B8DFE23000247FB /* Protocol */,
+				82474AE12B8DFE26000247FB /* Service */,
 			);
 			path = "Audio Player";
 			sourceTree = "<group>";
@@ -184,9 +228,242 @@
 		82456BFB2B582C5900F31566 /* Accelerometer */ = {
 			isa = PBXGroup;
 			children = (
-				82456BFC2B582C7500F31566 /* AccelerometerManager.swift */,
+				82474ADE2B8DFDEE000247FB /* Protocol */,
+				82474ADD2B8DFDED000247FB /* Service */,
 			);
 			path = Accelerometer;
+			sourceTree = "<group>";
+		};
+		82474AC22B8DC55F000247FB /* Options */ = {
+			isa = PBXGroup;
+			children = (
+				824443AE2B548AC200ED8851 /* OptionsDelegate.swift */,
+			);
+			path = Options;
+			sourceTree = "<group>";
+		};
+		82474ACB2B8DF850000247FB /* Injection */ = {
+			isa = PBXGroup;
+			children = (
+				82474ADF2B8DFE18000247FB /* Service */,
+			);
+			path = Injection;
+			sourceTree = "<group>";
+		};
+		82474AD82B8DFAD6000247FB /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				82474ADC2B8DFDD6000247FB /* Service */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		82474ADC2B8DFDD6000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82474AD92B8DFAE4000247FB /* ScreensFactory.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474ADD2B8DFDED000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82456BFC2B582C7500F31566 /* AccelerometerManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474ADE2B8DFDEE000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AC92B8DC5C0000247FB /* IAccelerometerManager.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474ADF2B8DFE18000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82474ACC2B8DF864000247FB /* InjectionManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AE02B8DFE23000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474ACE2B8DF900000247FB /* IAudioPlayerClass.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AE12B8DFE26000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				824443B42B55269C00ED8851 /* AudioPlayerClass.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AE22B8DFE41000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AD02B8DF936000247FB /* IAnimationManager.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AE32B8DFE42000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				824443A92B53A7EA00ED8851 /* AnimationManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AE42B8DFE5B000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AD22B8DF96F000247FB /* IDataStorageManager.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AE52B8DFE5D000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AE62B8DFE78000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AD42B8DF9CF000247FB /* IDateManager.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AE72B8DFE7A000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8DFB2B51A2430022FDB3 /* DateManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AE82B8DFE91000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AD62B8DFA0A000247FB /* ISettingsManager.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AE92B8DFE93000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E5C2B538D010022FDB3 /* SettingsManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AEA2B8DFEED000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AEB2B8DFEEF000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AEC2B8DFF05000247FB /* IRecordsListPresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AEE2B8DFF60000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AEF2B8DFF61000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AF02B8DFF85000247FB /* ISettingsListPresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AF22B8DFFE1000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AF32B8DFFE2000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AF42B8DFFF6000247FB /* ICarColorsListPresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AF62B8E0034000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AF82B8E0059000247FB /* IObstaclesListPresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AF72B8E0036000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AFA2B8E00AB000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AFB2B8E00AD000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474AFC2B8E00C1000247FB /* ILevelOfDifficultyListPresenter.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		82474AFE2B8E00F9000247FB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		82474AFF2B8E00FB000247FB /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				82474B002B8E010F000247FB /* IControlsListPresenter.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		82535E022B69724200A79136 /* Constants */ = {
@@ -202,6 +479,8 @@
 			children = (
 				828D8DE02B51A1DC0022FDB3 /* RacingGame2024 */,
 				828D8DDF2B51A1DC0022FDB3 /* Products */,
+				0E2AFB66870C6C47147F7FEF /* Pods */,
+				DCDA946CED00D894E26A335C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,6 +525,8 @@
 		828D8DF62B51A1FF0022FDB3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82474AD82B8DFAD6000247FB /* Factory */,
+				82474ACB2B8DF850000247FB /* Injection */,
 				82456BFB2B582C5900F31566 /* Accelerometer */,
 				824443B32B55268600ED8851 /* Audio Player */,
 				824443A82B53A7DD00ED8851 /* Animation */,
@@ -271,7 +552,8 @@
 		828D8DFA2B51A2370022FDB3 /* Date */ = {
 			isa = PBXGroup;
 			children = (
-				828D8DFB2B51A2430022FDB3 /* DateManager.swift */,
+				82474AE62B8DFE78000247FB /* Protocol */,
+				82474AE72B8DFE7A000247FB /* Service */,
 			);
 			path = Date;
 			sourceTree = "<group>";
@@ -375,7 +657,8 @@
 		828D8E1A2B52703F0022FDB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E1F2B5271020022FDB3 /* CarColorsListPresenter.swift */,
+				82474AF32B8DFFE2000247FB /* Protocol */,
+				82474AF22B8DFFE1000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -437,7 +720,8 @@
 		828D8E332B5282430022FDB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E3A2B5284C00022FDB3 /* ObstaclesListPresenter.swift */,
+				82474AF62B8E0034000247FB /* Protocol */,
+				82474AF72B8E0036000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -481,7 +765,8 @@
 		828D8E402B5288F90022FDB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E472B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift */,
+				82474AFB2B8E00AD000247FB /* Protocol */,
+				82474AFA2B8E00AB000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -525,7 +810,8 @@
 		828D8E4D2B528FE10022FDB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E542B5290B60022FDB3 /* ControlsListPresenter.swift */,
+				82474AFF2B8E00FB000247FB /* Protocol */,
+				82474AFE2B8E00F9000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -550,7 +836,8 @@
 		828D8E5B2B538CF00022FDB3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E5C2B538D010022FDB3 /* SettingsManager.swift */,
+				82474AE82B8DFE91000247FB /* Protocol */,
+				82474AE92B8DFE93000247FB /* Service */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -558,7 +845,8 @@
 		828D8E5E2B5393270022FDB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				828D8E602B5393570022FDB3 /* SettingsListPresenter.swift */,
+				82474AEF2B8DFF61000247FB /* Protocol */,
+				82474AEE2B8DFF60000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -682,7 +970,8 @@
 		82C449D22B5E6BDD0039B0F3 /* Data Storage */ = {
 			isa = PBXGroup;
 			children = (
-				82C449D32B5E6C040039B0F3 /* DataStorageManager.swift */,
+				82474AE42B8DFE5B000247FB /* Protocol */,
+				82474AE52B8DFE5D000247FB /* Service */,
 			);
 			path = "Data Storage";
 			sourceTree = "<group>";
@@ -690,7 +979,8 @@
 		82C449D72B5E71760039B0F3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				82C449D92B5E71950039B0F3 /* RecordsListPresenter.swift */,
+				82474AEB2B8DFEEF000247FB /* Protocol */,
+				82474AEA2B8DFEED000247FB /* Service */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -721,6 +1011,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		DCDA946CED00D894E26A335C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48267E88215DFA1467024BEB /* Pods_RacingGame2024.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -728,9 +1026,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 828D8DF22B51A1DF0022FDB3 /* Build configuration list for PBXNativeTarget "RacingGame2024" */;
 			buildPhases = (
+				CF63828934338F9AAD3145B4 /* [CP] Check Pods Manifest.lock */,
 				828D8DDA2B51A1DC0022FDB3 /* Sources */,
 				828D8DDB2B51A1DC0022FDB3 /* Frameworks */,
 				828D8DDC2B51A1DC0022FDB3 /* Resources */,
+				F0B797E1BBA52EE1ACF41357 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -789,6 +1089,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF63828934338F9AAD3145B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RacingGame2024-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0B797E1BBA52EE1ACF41357 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RacingGame2024/Pods-RacingGame2024-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RacingGame2024/Pods-RacingGame2024-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RacingGame2024/Pods-RacingGame2024-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		828D8DDA2B51A1DC0022FDB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -799,15 +1141,21 @@
 				828D8E052B51A2E50022FDB3 /* StartViewController.swift in Sources */,
 				828D8E462B5289910022FDB3 /* LevelOfDifficultyListTableViewController.swift in Sources */,
 				824443AA2B53A7EA00ED8851 /* AnimationManager.swift in Sources */,
+				82474ACA2B8DC5C0000247FB /* IAccelerometerManager.swift in Sources */,
 				828D8E442B52892E0022FDB3 /* LevelOfDifficulty.swift in Sources */,
 				828D8DFC2B51A2430022FDB3 /* DateManager.swift in Sources */,
+				82474ACF2B8DF900000247FB /* IAudioPlayerClass.swift in Sources */,
 				8298E2602B5CF6D900003F0E /* SettingsListTableViewController + Extensions.swift in Sources */,
 				828D8E3B2B5284C00022FDB3 /* ObstaclesListPresenter.swift in Sources */,
 				82F578932B7152B000BC64C1 /* ProfileModel.swift in Sources */,
 				828D8E1E2B5270620022FDB3 /* Colors.swift in Sources */,
+				82474AF12B8DFF85000247FB /* ISettingsListPresenter.swift in Sources */,
+				82474B012B8E010F000247FB /* IControlsListPresenter.swift in Sources */,
 				828D8E612B5393570022FDB3 /* SettingsListPresenter.swift in Sources */,
 				8298E2702B5CF88100003F0E /* ControlsListTableViewController + Extensions.swift in Sources */,
+				82474ACD2B8DF864000247FB /* InjectionManager.swift in Sources */,
 				828D8E032B51A2CB0022FDB3 /* SplashScreenViewController.swift in Sources */,
+				82474AD12B8DF936000247FB /* IAnimationManager.swift in Sources */,
 				8298E2682B5CF79A00003F0E /* ObstaclesListTableViewController + Extensions.swift in Sources */,
 				828D8E392B5283B60022FDB3 /* ObstaclesListTableViewController.swift in Sources */,
 				828D8E482B5289A70022FDB3 /* LevelOfDifficultyListPresenter.swift in Sources */,
@@ -820,7 +1168,11 @@
 				82C449DC2B5E71A10039B0F3 /* RecordsListPresenterDelegate.swift in Sources */,
 				828D8E252B5274F90022FDB3 /* CarColorsListTableViewController.swift in Sources */,
 				828D8E0B2B51A33B0022FDB3 /* SettingsListTableViewController.swift in Sources */,
+				82474AF52B8DFFF6000247FB /* ICarColorsListPresenter.swift in Sources */,
 				828D8E532B5290870022FDB3 /* ControlsListTableViewController.swift in Sources */,
+				82474AD32B8DF96F000247FB /* IDataStorageManager.swift in Sources */,
+				82474AD72B8DFA0A000247FB /* ISettingsManager.swift in Sources */,
+				82474AD52B8DF9CF000247FB /* IDateManager.swift in Sources */,
 				828D8E182B51B65A0022FDB3 /* Options.swift in Sources */,
 				828D8E512B5290010022FDB3 /* Controls.swift in Sources */,
 				828D8E632B53936E0022FDB3 /* SettingsListPresenterDelegate.swift in Sources */,
@@ -831,18 +1183,22 @@
 				82C449D42B5E6C040039B0F3 /* DataStorageManager.swift in Sources */,
 				82535E042B69724B00A79136 /* Constants.swift in Sources */,
 				828D8E0D2B51A3520022FDB3 /* OptionTableViewCell.swift in Sources */,
+				82474ADA2B8DFAE4000247FB /* ScreensFactory.swift in Sources */,
 				8298E26C2B5CF80200003F0E /* LevelOfDifficultyListTableViewController + Extensions.swift in Sources */,
 				828D8E292B527A530022FDB3 /* UIColor + Extensions.swift in Sources */,
 				82456BFD2B582C7500F31566 /* AccelerometerManager.swift in Sources */,
 				828D8DE22B51A1DC0022FDB3 /* AppDelegate.swift in Sources */,
+				82474AED2B8DFF05000247FB /* IRecordsListPresenter.swift in Sources */,
 				82456BF82B56ED9300F31566 /* GameObject.swift in Sources */,
 				824443AF2B548AC200ED8851 /* OptionsDelegate.swift in Sources */,
+				82474AF92B8E0059000247FB /* IObstaclesListPresenter.swift in Sources */,
 				828D8E5D2B538D010022FDB3 /* SettingsManager.swift in Sources */,
 				828D8E2B2B527C4B0022FDB3 /* UserDefaults + Extensions.swift in Sources */,
 				8298E2642B5CF74700003F0E /* CarColorsListTableViewController + Extensions.swift in Sources */,
 				828D8E372B5282670022FDB3 /* Obstacles.swift in Sources */,
 				824443B52B55269C00ED8851 /* AudioPlayerClass.swift in Sources */,
 				82C449E02B5E72D80039B0F3 /* RecordsListTableViewController + Extensions.swift in Sources */,
+				82474AFD2B8E00C1000247FB /* ILevelOfDifficultyListPresenter.swift in Sources */,
 				82C449DA2B5E71950039B0F3 /* RecordsListPresenter.swift in Sources */,
 				828D8DE42B51A1DC0022FDB3 /* SceneDelegate.swift in Sources */,
 			);
@@ -983,12 +1339,14 @@
 		};
 		828D8DF32B51A1DF0022FDB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3003CF9857D145650FD608EE /* Pods-RacingGame2024.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RacingGame2024/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Гонки 2024";
@@ -1011,12 +1369,14 @@
 		};
 		828D8DF42B51A1DF0022FDB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 969A32BE6E2B731B9B77F9FC /* Pods-RacingGame2024.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 265GKHT32M;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RacingGame2024/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Гонки 2024";

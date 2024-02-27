@@ -12,11 +12,20 @@ private extension String {
     static let identifier = "levelOfDifficultyListCell"
 }
 
-class LevelOfDifficultyListTableViewController: UITableViewController {
+final class LevelOfDifficultyListTableViewController: UITableViewController {
 
     weak var delegate: OptionsDelegate?
     
-    let presenter = LevelOfDifficultyListPresenter()
+    var presenter: ILevelOfDifficultyListPresenter
+    
+    init(presenter: ILevelOfDifficultyListPresenter) {
+        self.presenter = presenter
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

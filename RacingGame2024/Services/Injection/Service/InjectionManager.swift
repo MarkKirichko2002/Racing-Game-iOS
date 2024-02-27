@@ -32,22 +32,30 @@ final class InjectionManager {
         }
         // MARK: - Presenters
         container.register(ISettingsListPresenter.self) { resolver in
-            return SettingsListPresenter(settingsManager: resolver.resolve(ISettingsManager.self)!, dataStorageManager: resolver.resolve(IDataStorageManager.self)!)
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            guard let dataStorageManager = resolver.resolve(IDataStorageManager.self) else {fatalError()}
+            return SettingsListPresenter(settingsManager: settingsManager, dataStorageManager: dataStorageManager)
         }
         container.register(ICarColorsListPresenter.self) { resolver in
-            return CarColorsListPresenter(settingsManager: resolver.resolve(ISettingsManager.self)!)
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            return CarColorsListPresenter(settingsManager: settingsManager)
         }
         container.register(IObstaclesListPresenter.self) { resolver in
-            return ObstaclesListPresenter(settingsManager: resolver.resolve(ISettingsManager.self)!)
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            return ObstaclesListPresenter(settingsManager: settingsManager)
         }
         container.register(ILevelOfDifficultyListPresenter.self) { resolver in
-            return LevelOfDifficultyListPresenter(settingsManager: resolver.resolve(ISettingsManager.self)!)
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            return LevelOfDifficultyListPresenter(settingsManager: settingsManager)
         }
         container.register(IControlsListPresenter.self) { resolver in
-            return ControlsListPresenter(settingsManager: resolver.resolve(ISettingsManager.self)!)
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            return ControlsListPresenter(settingsManager: settingsManager)
         }
         container.register(IRecordsListPresenter.self) { resolver in
-            return RecordsListPresenter(dataStorageManager: resolver.resolve(IDataStorageManager.self)!, settingsManager: resolver.resolve(ISettingsManager.self)!)
+            guard let dataStorageManager = resolver.resolve(IDataStorageManager.self) else {fatalError()}
+            guard let settingsManager = resolver.resolve(ISettingsManager.self) else {fatalError()}
+            return RecordsListPresenter(dataStorageManager: dataStorageManager, settingsManager: settingsManager)
         }
         return container
     }
